@@ -1,0 +1,362 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		612D7B83165B6A310019CAD1 /* ProductPortletCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 612D7B82165B6A310019CAD1 /* ProductPortletCreator.m */; };
+		613BAB801658EBA0008A5C88 /* 320x460iphone-4s-and-below-dark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 613BAB7D1658EBA0008A5C88 /* 320x460iphone-4s-and-below-dark.jpg */; };
+		613BAB811658EBA0008A5C88 /* CategoryListImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 613BAB7E1658EBA0008A5C88 /* CategoryListImage.jpg */; };
+		613BAB821658EBA0008A5C88 /* FilterViewImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 613BAB7F1658EBA0008A5C88 /* FilterViewImage.jpg */; };
+		615B0AC6165AA51800261F10 /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 615B0AC5165AA51800261F10 /* IconDownloader.m */; };
+		616B4021165605B000B677A7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616B4020165605B000B677A7 /* UIKit.framework */; };
+		616B4023165605B000B677A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616B4022165605B000B677A7 /* Foundation.framework */; };
+		616B4025165605B000B677A7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616B4024165605B000B677A7 /* CoreGraphics.framework */; };
+		616B4027165605B000B677A7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616B4026165605B000B677A7 /* CoreData.framework */; };
+		616B402D165605B000B677A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 616B402B165605B000B677A7 /* InfoPlist.strings */; };
+		616B402F165605B000B677A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 616B402E165605B000B677A7 /* main.m */; };
+		616B4033165605B000B677A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 616B4032165605B000B677A7 /* AppDelegate.m */; };
+		616B4036165605B000B677A7 /* TinyViewModule.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 616B4034165605B000B677A7 /* TinyViewModule.xcdatamodeld */; };
+		617B45FD16580DF600A2BC9D /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B45FB16580DF600A2BC9D /* FilterViewController.m */; };
+		617B45FE16580DF600A2BC9D /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 617B45FC16580DF600A2BC9D /* FilterViewController.xib */; };
+		617B460316581DFE00A2BC9D /* CategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617B460116581DFE00A2BC9D /* CategoryListViewController.m */; };
+		617B460416581DFE00A2BC9D /* CategoryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 617B460216581DFE00A2BC9D /* CategoryListViewController.xib */; };
+		618042A51656199D00EAACD2 /* ShoppingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 618042A41656199D00EAACD2 /* ShoppingItem.m */; };
+		618042AF1656257D00EAACD2 /* ShoppingItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618042AD1656257D00EAACD2 /* ShoppingItemsViewController.m */; };
+		618042B01656257D00EAACD2 /* ShoppingItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 618042AE1656257D00EAACD2 /* ShoppingItemsViewController.xib */; };
+		618042B616563DC800EAACD2 /* Use.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 618042B516563DC800EAACD2 /* Use.jpg */; };
+		FB726A7A147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB726A78147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m */; };
+		FB726A7B147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB726A79147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		612D7B81165B6A310019CAD1 /* ProductPortletCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductPortletCreator.h; sourceTree = "<group>"; };
+		612D7B82165B6A310019CAD1 /* ProductPortletCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductPortletCreator.m; sourceTree = "<group>"; };
+		613BAB7D1658EBA0008A5C88 /* 320x460iphone-4s-and-below-dark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "320x460iphone-4s-and-below-dark.jpg"; sourceTree = "<group>"; };
+		613BAB7E1658EBA0008A5C88 /* CategoryListImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CategoryListImage.jpg; sourceTree = "<group>"; };
+		613BAB7F1658EBA0008A5C88 /* FilterViewImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FilterViewImage.jpg; sourceTree = "<group>"; };
+		615B0AC4165AA51800261F10 /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
+		615B0AC5165AA51800261F10 /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
+		616B401C165605AF00B677A7 /* TinyViewModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyViewModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		616B4020165605B000B677A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		616B4022165605B000B677A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		616B4024165605B000B677A7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		616B4026165605B000B677A7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		616B402A165605B000B677A7 /* TinyViewModule-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinyViewModule-Info.plist"; sourceTree = "<group>"; };
+		616B402C165605B000B677A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		616B402E165605B000B677A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		616B4030165605B000B677A7 /* TinyViewModule-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinyViewModule-Prefix.pch"; sourceTree = "<group>"; };
+		616B4031165605B000B677A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		616B4032165605B000B677A7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		616B4035165605B000B677A7 /* TinyViewModule.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinyViewModule.xcdatamodel; sourceTree = "<group>"; };
+		617B45FA16580DF600A2BC9D /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		617B45FB16580DF600A2BC9D /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		617B45FC16580DF600A2BC9D /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		617B460016581DFE00A2BC9D /* CategoryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListViewController.h; sourceTree = "<group>"; };
+		617B460116581DFE00A2BC9D /* CategoryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListViewController.m; sourceTree = "<group>"; };
+		617B460216581DFE00A2BC9D /* CategoryListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryListViewController.xib; sourceTree = "<group>"; };
+		618042A31656199D00EAACD2 /* ShoppingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingItem.h; sourceTree = "<group>"; };
+		618042A41656199D00EAACD2 /* ShoppingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingItem.m; sourceTree = "<group>"; };
+		618042AC1656257D00EAACD2 /* ShoppingItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingItemsViewController.h; sourceTree = "<group>"; };
+		618042AD1656257D00EAACD2 /* ShoppingItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingItemsViewController.m; sourceTree = "<group>"; };
+		618042AE1656257D00EAACD2 /* ShoppingItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingItemsViewController.xib; sourceTree = "<group>"; };
+		618042B516563DC800EAACD2 /* Use.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Use.jpg; sourceTree = "<group>"; };
+		FB726A77147A2C6E00B943B1 /* ShoppingItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingItemDetailsViewController.h; sourceTree = "<group>"; };
+		FB726A78147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingItemDetailsViewController.m; sourceTree = "<group>"; };
+		FB726A79147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingItemDetailsViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		616B4019165605AF00B677A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				616B4021165605B000B677A7 /* UIKit.framework in Frameworks */,
+				616B4023165605B000B677A7 /* Foundation.framework in Frameworks */,
+				616B4025165605B000B677A7 /* CoreGraphics.framework in Frameworks */,
+				616B4027165605B000B677A7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		616B4011165605AF00B677A7 = {
+			isa = PBXGroup;
+			children = (
+				616B4028165605B000B677A7 /* TinyViewModule */,
+				616B401F165605B000B677A7 /* Frameworks */,
+				616B401D165605AF00B677A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		616B401D165605AF00B677A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				616B401C165605AF00B677A7 /* TinyViewModule.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		616B401F165605B000B677A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				616B4020165605B000B677A7 /* UIKit.framework */,
+				616B4022165605B000B677A7 /* Foundation.framework */,
+				616B4024165605B000B677A7 /* CoreGraphics.framework */,
+				616B4026165605B000B677A7 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		616B4028165605B000B677A7 /* TinyViewModule */ = {
+			isa = PBXGroup;
+			children = (
+				616B4031165605B000B677A7 /* AppDelegate.h */,
+				616B4032165605B000B677A7 /* AppDelegate.m */,
+				612D7B81165B6A310019CAD1 /* ProductPortletCreator.h */,
+				612D7B82165B6A310019CAD1 /* ProductPortletCreator.m */,
+				618042A31656199D00EAACD2 /* ShoppingItem.h */,
+				618042A41656199D00EAACD2 /* ShoppingItem.m */,
+				615B0AC4165AA51800261F10 /* IconDownloader.h */,
+				615B0AC5165AA51800261F10 /* IconDownloader.m */,
+				618042AC1656257D00EAACD2 /* ShoppingItemsViewController.h */,
+				618042AD1656257D00EAACD2 /* ShoppingItemsViewController.m */,
+				FB726A77147A2C6E00B943B1 /* ShoppingItemDetailsViewController.h */,
+				FB726A78147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m */,
+				617B45FA16580DF600A2BC9D /* FilterViewController.h */,
+				617B45FB16580DF600A2BC9D /* FilterViewController.m */,
+				617B460016581DFE00A2BC9D /* CategoryListViewController.h */,
+				617B460116581DFE00A2BC9D /* CategoryListViewController.m */,
+				618042AE1656257D00EAACD2 /* ShoppingItemsViewController.xib */,
+				617B45FC16580DF600A2BC9D /* FilterViewController.xib */,
+				617B460216581DFE00A2BC9D /* CategoryListViewController.xib */,
+				FB726A79147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib */,
+				616B4034165605B000B677A7 /* TinyViewModule.xcdatamodeld */,
+				616B4029165605B000B677A7 /* Supporting Files */,
+			);
+			path = TinyViewModule;
+			sourceTree = "<group>";
+		};
+		616B4029165605B000B677A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				616B402A165605B000B677A7 /* TinyViewModule-Info.plist */,
+				616B402B165605B000B677A7 /* InfoPlist.strings */,
+				613BAB7D1658EBA0008A5C88 /* 320x460iphone-4s-and-below-dark.jpg */,
+				613BAB7E1658EBA0008A5C88 /* CategoryListImage.jpg */,
+				613BAB7F1658EBA0008A5C88 /* FilterViewImage.jpg */,
+				618042B516563DC800EAACD2 /* Use.jpg */,
+				616B402E165605B000B677A7 /* main.m */,
+				616B4030165605B000B677A7 /* TinyViewModule-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		616B401B165605AF00B677A7 /* TinyViewModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 616B4039165605B000B677A7 /* Build configuration list for PBXNativeTarget "TinyViewModule" */;
+			buildPhases = (
+				616B4018165605AF00B677A7 /* Sources */,
+				616B4019165605AF00B677A7 /* Frameworks */,
+				616B401A165605AF00B677A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinyViewModule;
+			productName = TinyViewModule;
+			productReference = 616B401C165605AF00B677A7 /* TinyViewModule.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		616B4013165605AF00B677A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "sanghichetan@yahoo.com";
+			};
+			buildConfigurationList = 616B4016165605AF00B677A7 /* Build configuration list for PBXProject "TinyViewModule" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 616B4011165605AF00B677A7;
+			productRefGroup = 616B401D165605AF00B677A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				616B401B165605AF00B677A7 /* TinyViewModule */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		616B401A165605AF00B677A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				616B402D165605B000B677A7 /* InfoPlist.strings in Resources */,
+				618042B01656257D00EAACD2 /* ShoppingItemsViewController.xib in Resources */,
+				618042B616563DC800EAACD2 /* Use.jpg in Resources */,
+				617B45FE16580DF600A2BC9D /* FilterViewController.xib in Resources */,
+				617B460416581DFE00A2BC9D /* CategoryListViewController.xib in Resources */,
+				613BAB801658EBA0008A5C88 /* 320x460iphone-4s-and-below-dark.jpg in Resources */,
+				613BAB811658EBA0008A5C88 /* CategoryListImage.jpg in Resources */,
+				613BAB821658EBA0008A5C88 /* FilterViewImage.jpg in Resources */,
+				FB726A7B147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		616B4018165605AF00B677A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				616B402F165605B000B677A7 /* main.m in Sources */,
+				616B4033165605B000B677A7 /* AppDelegate.m in Sources */,
+				616B4036165605B000B677A7 /* TinyViewModule.xcdatamodeld in Sources */,
+				618042A51656199D00EAACD2 /* ShoppingItem.m in Sources */,
+				618042AF1656257D00EAACD2 /* ShoppingItemsViewController.m in Sources */,
+				617B45FD16580DF600A2BC9D /* FilterViewController.m in Sources */,
+				617B460316581DFE00A2BC9D /* CategoryListViewController.m in Sources */,
+				615B0AC6165AA51800261F10 /* IconDownloader.m in Sources */,
+				612D7B83165B6A310019CAD1 /* ProductPortletCreator.m in Sources */,
+				FB726A7A147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		616B402B165605B000B677A7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				616B402C165605B000B677A7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		616B4037165605B000B677A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		616B4038165605B000B677A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		616B403A165605B000B677A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyViewModule/TinyViewModule-Prefix.pch";
+				INFOPLIST_FILE = "TinyViewModule/TinyViewModule-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		616B403B165605B000B677A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyViewModule/TinyViewModule-Prefix.pch";
+				INFOPLIST_FILE = "TinyViewModule/TinyViewModule-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		616B4016165605AF00B677A7 /* Build configuration list for PBXProject "TinyViewModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				616B4037165605B000B677A7 /* Debug */,
+				616B4038165605B000B677A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		616B4039165605B000B677A7 /* Build configuration list for PBXNativeTarget "TinyViewModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				616B403A165605B000B677A7 /* Debug */,
+				616B403B165605B000B677A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		616B4034165605B000B677A7 /* TinyViewModule.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				616B4035165605B000B677A7 /* TinyViewModule.xcdatamodel */,
+			);
+			currentVersion = 616B4035165605B000B677A7 /* TinyViewModule.xcdatamodel */;
+			path = TinyViewModule.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 616B4013165605AF00B677A7 /* Project object */;
+}

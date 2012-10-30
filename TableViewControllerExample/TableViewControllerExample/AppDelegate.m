@@ -24,7 +24,7 @@
     //self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     //self.window.rootViewController = self.viewController;
     
-    TableViewController *tbc = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
+    TableViewController *tbc = [[TableViewController alloc] initWithStyle:UITableViewStylePlain]; // could be either plain or be grouped
     UINavigationController *navCon = [[UINavigationController alloc] init];
     
     

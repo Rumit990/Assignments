@@ -7,11 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
-@interface TableViewController : UITableViewController
+
+
+@interface TableViewController : UITableViewController <SaveNewInfoDelegate>
 {
-    NSArray *arrayOfDrinks;
+    NSMutableArray *allAboutDrinks;
+    //DetailViewController *dvc;
+    
 }
 
-@property (strong) NSArray *arrayOfDrinks;
+@property (strong) NSMutableArray *allAboutDrinks;
+//@property (strong) DetailViewController *dvc;
+
+//@property(strong) NSMutableDictionary *drinksAndInfo;
+
 @end

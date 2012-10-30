@@ -7,11 +7,12 @@
 //
 
 #import "TableViewController.h"
+#import "DetailViewController.h"
 
-@implementation TableViewController
 
-@synthesize arrayOfDrinks;
+@implementation TableViewController 
 
+@synthesize allAboutDrinks;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -21,10 +22,15 @@
         // Custom initialization
     }
     
-    //self.arrayOfDrinks = [[NSArray alloc] initWithObjects:@"Beer",@"Vodka",@"Teqila",@"Bacardi",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",@"Rumit",nil];
+       
     
     self.title = @"Saturday Guide";
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DrinkDirections" ofType:@"plist"];
+    
+    
+    
+    self.allAboutDrinks = [[NSMutableArray alloc] initWithContentsOfFile:path];
     
     return self;
 }
@@ -39,17 +45,62 @@
 
 #pragma mark - View lifecycle
 
+-(void)addButtonPressed
+{
+    DetailViewController *dvc= [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    dvc.delegate = self;   
+    
+    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:dvc];
+    [self presentModalViewController:navCon animated:YES];
+}
+
+-(void)discardChanges:(DetailViewController *)requester
+{
+    [self dismissModalViewControllerAnimated:YES];
+    
+    [self.tableView reloadData];
+}
+
+-(void)addChanges:(DetailViewController *)requester
+{
+    
+    NSMutableDictionary *temp = [[NSMutableDictionary alloc] init];
+    
+    
+    
+    [temp setObject:requester.nameOfDrink.text forKey:@"name"];
+    [temp setObject:requester.ingredients.text forKey:@"ingredients"];
+    [temp setObject:requester.directions.text forKey:@"directions"];
+    
+    [self.allAboutDrinks addObject:temp];
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
+    [self.tableView reloadData];
+}
+
+-(void)updateChanges:(DetailViewController *)requester
+{
+    
+
+}
+
 - (void)viewDidLoad
 {
     
+    
     [super viewDidLoad];
     
+    UIBarButtonItem *insertButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addButtonPressed)];
+     
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Property" ofType:@"plist"];
+    self.navigationItem.rightBarButtonItem = insertButton;    
     
-    self.arrayOfDrinks = [[NSArray alloc] initWithContentsOfFile:path];
+    // delete button
     
-
+    self.navigationItem.leftBarButtonItem = self.editButtonItem; // a property of table view controller.
+    
+    
 
     
     // Uncomment the following line to preserve selection between presentations.
@@ -106,7 +157,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.arrayOfDrinks.count;
+    return self.allAboutDrinks.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -116,11 +167,14 @@
    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];  // if a cell is available in the available cells, one of tham that has been scrolled up is returned from teh set else a new one is allocated in the coming statememnts
        
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
 }
     
-    cell.textLabel.text = [self.arrayOfDrinks objectAtIndex:indexPath.row];
-    cell.detailTextLabel.text = @"Its a name";
+    cell.textLabel.text = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
+    
+    //cell.accessoryType = UI
+    
+    //cell.detailTextLabel.text = @"Its a name";
     
     // Configure the cell...
     
@@ -136,19 +190,20 @@
 }
 */
 
-/*
-// Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    if (editingStyle == UITableViewCellEditingStyleDelete) // this style is set once the delete button is pressed
+    {
+        [self.allAboutDrinks removeObjectAtIndex:indexPath.row]; // model update
+        
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];  // performs the deletion on the view with animation. view update
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.
@@ -170,13 +225,24 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+     DetailViewController *dvc= [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    dvc.delegate = self;   
+    
+    dvc.selectedDrink = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
+    
+    dvc.selectedDrinkDirections = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"directions"];
+     
+    dvc.selectedDrinkIngredients = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"ingredients"]; 
+    
+    
+    
+    
+    [self.navigationController pushViewController:dvc animated:YES];
+    
+    NSLog(@"after pushing the detail viee controller");
+    
+     
 }
 
 @end

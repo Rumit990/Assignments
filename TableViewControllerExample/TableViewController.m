@@ -81,7 +81,7 @@
     
     [self dismissModalViewControllerAnimated:YES];
     
-    NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector( caseInsensitiveCompare:)];
     
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDesc];
     //Sort the data in the model (dictionary befor calling the reload button)

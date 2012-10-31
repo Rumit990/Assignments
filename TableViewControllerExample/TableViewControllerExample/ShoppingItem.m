@@ -10,4 +10,8 @@
 
 @implementation ShoppingItem
 
+
+@synthesize itemName, itemId, itemCount;
+
+
 @end

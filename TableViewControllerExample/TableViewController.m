@@ -8,12 +8,27 @@
 
 #import "TableViewController.h"
 #import "DetailViewController.h"
-
+#import "ShoppingListController.h"
 
 @implementation TableViewController 
 
 @synthesize allAboutDrinks;
+@synthesize fetchedFromURL;
+@synthesize items;
 
+-(NSMutableArray *)items
+{
+    if(!items)
+    {
+        items = [[NSMutableArray alloc] init];
+    }
+    return items;
+}
+
+-(void)setItems:(NSMutableArray *)rcvdItems
+{
+    items = rcvdItems;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -93,6 +108,7 @@
     self.allAboutDrinks = [tempArray mutableCopy];
     
     [self.tableView reloadData];
+    
 }
 
 -(void)updateChanges:(DetailViewController *)requester forIndexPath:(NSIndexPath *)indexPath
@@ -112,6 +128,47 @@
    
 }
 
+- (void)fetchedData:(NSData *)responseData 
+{
+    
+    NSError* error;
+    
+    self.fetchedFromURL = [NSJSONSerialization 
+                          JSONObjectWithData:responseData options:kNilOptions error:&error];
+    
+      NSString *takenName = [[self.fetchedFromURL objectAtIndex:1] objectForKey:@"name"]; 
+    
+     NSLog(@"Name: %@", takenName); //3
+    
+    
+    
+    for(NSDictionary *tempItem in fetchedFromURL)
+    {
+        
+        ShoppingItem *tempShoppingItem = [[ShoppingItem alloc] init];
+        
+        tempShoppingItem.itemName = [tempItem objectForKey:@"name"];
+        tempShoppingItem.itemId = [[tempItem objectForKey:@"id"] stringValue];
+        tempShoppingItem.itemCount = [[tempItem objectForKey:@"itemCnt"] stringValue];
+        
+        [self.items addObject:tempShoppingItem];
+        
+    }
+
+}
+
+-(void)populateShoppingItems
+{
+    NSURL *url = [NSURL URLWithString:@"http://dev.tinyview.com:9080/api/rest/shopping_lists?sort_by=recent"];
+    
+    NSData* data = [NSData dataWithContentsOfURL:url]; // fetches the data from the URL
+    
+    [self fetchedData:data];
+    
+    
+}
+
+
 - (void)viewDidLoad
 {
     
@@ -126,7 +183,10 @@
     // delete button
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem; // a property of table view controller.
-   // self.tableView.delegate = self;
+   
+    [self populateShoppingItems];
+    
+    // self.tableView.delegate = self;
    // self.tableView.dataSource = self;
     
 
@@ -181,14 +241,23 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    if(section == 0)
+    {
     return self.allAboutDrinks.count;
+
+    }
+    else 
+    {
+        return self.fetchedFromURL.count;
+    }
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -199,18 +268,27 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
 }
+    if(indexPath.section == 0)
+    {
+        cell.textLabel.text = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
     
-    cell.textLabel.text = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
-    
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
     //cell.detailTextLabel.text = @"Its a name";
     
     // Configure the cell...
-    
+    }
+    else 
+    {
+        cell.textLabel.text = [[self.fetchedFromURL objectAtIndex:indexPath.row] objectForKey:@"name"];
+        
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }
     return cell;
 
 }
+
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -220,6 +298,8 @@
     return YES;
 }
 */
+
+
 
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -265,27 +345,41 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
     NSMutableDictionary *tempDataDictionary = [[NSMutableDictionary alloc] init];    
-
     
-    DetailViewController *dvc= [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    if(indexPath.section ==  0)
+    {
+    
+        DetailViewController *dvc= [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     
     
-    dvc.delegate = self;   
+        dvc.delegate = self;   
     
-    dvc.selectedDrink = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
+        dvc.selectedDrink = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
     
-    dvc.selectedDrinkDirections = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"directions"];
+        dvc.selectedDrinkDirections = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"directions"];
      
-    dvc.selectedDrinkIngredients = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"ingredients"]; 
+        dvc.selectedDrinkIngredients = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"ingredients"]; 
     
-    dvc.selectedDrinkDetails = [self.allAboutDrinks objectAtIndex:indexPath.row];
-    dvc.selectedIndexPath = indexPath;
+        dvc.selectedDrinkDetails = [self.allAboutDrinks objectAtIndex:indexPath.row];
+        dvc.selectedIndexPath = indexPath;
         
-    [self.navigationController pushViewController:dvc animated:YES];
+        [self.navigationController pushViewController:dvc animated:YES];
     
     
      
 }
 
+    else
+    {
+        ShoppingListController *slc = [[ShoppingListController alloc] init];
+        
+        slc.selectedItem = [items objectAtIndex:indexPath.row];
+        
+        [self.navigationController pushViewController:slc animated:YES];
+        
+    }
+}
 @end

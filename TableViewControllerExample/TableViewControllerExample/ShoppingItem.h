@@ -10,4 +10,14 @@
 
 @interface ShoppingItem : NSObject
 
+{
+    NSString *itemName;
+    NSString *itemId;
+    NSString *itemCount;
+}
+
+@property (strong) NSString *itemName;
+@property (strong) NSString *itemId;
+@property (strong) NSString *itemCount;
+
 @end

@@ -13,7 +13,6 @@
 		616DD804163BCFA800BA1DB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 616DD802163BCFA800BA1DB3 /* InfoPlist.strings */; };
 		616DD806163BCFA800BA1DB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD805163BCFA800BA1DB3 /* main.m */; };
 		616DD80A163BCFA800BA1DB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD809163BCFA800BA1DB3 /* AppDelegate.m */; };
-		616DD80D163BCFA800BA1DB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD80C163BCFA800BA1DB3 /* ViewController.m */; };
 		616DD810163BCFA900BA1DB3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD80E163BCFA900BA1DB3 /* ViewController.xib */; };
 		616DD81E163BD32600BA1DB3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 616DD81C163BD32600BA1DB3 /* TableViewController.m */; };
 		616DD81F163BD32600BA1DB3 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD81D163BD32600BA1DB3 /* TableViewController.xib */; };
@@ -22,6 +21,9 @@
 		6190FC84163E5C6300F14686 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6190FC82163E5C6300F14686 /* DetailViewController.m */; };
 		6190FC85163E5C6300F14686 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6190FC83163E5C6300F14686 /* DetailViewController.xib */; };
 		6190FC8F163E69A500F14686 /* DrinkDirections.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6190FC8E163E69A500F14686 /* DrinkDirections.plist */; };
+		6191E08A164136740094C9F6 /* ShoppingListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191E088164136740094C9F6 /* ShoppingListController.m */; };
+		6191E08B164136740094C9F6 /* ShoppingListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6191E089164136740094C9F6 /* ShoppingListController.xib */; };
+		6191E0911641398B0094C9F6 /* ShoppingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6191E0901641398B0094C9F6 /* ShoppingItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +37,6 @@
 		616DD807163BCFA800BA1DB3 /* TableViewControllerExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableViewControllerExample-Prefix.pch"; sourceTree = "<group>"; };
 		616DD808163BCFA800BA1DB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		616DD809163BCFA800BA1DB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		616DD80B163BCFA800BA1DB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		616DD80C163BCFA800BA1DB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		616DD80F163BCFA900BA1DB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		616DD81B163BD32600BA1DB3 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = ../TableViewController.h; sourceTree = "<group>"; };
 		616DD81C163BD32600BA1DB3 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = ../TableViewController.m; sourceTree = "<group>"; };
@@ -47,6 +47,11 @@
 		6190FC82163E5C6300F14686 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6190FC83163E5C6300F14686 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		6190FC8E163E69A500F14686 /* DrinkDirections.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkDirections.plist; sourceTree = "<group>"; };
+		6191E087164136740094C9F6 /* ShoppingListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingListController.h; sourceTree = "<group>"; };
+		6191E088164136740094C9F6 /* ShoppingListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListController.m; sourceTree = "<group>"; };
+		6191E089164136740094C9F6 /* ShoppingListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingListController.xib; sourceTree = "<group>"; };
+		6191E08F1641398B0094C9F6 /* ShoppingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingItem.h; sourceTree = "<group>"; };
+		6191E0901641398B0094C9F6 /* ShoppingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +104,14 @@
 				616DD81C163BD32600BA1DB3 /* TableViewController.m */,
 				6190FC81163E5C6300F14686 /* DetailViewController.h */,
 				6190FC82163E5C6300F14686 /* DetailViewController.m */,
-				616DD80B163BCFA800BA1DB3 /* ViewController.h */,
-				616DD80C163BCFA800BA1DB3 /* ViewController.m */,
+				6191E087164136740094C9F6 /* ShoppingListController.h */,
+				6191E088164136740094C9F6 /* ShoppingListController.m */,
+				6191E08F1641398B0094C9F6 /* ShoppingItem.h */,
+				6191E0901641398B0094C9F6 /* ShoppingItem.m */,
 				616DD81D163BD32600BA1DB3 /* TableViewController.xib */,
 				616DD80E163BCFA900BA1DB3 /* ViewController.xib */,
 				6190FC83163E5C6300F14686 /* DetailViewController.xib */,
+				6191E089164136740094C9F6 /* ShoppingListController.xib */,
 				616DD800163BCFA800BA1DB3 /* Supporting Files */,
 			);
 			path = TableViewControllerExample;
@@ -181,6 +189,7 @@
 				6190FC7A163E5A7F00F14686 /* DrinkArray.plist in Resources */,
 				6190FC85163E5C6300F14686 /* DetailViewController.xib in Resources */,
 				6190FC8F163E69A500F14686 /* DrinkDirections.plist in Resources */,
+				6191E08B164136740094C9F6 /* ShoppingListController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,9 +202,10 @@
 			files = (
 				616DD806163BCFA800BA1DB3 /* main.m in Sources */,
 				616DD80A163BCFA800BA1DB3 /* AppDelegate.m in Sources */,
-				616DD80D163BCFA800BA1DB3 /* ViewController.m in Sources */,
 				616DD81E163BD32600BA1DB3 /* TableViewController.m in Sources */,
 				6190FC84163E5C6300F14686 /* DetailViewController.m in Sources */,
+				6191E08A164136740094C9F6 /* ShoppingListController.m in Sources */,
+				6191E0911641398B0094C9F6 /* ShoppingItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

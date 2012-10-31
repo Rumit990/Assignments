@@ -7,7 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShoppingItem.h"
 
 @interface ShoppingListController : UIViewController
+{
+    
+    UILabel *itemName;
+    UILabel *itemId;
+    UILabel *noOfItemsSelected;
+    
+    ShoppingItem *selectedItem;
+    
+    
+    
+}
+@property (retain) IBOutlet UILabel *itemName;
+@property (retain) IBOutlet UILabel *itemId;
+@property (retain) IBOutlet UILabel *noOfItemsSelected;
+
+@property (strong) ShoppingItem *selectedItem;
 
 @end

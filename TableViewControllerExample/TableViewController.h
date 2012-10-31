@@ -8,17 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailViewController.h"
-
+#import "ShoppingItem.h"
 
 
 @interface TableViewController : UITableViewController <SaveNewInfoDelegate>
 {
     NSMutableArray *allAboutDrinks;
+    
+    NSMutableArray *fetchedFromURL;
     //DetailViewController *dvc;
+    
+    NSMutableArray *items;
     
 }
 
+@property (strong) NSMutableArray *items;
 @property (strong) NSMutableArray *allAboutDrinks;
+@property (strong) NSMutableArray *fetchedFromURL;
 //@property (strong) DetailViewController *dvc;
 
 //@property(strong) NSMutableDictionary *drinksAndInfo;

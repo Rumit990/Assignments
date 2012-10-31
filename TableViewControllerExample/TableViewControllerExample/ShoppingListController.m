@@ -10,6 +10,10 @@
 
 @implementation ShoppingListController
 
+@synthesize itemId, itemName, noOfItemsSelected;  //outlets
+
+@synthesize selectedItem;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,9 +33,20 @@
 
 #pragma mark - View lifecycle
 
+-(void)createUI
+{
+    self.itemName.text = self.selectedItem.itemName;
+    self.itemId.text = self.selectedItem.itemId;
+    self.noOfItemsSelected.text = self.selectedItem.itemCount;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self createUI];
+    
+    
     // Do any additional setup after loading the view from its nib.
 }
 

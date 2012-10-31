@@ -14,7 +14,7 @@
 
 -(void)addChanges:(DetailViewController *)requester;
 -(void)discardChanges:(DetailViewController *)requester;
--(void)updateChanges:(DetailViewController *)requester;
+-(void)updateChanges:(DetailViewController *)requester forIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -24,6 +24,8 @@
     NSString *selectedDrink;
     NSString *selectedDrinkIngredients;
     NSString *selectedDrinkDirections;
+    NSMutableDictionary *selectedDrinkDetails;
+    NSIndexPath *selectedIndexPath;
     
     UITextView *nameOfDrink;
     UITextView *directions;
@@ -49,5 +51,7 @@
 @property (strong) NSString *selectedDrink;
 @property (strong) NSString *selectedDrinkIngredients;
 @property (strong) NSString *selectedDrinkDirections;
+@property (strong) NSMutableDictionary *selectedDrinkDetails;
+@property (strong) NSIndexPath *selectedIndexPath;
 
 @end

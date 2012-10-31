@@ -61,11 +61,6 @@
     [self.tableView reloadData];
 }
 
-//-(NSComparisonResult)compare:(MyCustomObject *)other forElement:(NSString *)object
-//{
-//    
-//}
-
 -(void)addChanges:(DetailViewController *)requester
 {
     
@@ -81,35 +76,13 @@
     
     [self dismissModalViewControllerAnimated:YES];
     
-    NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    
-    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDesc];
-    //Sort the data in the model (dictionary befor calling the reload button)
-    
-    NSArray *tempArray = [NSArray arrayWithArray:self.allAboutDrinks];
-    
-    tempArray = [self.allAboutDrinks sortedArrayUsingDescriptors:sortDescriptors];
-    
-    self.allAboutDrinks = [tempArray mutableCopy];
-    
     [self.tableView reloadData];
 }
 
--(void)updateChanges:(DetailViewController *)requester forIndexPath:(NSIndexPath *)indexPath
+-(void)updateChanges:(DetailViewController *)requester
 {
     
-    
-    NSArray *tempArray = [NSArray arrayWithObject:indexPath];
-         
-    
-    
-    
-    [self.tableView reloadRowsAtIndexPaths:tempArray withRowAnimation:UITableViewRowAnimationFade];
 
-    NSLog(@"Aa rahaa hai delegate mein");
-    [self.navigationController popViewControllerAnimated:YES];
-    
-   
 }
 
 - (void)viewDidLoad
@@ -126,8 +99,7 @@
     // delete button
     
     self.navigationItem.leftBarButtonItem = self.editButtonItem; // a property of table view controller.
-   // self.tableView.delegate = self;
-   // self.tableView.dataSource = self;
+    
     
 
     
@@ -176,8 +148,6 @@
 
 #pragma mark - Table view data source
 
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -202,14 +172,13 @@
     
     cell.textLabel.text = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
     
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    //cell.accessoryType = UI
     
     //cell.detailTextLabel.text = @"Its a name";
     
     // Configure the cell...
     
     return cell;
-
 }
 
 /*
@@ -254,23 +223,10 @@
 
 #pragma mark - Table view delegate
 
-
--(void)tableView:(UITableView *)sender accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"Tap is working");
-}
-//-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath://(NSIndexPath *)indexPath{
-//    
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableDictionary *tempDataDictionary = [[NSMutableDictionary alloc] init];    
-
     
-    DetailViewController *dvc= [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    
-    
+     DetailViewController *dvc= [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     dvc.delegate = self;   
     
     dvc.selectedDrink = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"name"];
@@ -279,11 +235,12 @@
      
     dvc.selectedDrinkIngredients = [[self.allAboutDrinks objectAtIndex:indexPath.row] objectForKey:@"ingredients"]; 
     
-    dvc.selectedDrinkDetails = [self.allAboutDrinks objectAtIndex:indexPath.row];
-    dvc.selectedIndexPath = indexPath;
-        
+    
+    
+    
     [self.navigationController pushViewController:dvc animated:YES];
     
+    NSLog(@"after pushing the detail viee controller");
     
      
 }

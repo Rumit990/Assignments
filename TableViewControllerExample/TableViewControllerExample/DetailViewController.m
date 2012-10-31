@@ -10,7 +10,7 @@
 
 @implementation DetailViewController
 
-@synthesize selectedDrink,ingredients,directions, keyboardVisibilityFlag; // MODAL
+@synthesize selectedDrink,ingredients,directions, keyboardVisibilityFlag,selectedDrinkDetails,selectedIndexPath; // MODAL
 
 @synthesize nameOfDrink,selectedDrinkDirections,selectedDrinkIngredients,scrView ; // OUTLETS
 
@@ -54,7 +54,12 @@
 
 -(void)updateFields
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self.selectedDrinkDetails setObject:self.nameOfDrink.text forKey:@"name"];
+    [self.selectedDrinkDetails setObject:self.ingredients.text forKey:@"ingredients"];
+    [self.selectedDrinkDetails setObject:self.directions.text forKey:@"directions"];
+    
+    [self.delegate updateChanges:self forIndexPath:self.selectedIndexPath];
+    
     
 }
 
@@ -62,7 +67,9 @@
 {
     [super viewDidLoad];
     
-    self.scrView.contentSize = self.view.frame.size;
+    self.scrView.contentSize = self.view.frame.size; // scroll view size set to the size of the current view
+    
+    
     
     NSLog(@"In the view did load");
     
@@ -90,17 +97,17 @@
     }
     else
     {
-        self.ingredients.editable = NO;
-        self.nameOfDrink.editable = NO;
-        self.directions.editable = NO;
+     //   self.ingredients.editable = NO;
+       // self.nameOfDrink.editable = NO;
+        //self.directions.editable = NO;
         
-        //UIBarButtonItem *updateButton = [[UIBarButtonItem alloc] init];
+        UIBarButtonItem *updateButton = [[UIBarButtonItem alloc] init];
     
-        //updateButton.title = @"Update";
-        //updateButton.target = self;
-       // updateButton.action = @selector(updateFields);
+        updateButton.title = @"Update";
+        updateButton.target = self;
+        updateButton.action = @selector(updateFields);
         
-        //self.navigationItem.rightBarButtonItem = updateButton;
+        self.navigationItem.rightBarButtonItem = updateButton;
     
     
     }
@@ -113,30 +120,61 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-/*-(void)keyBoardDidShow:(id)notification
+-(void)keyboardDidShow:(id)notification
 {
     NSLog(@"Notification for the keyboard did show received");
+    
+    if(keyboardVisibilityFlag)
+    {
+        NSLog(@"Keyboard is already visible");
+        return;
+    }
+    
+    NSLog(@"Will resize the current view for the keyboard to fit in");
+    
+    NSDictionary *info = [notification userInfo];  
+    NSValue *value = [info objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [value CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
+    CGFloat keyboardTop = keyboardRect.origin.y;
+    CGRect viewFrame = self.view.bounds;
+    viewFrame.size.height = keyboardTop - self.view.bounds.origin.y;
+    self.scrView.frame  = viewFrame;
+    self.keyboardVisibilityFlag = YES;
+
 }
 
 -(void)keyBoardDidHide:(id)notification
 {
+    if(!keyboardVisiblityFlag)
+    {
+        NSLog(@"Keyboard is already on the screen");
+        return;
+    }
+    
+    self.scrView.frame = self.view.frame;
+    
     
 }
-*/
-/*
+
+
 -(void)viewWillAppear:(BOOL)animated
 {
+    
+    
     [super viewWillAppear:animated];
     
         
-   // [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil]; 
-  //  NSlog(@"keyboard event will be generated");
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil]; 
+    
+    
+    NSLog(@"keyboard event will be generated");
     
 
     
-    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     
-    //self.keyboardVisibilityFlag = NO;
+    self.keyboardVisibilityFlag = NO;
     
     
 }
@@ -145,7 +183,7 @@
 {
     //[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-*/
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

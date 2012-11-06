@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		615C06EC1648BE060020104B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615C06EB1648BE060020104B /* UIKit.framework */; };
+		615C06EE1648BE060020104B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615C06ED1648BE060020104B /* Foundation.framework */; };
+		615C06F01648BE070020104B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615C06EF1648BE060020104B /* CoreGraphics.framework */; };
+		615C06F61648BE070020104B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 615C06F41648BE070020104B /* InfoPlist.strings */; };
+		615C06F81648BE070020104B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C06F71648BE070020104B /* main.m */; };
+		615C06FC1648BE070020104B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C06FB1648BE070020104B /* AppDelegate.m */; };
+		615C070A1648C4CD0020104B /* PanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C07081648C4CD0020104B /* PanningViewController.m */; };
+		615C070B1648C4CD0020104B /* PanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615C07091648C4CD0020104B /* PanningViewController.xib */; };
+		615C070E1648C55E0020104B /* BiggerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 615C070D1648C55E0020104B /* BiggerView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		615C06E71648BE060020104B /* VIewPanning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VIewPanning.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		615C06EB1648BE060020104B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		615C06ED1648BE060020104B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		615C06EF1648BE060020104B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		615C06F31648BE070020104B /* VIewPanning-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VIewPanning-Info.plist"; sourceTree = "<group>"; };
+		615C06F51648BE070020104B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		615C06F71648BE070020104B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		615C06F91648BE070020104B /* VIewPanning-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VIewPanning-Prefix.pch"; sourceTree = "<group>"; };
+		615C06FA1648BE070020104B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		615C06FB1648BE070020104B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		615C07071648C4CD0020104B /* PanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanningViewController.h; sourceTree = "<group>"; };
+		615C07081648C4CD0020104B /* PanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanningViewController.m; sourceTree = "<group>"; };
+		615C07091648C4CD0020104B /* PanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PanningViewController.xib; sourceTree = "<group>"; };
+		615C070C1648C55E0020104B /* BiggerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BiggerView.h; sourceTree = "<group>"; };
+		615C070D1648C55E0020104B /* BiggerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BiggerView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		615C06E41648BE060020104B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615C06EC1648BE060020104B /* UIKit.framework in Frameworks */,
+				615C06EE1648BE060020104B /* Foundation.framework in Frameworks */,
+				615C06F01648BE070020104B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		615C06DC1648BE060020104B = {
+			isa = PBXGroup;
+			children = (
+				615C06F11648BE070020104B /* VIewPanning */,
+				615C06EA1648BE060020104B /* Frameworks */,
+				615C06E81648BE060020104B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		615C06E81648BE060020104B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				615C06E71648BE060020104B /* VIewPanning.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		615C06EA1648BE060020104B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				615C06EB1648BE060020104B /* UIKit.framework */,
+				615C06ED1648BE060020104B /* Foundation.framework */,
+				615C06EF1648BE060020104B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		615C06F11648BE070020104B /* VIewPanning */ = {
+			isa = PBXGroup;
+			children = (
+				615C06FA1648BE070020104B /* AppDelegate.h */,
+				615C06FB1648BE070020104B /* AppDelegate.m */,
+				615C07071648C4CD0020104B /* PanningViewController.h */,
+				615C07081648C4CD0020104B /* PanningViewController.m */,
+				615C070C1648C55E0020104B /* BiggerView.h */,
+				615C070D1648C55E0020104B /* BiggerView.m */,
+				615C07091648C4CD0020104B /* PanningViewController.xib */,
+				615C06F21648BE070020104B /* Supporting Files */,
+			);
+			path = VIewPanning;
+			sourceTree = "<group>";
+		};
+		615C06F21648BE070020104B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				615C06F31648BE070020104B /* VIewPanning-Info.plist */,
+				615C06F41648BE070020104B /* InfoPlist.strings */,
+				615C06F71648BE070020104B /* main.m */,
+				615C06F91648BE070020104B /* VIewPanning-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		615C06E61648BE060020104B /* VIewPanning */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 615C06FF1648BE070020104B /* Build configuration list for PBXNativeTarget "VIewPanning" */;
+			buildPhases = (
+				615C06E31648BE060020104B /* Sources */,
+				615C06E41648BE060020104B /* Frameworks */,
+				615C06E51648BE060020104B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VIewPanning;
+			productName = VIewPanning;
+			productReference = 615C06E71648BE060020104B /* VIewPanning.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		615C06DE1648BE060020104B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "sanghichetan@yahoo.com";
+			};
+			buildConfigurationList = 615C06E11648BE060020104B /* Build configuration list for PBXProject "VIewPanning" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 615C06DC1648BE060020104B;
+			productRefGroup = 615C06E81648BE060020104B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				615C06E61648BE060020104B /* VIewPanning */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		615C06E51648BE060020104B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615C06F61648BE070020104B /* InfoPlist.strings in Resources */,
+				615C070B1648C4CD0020104B /* PanningViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		615C06E31648BE060020104B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615C06F81648BE070020104B /* main.m in Sources */,
+				615C06FC1648BE070020104B /* AppDelegate.m in Sources */,
+				615C070A1648C4CD0020104B /* PanningViewController.m in Sources */,
+				615C070E1648C55E0020104B /* BiggerView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		615C06F41648BE070020104B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				615C06F51648BE070020104B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		615C06FD1648BE070020104B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		615C06FE1648BE070020104B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		615C07001648BE070020104B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VIewPanning/VIewPanning-Prefix.pch";
+				INFOPLIST_FILE = "VIewPanning/VIewPanning-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		615C07011648BE070020104B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VIewPanning/VIewPanning-Prefix.pch";
+				INFOPLIST_FILE = "VIewPanning/VIewPanning-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		615C06E11648BE060020104B /* Build configuration list for PBXProject "VIewPanning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				615C06FD1648BE070020104B /* Debug */,
+				615C06FE1648BE070020104B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		615C06FF1648BE070020104B /* Build configuration list for PBXNativeTarget "VIewPanning" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				615C07001648BE070020104B /* Debug */,
+				615C07011648BE070020104B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 615C06DE1648BE060020104B /* Project object */;
+}

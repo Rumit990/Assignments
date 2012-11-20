@@ -57,19 +57,19 @@
 
 @interface IconDownloader : NSObject
 {  
+    
+    int itemIndex;
     NSIndexPath *indexPathInTableView;
     id <IconDownloaderDelegate> delegate;
     UIImage *imageDownloaded;
     NSString *imageType;
     NSString *imageURLString;
     NSURL *imageURL;
-
-    
     NSMutableData *activeDownload;
     NSURLConnection *imageConnection;
 }
 
-
+@property int itemIndex;
 @property (strong) NSIndexPath *indexPathInTableView;
 @property (strong) id <IconDownloaderDelegate> delegate;
 @property (strong) UIImage *imageDownloaded;

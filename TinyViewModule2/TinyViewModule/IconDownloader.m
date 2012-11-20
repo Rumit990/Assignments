@@ -67,6 +67,7 @@
 @synthesize imageType;
 @synthesize imageURLString;
 @synthesize imageURL;
+@synthesize itemIndex;
 
 #pragma mark
 

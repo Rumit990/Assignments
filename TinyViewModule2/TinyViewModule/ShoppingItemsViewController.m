@@ -128,7 +128,7 @@
     
     self.shoppingItemsView.scrollView = [[UIScrollView alloc] initWithFrame:frame];
     
-    UIEdgeInsets scrollViewInsets = UIEdgeInsetsMake(20, 0, 40, 0);
+    UIEdgeInsets scrollViewInsets = UIEdgeInsetsMake(40, 6, 20, 0);
     
     self.shoppingItemsView.scrollView.contentInset = scrollViewInsets;
     

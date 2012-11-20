@@ -17,8 +17,6 @@
 
 @synthesize scrollView;
 @synthesize iconDowloaderArray;
-@synthesize shoppingItemRowCount;
-@synthesize shoppingItemCount;
 @synthesize arrayOfItemViews;
 
 
@@ -68,6 +66,18 @@
     return self;
 }
 
+/*
+-(void)awakeFromNib
+{
+    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    
+    self.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+    
+    UIEdgeInsets scrollViewInsets = UIEdgeInsetsMake(40, 6, 20, 0);
+    
+    self.scrollView.contentInset = scrollViewInsets;
+}
+*/
 
 -(void)appImageDidLoad:(NSIndexPath *)indexPath iconDownloader:(IconDownloader *)paramIconDownloader
 {
@@ -76,7 +86,7 @@
     
 }
 
-#define gapInRows 30
+#define gapInRows 8
 #define gapInItems 8
 #define frameWidth 150
 #define frameHeight 190
@@ -84,7 +94,7 @@
 
 -(void)createViewWithData:(NSMutableArray *)shoppingItems
 {
-   
+    int count = 0;
     
     CGRect itemViewFrame = CGRectMake(0, 0, frameWidth, frameHeight);
     
@@ -104,18 +114,18 @@
         
         downloader.delegate = self;
         
-        downloader.itemIndex = self.shoppingItemCount;
+        downloader.itemIndex = count;
         
         [downloader startDownload];
         
         [self.iconDowloaderArray addObject:downloader];
 
-        if(self.shoppingItemCount%2 == 0)
+        if(count%2 == 0)
         {
             
             itemViewFrame.origin.x = 0;
             
-            ProductPortletCreator *itemView = [[ProductPortletCreator alloc] initWithFrame:itemViewFrame andIndex:self.shoppingItemCount];
+            ProductPortletCreator *itemView = [[ProductPortletCreator alloc] initWithFrame:itemViewFrame andIndex:count];
             
             
             
@@ -129,7 +139,7 @@
             
             itemViewFrame.origin.x = itemViewFrame.size.width + gapInItems;
             
-            ProductPortletCreator *itemView = [[ProductPortletCreator alloc] initWithFrame:itemViewFrame andIndex:self.shoppingItemCount];
+            ProductPortletCreator *itemView = [[ProductPortletCreator alloc] initWithFrame:itemViewFrame andIndex:count];
     
             
             
@@ -145,7 +155,7 @@
         }
         
         
-        self.shoppingItemCount++;
+        count++;
         
         
     

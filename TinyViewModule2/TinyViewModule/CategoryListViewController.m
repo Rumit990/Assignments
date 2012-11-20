@@ -81,6 +81,10 @@
 
     UIImage *categoryListImage = [UIImage imageNamed:@"CategoryListImage.jpg"];
     
+//    self.view.opaque = NO;
+//    self.tableView.backgroundColor = [UIColor clearColor];
+//    self.tableView.backgroundView= nil;
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:categoryListImage];
 
 }
@@ -88,6 +92,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
 
 }
 

@@ -9,7 +9,7 @@
 
 #import "FilterViewController.h"
 #import "CategoryListViewController.h"
-#import "CentredTableView.h"
+
 
 @implementation FilterViewController
 

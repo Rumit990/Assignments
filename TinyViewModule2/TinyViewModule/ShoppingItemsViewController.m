@@ -123,16 +123,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    
-    CGRect frame = [[UIScreen mainScreen] applicationFrame];
-    
-    self.shoppingItemsView.scrollView = [[UIScrollView alloc] initWithFrame:frame];
-    
-    UIEdgeInsets scrollViewInsets = UIEdgeInsetsMake(40, 6, 20, 0);
-    
-    self.shoppingItemsView.scrollView.contentInset = scrollViewInsets;
-    
-    [self.shoppingItemsView createViewWithData:self.shoppingItems];
+
     
 }
 
@@ -140,19 +131,21 @@
 {
     // in order to reset the view from the beginning when the view appears next time
     
-    self.shoppingItemsView.shoppingItemCount = 0;
+    //self.shoppingItemsView.shoppingItemCount = 0;
+//    
+//    self.shoppingItemsView.shoppingItemRowCount = 0;
     
-    self.shoppingItemsView.shoppingItemRowCount = 0;
+   // self.shoppingItemsView.iconDowloaderArray = nil;
     
-    self.shoppingItemsView.iconDowloaderArray = nil;
-    
-    for(UIView *subview in self.shoppingItemsView.subviews)
-	{
-		[subview removeFromSuperview];
-		
-	}
-    
-    self.shoppingItemsView.scrollView = nil;
+    //self.shoppingItemsView.arrayOfItemViews = nil;
+    //    for(UIView *subview in self.shoppingItemsView.subviews)
+//	{
+//		[subview removeFromSuperview];
+//		
+//	}
+//    
+//    self.shoppingItemsView.scrollView = nil;
+
 
 }
 
@@ -181,6 +174,16 @@
     
     
     [self fetchShoppingData];
+    
+    CGRect frame = [[UIScreen mainScreen] applicationFrame];
+    
+    self.shoppingItemsView.scrollView = [[UIScrollView alloc] initWithFrame:frame];
+    
+    UIEdgeInsets scrollViewInsets = UIEdgeInsetsMake(40, 6, 20, 0);
+    
+    self.shoppingItemsView.scrollView.contentInset = scrollViewInsets;
+    
+    [self.shoppingItemsView createViewWithData:self.shoppingItems];
     
     // Do any additional setup after loading the view from its nib.
 }

@@ -11,8 +11,6 @@
 
 @interface ShoppingListView : UIView <IconDownloaderDelegate>
 {
-    int shoppingItemCount; // this is to differentiate between odd and even
-    int shoppingItemRowCount; // this is set offset for the new row
     UIScrollView *scrollView;
     NSMutableArray *iconDownloaderArray;   
     
@@ -21,9 +19,7 @@
 
 -(void)createViewWithData:(NSMutableArray *)shoppingItems;
 
-@property int shoppingItemCount;
-@property int shoppingItemRowCount;
-@property (retain) UIScrollView *scrollView;
+@property (strong) UIScrollView *scrollView;
 @property (strong) NSMutableArray *iconDowloaderArray;
 @property (strong) NSMutableArray *arrayOfItemViews;
 

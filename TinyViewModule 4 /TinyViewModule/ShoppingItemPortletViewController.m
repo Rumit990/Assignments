@@ -93,7 +93,7 @@
     if (self) 
     {
         self.shoppingItem = item;
-
+        //TODO: below code should be moved in viewDidLoad
         IconDownloader *downloader = [[IconDownloader alloc] init];
         downloader.shoppingItem = item;
         downloader.delegate = self;

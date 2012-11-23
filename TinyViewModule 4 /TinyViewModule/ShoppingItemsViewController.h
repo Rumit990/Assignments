@@ -21,6 +21,7 @@
     
     NSMutableArray *shoppingItems;
     
+    // TODO: Need to write comments
     NSString *shoppingItemsFilter;
     
 }

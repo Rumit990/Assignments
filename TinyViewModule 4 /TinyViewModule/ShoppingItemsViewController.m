@@ -28,7 +28,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
+        // TODO: createLabelWithTitle should be createTitleLabelWithTitle
         self.navigationItem.titleView = [Common createLabelWithTitle:@"Shopping Items"];
     }
     return self;
@@ -61,14 +61,16 @@
     for(NSDictionary * tempShoppingData in shoppingItemsTempArray)
     {
         
-        
+        //TODO: it should be out of loop, 
         if(!self.shoppingItems)
         {
             self.shoppingItems = [[NSMutableArray alloc] init];
         }
         
-        ShoppingItem * item = [[ShoppingItem alloc] init];
         
+        ShoppingItem * item = [[ShoppingItem alloc] init];
+        // TODO: init method structure should be standard
+        // incorrect use of custom init method
         [item initWithDictionary:tempShoppingData andIndex:count];; // to create shopping item instance from the dictionary.
         
         [self.shoppingItems addObject:item];
@@ -87,7 +89,7 @@
 -(void)fetchShoppingData
 {
     // CREATE URL AND FETCH JSON DATA , INTO AN NSData INSTANCE.
-    
+    // TODO: need to make async call
     NSURL *shoppingDataUrl = [NSURL URLWithString:@"http://dev.tinyview.com:9080/api/rest/products?sort_by=popular"];
     
     NSData *shoppingData = [NSData dataWithContentsOfURL:shoppingDataUrl];
@@ -206,7 +208,7 @@
     //UIEdgeInsets scrollViewInsets = UIEdgeInsetsMake(40, 6, 20, 0);
     
     //self.scrollView.contentInset = scrollViewInsets;
-    
+    // TODO: improve name of the method.
     [self createViewControllersWithData];
     
     // Do any additional setup after loading the view from its nib.

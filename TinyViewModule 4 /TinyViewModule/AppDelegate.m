@@ -28,13 +28,7 @@
     nav.navigationBar.translucent = YES;
 
     ShoppingItemsViewController *shoppingListController = [[ShoppingItemsViewController alloc] initWithNibName:@"ShoppingItemsViewController" bundle:nil];
-    
-    
-    
     [nav pushViewController:shoppingListController animated:NO];
-    
-    
-    
     self.window.rootViewController = nav;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

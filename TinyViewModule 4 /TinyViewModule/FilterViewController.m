@@ -9,13 +9,13 @@
 
 #import "FilterViewController.h"
 #import "CategoryListViewController.h"
-
+#import "Common.h"
 
 @implementation FilterViewController
 
 @synthesize applyFilterDelegate;
 @synthesize categoryFilter;
-@synthesize backgroundView;
+
 
 /*------------------------*/
 
@@ -54,9 +54,9 @@
     if (self) {
         // Custom initialization
         
-        
-        self.title = @"Filter Products";
-        
+        self.navigationItem.titleView = [Common createLabelWithTitle:@"Filter items"];
+    
+    
     }
     return self;
 }
@@ -241,7 +241,11 @@
     // Configure the cell...
     
     cell.textLabel.text = @"Category";
+    
     cell.detailTextLabel.text = self.categoryFilter;
+    
+    cell.textLabel.font = [UIFont systemFontOfSize:[Common tableViewFontSize]];
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
@@ -301,7 +305,7 @@
     {
         return 140; // to leave the required space before the cell with contents
     }
-    else return 44;  // normal cell size
+    else return [Common tableViewCellHeight];  // normal cell size
 }
 
 
@@ -313,7 +317,7 @@
         cell.hidden = YES;  //upper cell is hidden
     }
     else
-    cell.detailTextLabel.text = self.categoryFilter;
+    cell.detailTextLabel.text = self.categoryFilter;  // DETAIL TEXT LABEL IS A PROPERTY ON THE TABLE VIEW CELL OF TYPE VALUE 1.
 }
 
 

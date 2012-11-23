@@ -87,8 +87,6 @@
 - (void)startDownload
 {
     
-    NSLog(@"********* Started download for another image ***********");
-    
     self.activeDownload = [NSMutableData data];
     //For Favicon type image imageURL is set already.
     
@@ -135,7 +133,7 @@
     if (!image)
         return;
     
-     self.shoppingItem.itemImage = image;
+     self.shoppingItem.itemImage = image;  // SHOPPING ITEM IMAGE SET BY THE ORIGINAL DOWNLOADED IMAGE OF THE ITEM. DONE FOR EASY RETRIEVAL AT LATER STAGES
 
     float iconHeight , iconWidth;
     
@@ -143,13 +141,13 @@
     iconWidth = imageDimensionWidth;
 
     
-    if (image.size.width != iconWidth && image.size.height != iconHeight)
+    if (image.size.width != iconWidth && image.size.height != iconHeight) // FOR GENERATING ICON OF DEFINED DIMENSIONS.
 	{
         CGSize itemSize = CGSizeMake(iconHeight, iconWidth);
 		UIGraphicsBeginImageContext(itemSize);
 		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
 		[image drawInRect:imageRect];
-		self.shoppingItem.itemImageIcon = UIGraphicsGetImageFromCurrentImageContext();
+		self.shoppingItem.itemImageIcon = UIGraphicsGetImageFromCurrentImageContext(); 
 		UIGraphicsEndImageContext();
     }
     else
@@ -163,7 +161,9 @@
     self.imageConnection = nil;
     
     // call our delegate and tell it that our icon is ready for display
-    [delegate appImageDidLoad:self.indexPathInTableView iconDownloader:self.shoppingItem];
+    [delegate appImageDidLoad:self.indexPathInTableView iconDownloader:self.shoppingItem];  
+    
+    // THE PORTLET VIEW CONTROLLER ITSELF IS THE DELEGATE , SO THAT THE ITEM IMAGE VIEW PROPERTY CAN BE SET WITH IT AS AND WHEN THE IMAGE IS DOWNLOADED.
 }
 
 @end

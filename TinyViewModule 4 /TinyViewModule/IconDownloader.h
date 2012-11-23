@@ -81,6 +81,6 @@
 
 @protocol IconDownloaderDelegate 
 
-- (void)appImageDidLoad:(NSIndexPath *)indexPath iconDownloader:(IconDownloader *)paramIconDownloader;
+- (void)appImageDidLoad:(NSIndexPath *)indexPath iconDownloader:(ShoppingItem *)shoppingItem;
 
 @end

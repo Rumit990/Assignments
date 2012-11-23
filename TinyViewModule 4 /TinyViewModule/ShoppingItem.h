@@ -11,11 +11,14 @@
 @interface ShoppingItem : NSObject
 {
     UIImage *itemImage;
-    UIImage *itemImageIcon;
-    int itemIndex;
+    UIImage *itemImageIcon;   // ORIGINAL IMAGE FOR THE ITEM AND THE IMAGE ICON BOTH ARE RETAINED IN THE ITEM INSTANCE.
+    
+    int itemIndex;            // COULD BE USED AT LATER STAGES
     NSURL * imageURL;
     
 }
+
+
 @property (strong) NSURL *imageURL;
 @property (strong) UIImage *itemImageIcon; 
 @property int itemIndex;

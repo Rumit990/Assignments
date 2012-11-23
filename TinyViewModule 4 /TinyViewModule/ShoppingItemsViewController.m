@@ -13,6 +13,7 @@
 #import "ProductPortletCreator.h"
 #import "ShoppingItemDetailsViewController.h"
 #import "ShoppingItemPortletViewController.h"
+#import "Common.h"
 
 @implementation ShoppingItemsViewController
 
@@ -28,10 +29,7 @@
     if (self) {
         // Custom initialization
         
-        self.title = @"Shopping list";
-        
-        
-        
+        self.navigationItem.titleView = [Common createLabelWithTitle:@"Shopping Items"];
     }
     return self;
 }
@@ -56,7 +54,7 @@
     
     NSArray *shoppingItemsTempArray = [NSJSONSerialization JSONObjectWithData:shoppingData options:kNilOptions error:&error];
     
-    //check for the data retrieval
+    // CREATE SHOPPING OBJECTS FROM THE FETCHED ARRAY OF JSON DATA AND CREATE OBJECTS OF SHOPPING ITEMS
     
     NSLog(@"The amount of data is %d",shoppingItemsTempArray.count);
     
@@ -88,71 +86,15 @@
 
 -(void)fetchShoppingData
 {
-    // create URL and fetch JSON data , into an NSData instance.
+    // CREATE URL AND FETCH JSON DATA , INTO AN NSData INSTANCE.
     
     NSURL *shoppingDataUrl = [NSURL URLWithString:@"http://dev.tinyview.com:9080/api/rest/products?sort_by=popular"];
     
     NSData *shoppingData = [NSData dataWithContentsOfURL:shoppingDataUrl];
     
-    [self populateShoppingItemsArrayWithData:shoppingData]; // see if the data is to be entered into the core data , if yes do it simple
+    [self populateShoppingItemsArrayWithData:shoppingData]; 
     
     
-}
-
--(void)createUI
-{
-    /*if(!self.scrollView)
-    {
-        
-        //  TEST
-        
-        
-        UIImage *testImage = [UIImage  imageNamed:@"Use.jpg"];
-        
-        UIImageView *view = [[UIImageView alloc] initWithImage:testImage];
-        
-        self.scrollView.contentSize = testImage.size;
-        
-        //self.scrollView = [[UIScrollView alloc] initWithFrame:<#(CGRect)#>];
-        
-        [self.scrollView addSubview:view];
-        
-        
-        // TEST
-        
-    }*/
-    
-}
-
-// doubt to be asked, what si the correct place for scroll view iniialization
-// and about view did unload, when is it called
-
--(void)viewWillAppear:(BOOL)animated
-{
-
-    
-}
-
--(void)viewDidDisappear:(BOOL)animated
-{
-    // in order to reset the view from the beginning when the view appears next time
-    
-    //self.shoppingItemsView.shoppingItemCount = 0;
-//    
-//    self.shoppingItemsView.shoppingItemRowCount = 0;
-    
-   // self.shoppingItemsView.iconDowloaderArray = nil;
-    
-    //self.shoppingItemsView.arrayOfItemViews = nil;
-    //    for(UIView *subview in self.shoppingItemsView.subviews)
-//	{
-//		[subview removeFromSuperview];
-//		
-//	}
-//    
-//    self.shoppingItemsView.scrollView = nil;
-
-
 }
 
 -(void)filterButtonHandler
@@ -170,17 +112,21 @@
 }
 
 
+//  VALUES FOR SETTING THE INITIAL FRAMES
+
 #define gapInRows 8
 #define gapInItems 8
 #define frameWidth 150
 #define frameHeight 190
+#define leftMargin 6
+#define topMargin 6
 
 
 -(void)createViewControllersWithData
 {
     int count = 0;
     
-    CGRect itemViewFrame = CGRectMake(0, 0, frameWidth, frameHeight);
+    CGRect itemViewFrame = CGRectMake(leftMargin, topMargin, frameWidth, frameHeight);  // BASE FRAME FOR THE PORTLETS
     
     CGFloat scrollViewContentSize = (gapInRows + itemViewFrame.size.height) * ((self.shoppingItems.count + 1) / 2);
     
@@ -193,10 +139,12 @@
     {
         
         
-        if(count%2 == 0)
+        if(count%2 == 0)  // CONDITION FOR POSITIONING THE ODD NUMBERED ELEMENT 
         {
             
-            itemViewFrame.origin.x = 0;
+            itemViewFrame.origin.x = leftMargin;  // EACH TIME IN THE FOR LOOP THE ODD NUMBERED ELEMENT IS TO BE SET TO START FROM THE LEFT MARGIN
+            
+            
             
             ShoppingItemPortletViewController *shoppingItemPortletViewCon = [[ShoppingItemPortletViewController alloc] initWithNibName:@"ShoppingItemPortletViewController" bundle:nil andItem:item];
             
@@ -211,7 +159,7 @@
         
         else
         {
-            itemViewFrame.origin.x = itemViewFrame.size.width + gapInItems;
+            itemViewFrame.origin.x = leftMargin + itemViewFrame.size.width + gapInItems; // STARTING X COORDINATE FOR THE EVEN NUMBERED ELEMENT 
                     
             ShoppingItemPortletViewController *shoppingItemPortletViewCon = [[ShoppingItemPortletViewController alloc] initWithNibName:@"ShoppingItemPortletViewController" bundle:nil andItem:item];
             
@@ -230,7 +178,6 @@
             
         }
         
-         
         count++;
         
         
@@ -285,7 +232,7 @@
 {
     // return to the previous view controller ( by popping )  where the filter is to be applied
     
-    NSLog(@"Shopping items view controller, the selected filter is -----------------> %@",selectedFilter);
+    NSLog(@"Shopping items view controller, the selected filter is : %@",selectedFilter);
     
     self.shoppingItemsFilter = selectedFilter;
     
@@ -302,7 +249,7 @@
 
 -(void)shortlistButtonHandler:(ShoppingItem *)shortlistedItem
 {
-    NSLog(@"Shortlist button pressed --------------------- &&&&&&&& *******");
+    NSLog(@"Shortlist button pressed");
     
     
     ShoppingItemDetailsViewController *itemDetailsViewController = [[ShoppingItemDetailsViewController alloc] initWithNibName:@"ShoppingItemDetailsViewController" bundle:nil andItem:shortlistedItem];
@@ -314,7 +261,7 @@
 
 -(void)buyButtonHandler:(ShoppingItem *)item
 {
-    NSLog(@"buy button pressed ---------------------------&&&&&&&&&*******");
+    NSLog(@"Buy button pressed");
     
 }
 

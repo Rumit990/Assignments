@@ -30,8 +30,10 @@
 		618042B616563DC800EAACD2 /* Use.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 618042B516563DC800EAACD2 /* Use.jpg */; };
 		FB726A7A147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB726A78147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m */; };
 		FB726A7B147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB726A79147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib */; };
+		FB810728165E60D500A5CA8D /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = FB810727165E60D400A5CA8D /* Common.m */; };
 		FB826989147A69F400DBDD1E /* ShoppingItemPortletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB826987147A69F400DBDD1E /* ShoppingItemPortletViewController.m */; };
 		FB82698A147A69F400DBDD1E /* ShoppingItemPortletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB826988147A69F400DBDD1E /* ShoppingItemPortletViewController.xib */; };
+		FB841125165E39B700F6C150 /* GlobalIb.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB841124165E39B700F6C150 /* GlobalIb.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,9 +71,12 @@
 		FB726A77147A2C6E00B943B1 /* ShoppingItemDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingItemDetailsViewController.h; sourceTree = "<group>"; };
 		FB726A78147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingItemDetailsViewController.m; sourceTree = "<group>"; };
 		FB726A79147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingItemDetailsViewController.xib; sourceTree = "<group>"; };
+		FB810726165E60D400A5CA8D /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		FB810727165E60D400A5CA8D /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		FB826986147A69F400DBDD1E /* ShoppingItemPortletViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingItemPortletViewController.h; sourceTree = "<group>"; };
 		FB826987147A69F400DBDD1E /* ShoppingItemPortletViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingItemPortletViewController.m; sourceTree = "<group>"; };
 		FB826988147A69F400DBDD1E /* ShoppingItemPortletViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShoppingItemPortletViewController.xib; sourceTree = "<group>"; };
+		FB841124165E39B700F6C150 /* GlobalIb.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GlobalIb.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,11 +127,13 @@
 			children = (
 				616B4031165605B000B677A7 /* AppDelegate.h */,
 				616B4032165605B000B677A7 /* AppDelegate.m */,
+				FB810726165E60D400A5CA8D /* Common.h */,
+				FB810727165E60D400A5CA8D /* Common.m */,
 				612D7B81165B6A310019CAD1 /* ProductPortletCreator.h */,
 				612D7B82165B6A310019CAD1 /* ProductPortletCreator.m */,
 				618042A31656199D00EAACD2 /* ShoppingItem.h */,
-				618042A41656199D00EAACD2 /* ShoppingItem.m */,
 				615B0AC4165AA51800261F10 /* IconDownloader.h */,
+				618042A41656199D00EAACD2 /* ShoppingItem.m */,
 				615B0AC5165AA51800261F10 /* IconDownloader.m */,
 				618042AC1656257D00EAACD2 /* ShoppingItemsViewController.h */,
 				618042AD1656257D00EAACD2 /* ShoppingItemsViewController.m */,
@@ -143,6 +150,7 @@
 				617B45FC16580DF600A2BC9D /* FilterViewController.xib */,
 				617B460216581DFE00A2BC9D /* CategoryListViewController.xib */,
 				FB726A79147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib */,
+				FB841124165E39B700F6C150 /* GlobalIb.xib */,
 				616B4034165605B000B677A7 /* TinyViewModule.xcdatamodeld */,
 				616B4029165605B000B677A7 /* Supporting Files */,
 			);
@@ -225,6 +233,7 @@
 				613BAB821658EBA0008A5C88 /* FilterViewImage.jpg in Resources */,
 				FB726A7B147A2C6E00B943B1 /* ShoppingItemDetailsViewController.xib in Resources */,
 				FB82698A147A69F400DBDD1E /* ShoppingItemPortletViewController.xib in Resources */,
+				FB841125165E39B700F6C150 /* GlobalIb.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +255,7 @@
 				612D7B83165B6A310019CAD1 /* ProductPortletCreator.m in Sources */,
 				FB726A7A147A2C6E00B943B1 /* ShoppingItemDetailsViewController.m in Sources */,
 				FB826989147A69F400DBDD1E /* ShoppingItemPortletViewController.m in Sources */,
+				FB810728165E60D500A5CA8D /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

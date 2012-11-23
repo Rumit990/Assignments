@@ -19,13 +19,10 @@
 {
     id <ApplyFilterDelegate> applyFilterDelegate;
     
-    UIView *backgrroundView;
-    
     NSString *categoryFilter;
 }
 
 @property (strong) id <ApplyFilterDelegate> applyFilterDelegate;
 @property (strong) NSString *categoryFilter;
-@property (retain) IBOutlet UIView *backgroundView;
 
 @end

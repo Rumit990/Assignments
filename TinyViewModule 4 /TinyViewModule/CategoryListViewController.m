@@ -7,6 +7,7 @@
 //
 
 #import "CategoryListViewController.h"
+#import "Common.h"
 
 @implementation CategoryListViewController
 
@@ -39,10 +40,13 @@
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
         
-        self.title = @"Pick a Category";
+        
+       self.navigationItem.titleView = [Common createLabelWithTitle:@"Pick a Category"];
+       
     }
     return self;
 }
@@ -118,14 +122,19 @@
 {
 
     // Return the number of sections.
-    return 1;
+    return 2;
 
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(section == 0)
+    {
+        return 1;
+    }
+
     // Return the number of rows in the section.
-    return self.categoryList.count;
+    else return self.categoryList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -139,7 +148,7 @@
     
     // Configure the cell...
     cell.textLabel.text = [self.categoryList objectAtIndex:indexPath.row];
-    
+    cell.textLabel.font = [UIFont systemFontOfSize:[Common tableViewFontSize]];
     
     return cell;
 }
@@ -182,6 +191,26 @@
     return YES;
 }
 */
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+    if(indexPath.section == 0)
+    {
+    
+        return 190; // POSITIONING THE SECTION WITH CONTENT IN THE INTENDED POSITION.
+    }
+    
+    else return [Common tableViewCellHeight];  //
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.section == 0)
+    {
+        cell.hidden = YES;
+    }
+}
 
 #pragma mark - Table view delegate
 

@@ -9,6 +9,7 @@
 #import "ShoppingItemPortletViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "ShoppingItemDetailsViewController.h"
+#import "Common.h"
 
 @implementation ShoppingItemPortletViewController
 
@@ -30,7 +31,7 @@
 
 -(void)shortlistButtonHandler
 {
-    NSLog(@"Shortlist button pressed --------------------- &&&&&&&& *******");
+    NSLog(@"Shortlist button pressed");
     
     
     ShoppingItemDetailsViewController *itemDetailsViewController = [[ShoppingItemDetailsViewController alloc] initWithNibName:@"ShoppingItemDetailsViewController" bundle:nil andItem:self.shoppingItem];
@@ -42,7 +43,7 @@
 
 -(void)buyButtonHandler
 {
-    NSLog(@"buy button pressed ---------------------------&&&&&&&&&*******");
+    NSLog(@"Buy button pressed");
     
 }
 
@@ -65,32 +66,15 @@
     
     [self.view addSubview:self.shoppingItemImageView];
     
-    
-    
-    UIFont *buttonFont = [UIFont fontWithName:@"Noteworthy-Bold" size:17.0];
-    UIColor *buttonColorDefault = [UIColor colorWithRed:90.0f/255.0f green:90.0f/255.0f blue:90.0f/255.0f alpha:1.0];
-    UIColor *buttonColorHighlight = [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0];
-    
+
     CGRect shortlistButtonFrame = CGRectMake(1, 160, 73.5, 30);
     CGRect buyButtonFrame = CGRectMake(75.5, 160, 73.5, 30);
     
     
-    self.shortlistButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.buyButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.shortlistButton = [Common createPortletButtonWithTitle:@"Shortlist"];
+    self.buyButton = [Common createPortletButtonWithTitle:@"Buy"];
     
-    [self.shortlistButton setTitle:@"Shortlist" forState:UIControlStateNormal];
-    [self.shortlistButton.titleLabel setFont:buttonFont];
-    [self.shortlistButton setTitleColor:buttonColorDefault forState:UIControlStateNormal];
-    [self.shortlistButton setTitleColor:buttonColorHighlight forState:UIControlStateHighlighted];
-    self.shortlistButton.layer.backgroundColor = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0].CGColor;
     [self.shortlistButton addTarget:self action:@selector(shortlistButtonHandler) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    [self.buyButton setTitle:@"Buy" forState:UIControlStateNormal];
-    [self.buyButton.titleLabel setFont:buttonFont];
-    [self.buyButton setTitleColor:buttonColorDefault forState:UIControlStateNormal];
-    [self.buyButton setTitleColor:buttonColorHighlight forState:UIControlStateHighlighted];
-    self.buyButton.layer.backgroundColor = [UIColor colorWithRed:240.0f/255.0f green:240.0f/255.0f blue:240.0f/255.0f alpha:1.0].CGColor;
     [self.buyButton addTarget:self action:@selector(buyButtonHandler) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -153,7 +137,7 @@
 -(void)appImageDidLoad:(NSIndexPath *)indexPath iconDownloader:(ShoppingItem *)item
 {
     
-    [self.shoppingItemImageView setImage:item.itemImage];
+    [self.shoppingItemImageView setImage:item.itemImageIcon];
     
 }
 

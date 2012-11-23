@@ -15,18 +15,21 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
     UINavigationController *nav = [[UINavigationController alloc] init];
-    
+   
     nav.navigationBar.tintColor = [UIColor blackColor];
     
     nav.navigationBar.translucent = YES;
-    
+
     ShoppingItemsViewController *shoppingListController = [[ShoppingItemsViewController alloc] initWithNibName:@"ShoppingItemsViewController" bundle:nil];
+    
+    
     
     [nav pushViewController:shoppingListController animated:NO];
     

@@ -8,9 +8,9 @@
 
 #import "ShoppingItemDetailsViewController.h"
 #import "ShoppingItem.h"
-
 #import "ShoppingItemDetailsViewController.h"
 #import "ShoppingItem.h"
+#import "Common.h"
 
 @implementation ShoppingItemDetailsViewController
 
@@ -24,6 +24,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        
     }
     return self;
 }
@@ -35,7 +37,9 @@
         
         shoppingItem = item;
         
-        // Custom initialization
+        self.navigationItem.titleView = [Common createLabelWithTitle:@"Item details"];
+        
+        
     }
     return self;
 }

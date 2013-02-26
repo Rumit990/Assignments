@@ -29,6 +29,10 @@
 		FB87BC9516DC7DBA00B32BE9 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = FBAC4F4316DB41320080F468 /* Config.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB87BC9616DC7E9C00B32BE9 /* EventUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = FB2D028F16DB945000E52CCB /* EventUtil.h */; };
 		FB87BC9716DC7E9F00B32BE9 /* Event.h in Headers */ = {isa = PBXBuildFile; fileRef = FB87BC8E16DC796A00B32BE9 /* Event.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB87BCAA16DCABFF00B32BE9 /* CetasApiService.h in Headers */ = {isa = PBXBuildFile; fileRef = FB87BCA816DCABFA00B32BE9 /* CetasApiService.h */; };
+		FB87BCAB16DCABFF00B32BE9 /* CetasApiService.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87BCA916DCABFD00B32BE9 /* CetasApiService.m */; };
+		FB87BCAF16DCAFD300B32BE9 /* Request.h in Headers */ = {isa = PBXBuildFile; fileRef = FB87BCAD16DCAFD300B32BE9 /* Request.h */; };
+		FB87BCB016DCAFD300B32BE9 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87BCAE16DCAFD300B32BE9 /* Request.m */; };
 		FBAC4F1C16DB40BD0080F468 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC4F1B16DB40BD0080F468 /* Foundation.framework */; };
 		FBAC4F2B16DB40BE0080F468 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC4F2A16DB40BE0080F468 /* SenTestingKit.framework */; };
 		FBAC4F2D16DB40BE0080F468 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC4F2C16DB40BE0080F468 /* UIKit.framework */; };
@@ -98,6 +102,10 @@
 		FB2D028F16DB945000E52CCB /* EventUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventUtil.h; sourceTree = "<group>"; };
 		FB2D029016DB945000E52CCB /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		FB87BC8E16DC796A00B32BE9 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		FB87BCA816DCABFA00B32BE9 /* CetasApiService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CetasApiService.h; sourceTree = "<group>"; };
+		FB87BCA916DCABFD00B32BE9 /* CetasApiService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CetasApiService.m; sourceTree = "<group>"; };
+		FB87BCAD16DCAFD300B32BE9 /* Request.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Request.h; sourceTree = "<group>"; };
+		FB87BCAE16DCAFD300B32BE9 /* Request.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Request.m; sourceTree = "<group>"; };
 		FBAC4F1816DB40BD0080F468 /* libCetasDataIngestionAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCetasDataIngestionAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBAC4F1B16DB40BD0080F468 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBAC4F1F16DB40BD0080F468 /* CetasDataIngestionAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CetasDataIngestionAPI-Prefix.pch"; sourceTree = "<group>"; };
@@ -224,6 +232,8 @@
 				FB2D028F16DB945000E52CCB /* EventUtil.h */,
 				FB2D029016DB945000E52CCB /* Event.m */,
 				FB87BC8E16DC796A00B32BE9 /* Event.h */,
+				FB87BCAD16DCAFD300B32BE9 /* Request.h */,
+				FB87BCAE16DCAFD300B32BE9 /* Request.m */,
 			);
 			name = VO;
 			sourceTree = "<group>";
@@ -273,6 +283,8 @@
 				FBAC4F4416DB41320080F468 /* Config.m */,
 				FBAC4F4616DB415C0080F468 /* CetasTracker.h */,
 				FBAC4F4716DB415C0080F468 /* CetasTracker.m */,
+				FB87BCA816DCABFA00B32BE9 /* CetasApiService.h */,
+				FB87BCA916DCABFD00B32BE9 /* CetasApiService.m */,
 			);
 			path = CetasDataIngestionAPI;
 			sourceTree = "<group>";
@@ -334,6 +346,8 @@
 				FB87BC9516DC7DBA00B32BE9 /* Config.h in Headers */,
 				FB87BC9716DC7E9F00B32BE9 /* Event.h in Headers */,
 				FB87BC9616DC7E9C00B32BE9 /* EventUtil.h in Headers */,
+				FB87BCAA16DCABFF00B32BE9 /* CetasApiService.h in Headers */,
+				FB87BCAF16DCAFD300B32BE9 /* Request.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +545,8 @@
 				FBAC4F5216DB443D0080F468 /* JSONKit.m in Sources */,
 				FB2D028D16DB872F00E52CCB /* Constants.m in Sources */,
 				FB2D029116DB945000E52CCB /* Event.m in Sources */,
+				FB87BCAB16DCABFF00B32BE9 /* CetasApiService.m in Sources */,
+				FB87BCB016DCAFD300B32BE9 /* Request.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

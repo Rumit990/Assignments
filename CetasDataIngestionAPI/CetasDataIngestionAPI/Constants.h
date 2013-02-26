@@ -19,6 +19,15 @@ extern NSString * const kUserInfoKeyUserLatitude;
 extern NSString * const kUserInfoKeyUserHorizontalAccuracy;
 extern NSString * const kUserInfoKeyUserVerticalAccuracy ;
 extern NSString * const kUserInfoKeyUserRemark;
+extern NSString * const kCetasRestAPIBaseURL;
+extern NSString * const kResponseStatusCode200;
+extern NSString * const kCetasAPIResponseKeyStatus;
+extern NSString * const kCetasAPIResponseKeyToken;
+extern NSString * const kCetasAPIResponseKeyTimeout;
+extern NSString * const kCetasAPIResponseKeyAttributes;
+extern NSString * const kCetasAPIResponseKeyUserID;
+extern NSString * const kCetasAPIResponseKeyContent;
+
 
 #define kMessageRequestTypeLogin 0
 #define kMessageRequestTypeMessage 1
@@ -26,6 +35,7 @@ extern NSString * const kUserInfoKeyUserRemark;
 #define kMessageRequestTypeRequest 3
 #define kMessageRequestTypeResponse 4
 
+#define logIfRequired(string) NSLog(string)
 
 @interface Constants : NSObject
 

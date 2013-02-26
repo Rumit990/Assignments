@@ -41,7 +41,7 @@
 
 
 -(void)setDate:(NSDate *)date{
-    self.time = [date timeIntervalSinceNow];
+    self.time = [date timeIntervalSince1970];
 }
 -(void)setTime:(NSTimeInterval)time{
     self.eventTime = time;

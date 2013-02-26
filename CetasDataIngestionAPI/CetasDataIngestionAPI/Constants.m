@@ -20,6 +20,15 @@ NSString * const kUserInfoKeyUserLatitude = @"Latitude";
 NSString * const kUserInfoKeyUserHorizontalAccuracy = @"HorizontalAccuracy";
 NSString * const kUserInfoKeyUserVerticalAccuracy = @"VerticalAccuracy";
 NSString * const kUserInfoKeyUserRemark = @"Remark";
+NSString * const kCetasRestAPIBaseURL = @"http://webfeeds.cetas.net:8080/rest/agent/";
+NSString * const kResponseStatusCode200= @"200 OK";
+NSString * const kCetasAPIResponseKeyStatus = @"status";
+NSString * const kCetasAPIResponseKeyToken = @"token";
+NSString * const kCetasAPIResponseKeyTimeout = @"timeout";
+NSString * const kCetasAPIResponseKeyAttributes = @"attributes";
+NSString * const kCetasAPIResponseKeyUserID = @"userID";
+NSString * const kCetasAPIResponseKeyContent = @"content";
+
 
 
 @end

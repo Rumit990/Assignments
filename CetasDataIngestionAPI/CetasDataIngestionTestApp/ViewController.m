@@ -31,7 +31,7 @@
 -(IBAction)trackButtonPressed:(id)sender{
     NSLog(@"CetasDataIngestionTestApp:  Track Button Pressed");
     [Config test];
-    Event *event = [[Event alloc] init];
+    //Event *event = [[Event alloc] init];
 
 
     

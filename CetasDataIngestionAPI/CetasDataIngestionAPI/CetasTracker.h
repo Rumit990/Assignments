@@ -8,7 +8,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Config.h"
+#import "Event.m"
 
 @interface CetasTracker : NSObject
+
+
+- (id)getTrackerWithApiKey:(NSString *)apiKey  config :(Config *)config ;
++ (id)getDefaultTracker;
+- (void)logEvent:(Event *)event; // Later track event
+- (void)logEvents:(NSArray *)events;
+- (void)logEventWithEventDetails:(NSMutableDictionary *)eventDetail;
+- (void)stop;
+
 
 @end

@@ -10,6 +10,8 @@
 #import "ViewController.h"
 #import "Config.h"
 #import "Event.h"
+#import "JSON.h"
+#import "CetasTracker.h"
 
 @interface ViewController ()
 
@@ -29,9 +31,11 @@
     // Dispose of any resources that can be recreated.
 }
 -(IBAction)trackButtonPressed:(id)sender{
-    NSLog(@"CetasDataIngestionTestApp:  Track Button Pressed");
+    Config *config = [Config getDefaultInstance];
     [Config test];
-    //Event *event = [[Event alloc] init];
+    [config setUserName:@"someone"];
+    [config setUserId:@"userid"];
+    CetasTracker *tracker = [[CetasTracker alloc] getTrackerWithApiKey:@"mq28uQr94zM5yHMrBWGX5P3j+pNajzT9StMd+WoEyDsJj40U+ebzS5k0Nj1CCVc6efnohnFJeOOyWf0KAxqeD7RH5x+hB8dEOio8HQOWMjCJZnTV22yTOLBCeTsk+h1GdMeE1KOTl2X7USpLVUk6bw==" config:config];
 
 
     

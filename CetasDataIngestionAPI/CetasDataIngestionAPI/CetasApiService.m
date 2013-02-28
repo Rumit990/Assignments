@@ -10,6 +10,12 @@
 #import "CetasApiService.h"
 #import "Request.h"
 #import "JSON.h"
+#import "Event.h"
+#import "ConfigUtil.h"
+#import "EventUtil.h"
+#import <UIKit/UIKit.h>
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 #define kMessageTypeLogin 0
 #define kMessageTypeUpdate 1
@@ -73,6 +79,100 @@
     
 }
 
+-(NSDictionary *)getSystemInfo{
+    
+    NSMutableDictionary *systemInfo = [[NSMutableDictionary alloc] init];
+    UIDevice *currentDevice = [UIDevice currentDevice];
+    NSArray *languageArray = [NSLocale preferredLanguages];
+    NSString *language = @"null";
+    if(languageArray.count){
+        language = [languageArray objectAtIndex:0];
+    }
+   
+    NSLocale *locale = [NSLocale currentLocale];
+    NSString *country = [locale localeIdentifier];
+    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    
+    [systemInfo setValue:[currentDevice name] forKey:@"Name"];
+    [systemInfo setValue:[currentDevice systemName] forKey:@"SystemName"];
+    [systemInfo setValue:[currentDevice systemVersion] forKey:@"OSVersion"];
+    [systemInfo setValue:[currentDevice model] forKey:@"DeviceModel"];
+    [systemInfo setValue:language forKey:@"Language"];
+    [systemInfo setValue:country forKey:@"Country"];
+    [systemInfo setValue:appVersion forKey:@"AppVersion"];
+    
+    CTTelephonyNetworkInfo *netinfo = [[CTTelephonyNetworkInfo alloc] init];
+    CTCarrier *ctCarrier = [netinfo subscriberCellularProvider];
+    [systemInfo setValue:ctCarrier.carrierName forKey:@"CarrierName"];
+    [systemInfo setValue:ctCarrier.mobileCountryCode forKey:@"MobileCountryCode"];
+    [systemInfo setValue:ctCarrier.mobileNetworkCode forKey:@"MobileNetworkCode"];
+    [systemInfo setValue:ctCarrier.isoCountryCode forKey:@"IsoCountryCode"];
+    
+    return systemInfo;
+}
+
+
+-(Request *)prepareRequest:(NSArray *)events apiKey:(NSString *)apiKey{
+    
+    Config *config = [self.delegate getConfigObject];
+    Request *request = [[Request alloc] init];
+    request.timeout = config.timeout; 
+    request.attributes =  [self getSystemInfo]; 
+    request.user = config.userInfo;
+    
+    switch (self.messageType) {
+        case kMessageRequestTypeLogin:{
+            request.token = apiKey;
+            Event *event = [[Event alloc] initWithType:kMessageRequestTypeLogin];
+            [event setEventAtribute:kCetasAPIResponseKeyUserID  forKey:[config getUserId]];
+            [event setEventAtribute:kUserInfoKeyUserName forKey:[config getUserName]];
+            request.content = [NSArray arrayWithObject:event];
+        }
+        break;
+        case kMessageRequestTypeMessage:{
+            request.token = [self.delegate getSessionKey];
+            request.content = events;
+        }
+        break;
+        case kMessageRequestTypeLogout:{
+            request.token = [self.delegate getSessionKey];
+            Event *event = [[Event alloc] initWithType:kMessageRequestTypeLogin];
+            [event setEventAtribute:[config getUserId]  forKey:kCetasAPIResponseKeyUserID];
+            [event setEventAtribute:[config getUserName] forKey:kUserInfoKeyUserName];
+            
+            request.content = [NSArray arrayWithObject:event];
+            request.user = nil;
+            request.attributes = [NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:[self.delegate getSessionDuration]] forKey:@"duration"];
+        }
+        break;
+
+    }
+    return request;
+}
+
+
+-(void)login:(NSString *)apiKey {
+    
+    self.messageType= kMessageRequestTypeLogin;
+    Request *request = [self prepareRequest:nil apiKey:apiKey];
+    NSString *requestJSON = [request getJSONRepresentation];
+    [self sendPostRequestWithPostParamsString:requestJSON];
+    
+}
+
+-(void)logout {
+    self.messageType = kMessageRequestTypeLogout;
+    Request *request = [self prepareRequest:nil apiKey:nil];
+    NSString *requestJSON = [request getJSONRepresentation];
+    [self sendPostRequestWithPostParamsString:requestJSON];
+}
+
+-(void) updateEvents:(NSArray *)events{
+    self.messageType = kMessageRequestTypeMessage;
+    Request *request = [self prepareRequest:events apiKey:nil];
+    NSString *requestJSON = [request getJSONRepresentation];
+    [self sendPostRequestWithPostParamsString:requestJSON];
+}
 
 #pragma mark connection
 /**
@@ -124,7 +224,6 @@
             }
         }
     }
-
     
 }
 
@@ -136,7 +235,5 @@
     if ([self.delegate respondsToSelector:@selector(dataLoadedFailure:error:)]){
         [self.delegate dataLoadedFailure:self error:error];
     }
-
 }
-
 @end

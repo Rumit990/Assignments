@@ -17,6 +17,7 @@
 
 -(Config *)getConfigObject;
 -(NSString *)getSessionKey;
+-(NSTimeInterval)getSessionDuration;
 
 /**
  * Called when all the data successfully received from the backend

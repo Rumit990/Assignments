@@ -13,16 +13,6 @@
 #import "Constants.h"
 #import "JSON.h"
 
-@interface Event()
-
-@property NSTimeInterval eventTime;
-@property NSInteger sequenceNumber;
-@property NSInteger type;
-@property (strong) NSMutableDictionary *attributes;
-@property (strong) NSString *attributesName;
-
-@end
-
 
 @implementation Event
 
@@ -38,7 +28,18 @@
     }
     return self;
 }
-
+-(id)initWithType:(NSInteger)paramType{
+    self = [super init];
+    if (self) {
+        // Work your initialising magic here as you normally would
+        self.type = paramType;
+        self.attributesName = @"attributes";
+        self.attributes = [[NSMutableDictionary alloc] init];
+        self.sequenceNumber = 1;
+        
+    }
+    return self;
+}
 
 -(void)setDate:(NSDate *)date{
     self.time = [date timeIntervalSince1970];

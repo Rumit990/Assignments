@@ -28,7 +28,7 @@ NSString * const kCetasAPIResponseKeyTimeout = @"timeout";
 NSString * const kCetasAPIResponseKeyAttributes = @"attributes";
 NSString * const kCetasAPIResponseKeyUserID = @"userID";
 NSString * const kCetasAPIResponseKeyContent = @"content";
-
+NSString * const kCetasAPIResponseKeyUser = @"user";
 
 
 @end

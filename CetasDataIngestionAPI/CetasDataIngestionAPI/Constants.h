@@ -27,7 +27,7 @@ extern NSString * const kCetasAPIResponseKeyTimeout;
 extern NSString * const kCetasAPIResponseKeyAttributes;
 extern NSString * const kCetasAPIResponseKeyUserID;
 extern NSString * const kCetasAPIResponseKeyContent;
-
+extern NSString * const kCetasAPIResponseKeyUser;
 
 #define kMessageRequestTypeLogin 0
 #define kMessageRequestTypeMessage 1

@@ -11,7 +11,7 @@
 #import "CetasDataIngestionAPITests.h"
 #import "Config.h"
 #import "Event.h"
-#import "EventUtil.h"
+#import "CetasTracker.h"
 
 @implementation CetasDataIngestionAPITests
 
@@ -31,10 +31,13 @@
 
 
 -(void)testDataIngestionAPI{
-    Config *config =[[Config alloc] init];
-    [config test];
-    Event *event =[[EventVO alloc] init];
-    [event getEventJsonRepresentation];
+    Config *config = [[Config alloc] init];
+    [config setUserName:@"someone"];
+    [config setUserId:@"userid"];
+    CetasTracker *tracker = [[CetasTracker alloc] getTrackerWithApiKey:@"mq28uQr94zM5yHMrBWGX5P3j+pNajzT9StMd+WoEyDsJj40U+ebzS5k0Nj1CCVc6efnohnFJeOOyWf0KAxqeD7RH5x+hB8dEOio8HQOWMjCJZnTV22yTOLBCeTsk+h1GdMeE1KOTl2X7USpLVUk6bw==" config:config];
+
+    
+    
 
     
     

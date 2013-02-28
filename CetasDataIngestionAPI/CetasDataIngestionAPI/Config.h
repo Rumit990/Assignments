@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface Config : NSObject
 
 /**
@@ -17,6 +18,7 @@
 +(id)getDefaultInstance;
 -(void)setUserId:(NSString *)userId;
 -(void)setUserAge:(int)age;
+-(void)setUserName:(NSString *)name;
 -(void)setUserGender:(int)gender;
 - (void)setUserLatitude:(double)latitude longitude:(double)longitude horizontalAccuracy:(float)horizontalAccuracy verticalAccuracy:(float)verticalAccuracy;
 -(void)setRemark:(NSString *)remark;
@@ -28,6 +30,7 @@
 -(double)getUserLongitude;
 -(float)getVerticalAccuracy;
 -(float)getHorizontalAccuracy;
+-(NSString *)getUserName;
 
 
 +(void)test;

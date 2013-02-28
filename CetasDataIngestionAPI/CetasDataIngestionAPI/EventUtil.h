@@ -11,10 +11,18 @@
 #import <Foundation/Foundation.h>
 #import "Event.h"
 
-@interface Event ()
+
+@interface Event (){
     
+}
+
+@property NSTimeInterval eventTime;
+@property NSInteger sequenceNumber;
+@property NSInteger type;
+@property (strong) NSMutableDictionary *attributes;
+@property (strong) NSString *attributesName;
 
 -(NSString *)getEventJsonRepresentation;
-
+-(id)initWithType:(NSInteger)paramType;
 
 @end

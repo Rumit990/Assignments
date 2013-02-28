@@ -1,5 +1,5 @@
 //
-//  Request.h
+//  ConfigUtil.h
 //  CetasDataIngestionAPI
 //
 //  Copyright (c) 2011 - 2013 Cetas Software, Inc. All rights reserved.
@@ -9,15 +9,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Request : NSObject
-
-@property (strong) NSString *token;
+@interface Config (){
+    
+}
+@property (strong) NSMutableDictionary *userInfo;
+@property NSInteger capacity;
+@property NSInteger interval;
 @property NSInteger timeout;
-@property (strong) NSDictionary *attributes;
-@property (strong) NSDictionary *user;
-//Content will be array of events.
-@property (strong) NSArray *content;
+@property BOOL showErrorInLogs;
 
--(NSString *)getJSONRepresentation;
 
 @end

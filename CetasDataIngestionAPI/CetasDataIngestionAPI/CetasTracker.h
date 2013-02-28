@@ -9,7 +9,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Config.h"
-#import "Event.m"
+#import "EventUtil.h"
 
 @interface CetasTracker : NSObject
 

@@ -8,8 +8,9 @@
 //
 
 #import "CetasTracker.h"
+#import "CetasApiService.h"
 
-@interface CetasTracker ()
+@interface CetasTracker () <CetasAPIServiceDelegate>
 - (void)updateEvent:(Event *)event;
 - (void)updateEvents:(NSArray *)event;
 
@@ -22,7 +23,7 @@
 @property (strong) NSMutableDictionary *requestItemsInProcess;
 
 @end
-@implementation CetasTracker
+@implementation CetasTracker 
 
 static CetasTracker *defaultTracker = nil;
 //default initializer
@@ -60,18 +61,46 @@ static CetasTracker *defaultTracker = nil;
     // User id validation
     defaultTracker= [self initWithApiKey:apiKey config:config];
     if(defaultTracker){
-        // TO DO Call Service Login Call.
+        CetasApiService *service = [[CetasApiService alloc] initWithDelegate:self];
+        [service login:apiKey];
         // Add Repeat Timer for time interval.
     }
     return defaultTracker;
 }
-//+ (id)getDefaultTracker;
+
 //- (void)logEvent:(Event *)event; // Later track event
 //- (void)logEvents:(NSArray *)events;
 //- (void)logEventWithEventDetails:(NSMutableDictionary *)eventDetail;
 //- (void)stop;
 
+#pragma Mark CetasApiServiceDelegate methods
+-(Config *)getConfigObject{
+    return self.configObj;
+}
 
+-(NSString *)getSessionKey{
+    return self.sessionID;
+}
+-(NSTimeInterval)getSessionDuration{
+    NSTimeInterval endTime = [[NSDate date] timeIntervalSince1970];
+    
+    return (endTime - self.startTime);
+}
+
+/**
+ * Called when all the data successfully received from the backend
+ */
+-(void)dataLoadedSuccess:(CetasApiService *)service response:(NSDictionary *)response{
+    
+    
+}
+
+/**
+ * Called when data loading failed from the backend
+ */
+-(void)dataLoadedFailure:(CetasApiService *)service error:(NSError *)error{
+    
+}
 
 
 

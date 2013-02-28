@@ -8,13 +8,33 @@
 //
 
 #import "Request.h"
+#import "Constants.h"
+#import "JSON.h"
+#import "Event.h"
+#import "EventUtil.h"
 
 @implementation Request
 
 
 -(NSString *)getJSONRepresentation{
     
-    return @"";
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:self.token forKey:kCetasAPIResponseKeyToken];
+    [dic setValue:[NSNumber numberWithInteger:self.timeout] forKey:kCetasAPIResponseKeyTimeout];
+    [dic setValue:self.attributes forKey:kCetasAPIResponseKeyAttributes];
+    [dic setValue:self.user forKey:kCetasAPIResponseKeyUser];
+    
+    // Prepare content as a string.
+    NSMutableArray *events = [[NSMutableArray alloc] init];
+    for (Event *event in self.content) {
+        [events addObject:[event getEventJsonRepresentation]];
+    }
+    NSString *eventStr = [events componentsJoinedByString:@"\n"];
+    if(!events.count)
+        eventStr = @"null";
+    
+    [dic setValue:eventStr forKey:kCetasAPIResponseKeyContent];
+    return [dic JSONRepresentation];
 }
 
 

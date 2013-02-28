@@ -9,22 +9,13 @@
 
 #import "Config.h"
 #import "Constants.h"
+#import "ConfigUtil.h"
 
 #define kGenderUnknown 0
 #define kGenderMale 1
 #define kGenderFemale 2
 
-@interface Config (){
-    
-}
-@property (strong) NSMutableDictionary *userInfo;
-@property NSInteger capacity;
-@property NSInteger interval;
-@property NSInteger timeout;
-@property BOOL showErrorInLogs;
 
-
-@end
 @implementation Config
 static Config *defaultInstance = nil;
 /**
@@ -70,6 +61,15 @@ static Config *defaultInstance = nil;
 
 +(void)test{
     NSLog(@"test");
+    //build an info object and convert to json
+    NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"test",@"testKey", nil];
+     NSError* error = nil;
+    //convert object to data
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:info 
+                                                       options:kNilOptions error:&error];
+   NSString *apiResponseStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    NSLog(@"test :%@",apiResponseStr);
 }
 
 
@@ -97,7 +97,12 @@ static Config *defaultInstance = nil;
 -(void)setRemark:(NSString *)remark{
     [self.userInfo setObject:remark forKey:kUserInfoKeyUserRemark];
 }
-
+-(void)setUserName:(NSString *)name{
+    [self.userInfo setValue:name forKey:kUserInfoKeyUserName];
+}
+-(NSString *)getUserName{
+    return [self.userInfo objectForKey:kUserInfoKeyUserName];
+}
 -(NSString *)getUserId{
     return [self.userInfo objectForKey:kUserInfoKeyUserID];
 }

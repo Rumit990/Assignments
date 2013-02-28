@@ -11,9 +11,7 @@
 #import "Constants.h"
 #import "ConfigUtil.h"
 
-#define kGenderUnknown 0
-#define kGenderMale 1
-#define kGenderFemale 2
+
 
 
 @implementation Config
@@ -86,6 +84,14 @@ static Config *defaultInstance = nil;
 -(void)setUserGender:(int)gender{
     [self.userInfo setObject:[[NSNumber alloc] initWithInt:gender] forKey:kUserInfoKeyUserGender];
 }
+
+-(void)setUserAge:(int)age gender:(int)gender remark:(NSString *)remark{
+    
+    [self.userInfo setObject:[[NSNumber alloc] initWithInt:age] forKey:kUserInfoKeyUserAge];
+    [self.userInfo setObject:[[NSNumber alloc] initWithInt:gender] forKey:kUserInfoKeyUserGender];
+     [self.userInfo setObject:remark forKey:kUserInfoKeyUserRemark];
+}
+
 - (void)setUserLatitude:(double)latitude longitude:(double)longitude horizontalAccuracy:(float)horizontalAccuracy verticalAccuracy:(float)verticalAccuracy{
     
     [self.userInfo setObject:[[NSNumber alloc] initWithDouble:longitude] forKey:kUserInfoKeyUserLongitude];

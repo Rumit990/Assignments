@@ -14,7 +14,7 @@
 @interface CetasTracker : NSObject
 
 
-- (id)getTrackerWithApiKey:(NSString *)apiKey  config :(Config *)config ;
+- (id)initWithApiKey:(NSString *)apiKey  config :(Config *)config;
 + (id)getDefaultTracker;
 - (void)logEvent:(Event *)event; // Later track event
 - (void)logEvents:(NSArray *)events;

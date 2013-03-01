@@ -12,6 +12,7 @@
 
 @interface ViewController : UIViewController
 -(IBAction)trackButtonPressed:(id)sender;
+-(IBAction)logout:(id)sender;
 @end
 
 

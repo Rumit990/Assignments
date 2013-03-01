@@ -35,7 +35,7 @@ static Config *defaultInstance = nil;
         [defaultInstance.userInfo setObject:[[NSNumber alloc] initWithFloat:0.0] forKey:kUserInfoKeyUserVerticalAccuracy];
         
         [defaultInstance.userInfo setObject:@"" forKey:kUserInfoKeyUserRemark];
-        defaultInstance.capacity = 1000;
+        defaultInstance.capacity = 5;
         defaultInstance.interval = 60;
         defaultInstance.timeout = 1800;
         
@@ -144,6 +144,9 @@ static Config *defaultInstance = nil;
 -(float)getHorizontalAccuracy{
     return [[self.userInfo objectForKey:kUserInfoKeyUserHorizontalAccuracy] floatValue];
 
+}
+-(void)setUpdateInterval:(NSInteger)updateInterval{
+    self.interval = updateInterval;
 }
 
 

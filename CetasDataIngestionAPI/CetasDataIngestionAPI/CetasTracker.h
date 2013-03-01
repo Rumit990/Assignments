@@ -19,7 +19,8 @@
 - (void)logEvent:(Event *)event; // Later track event
 - (void)logEvents:(NSArray *)events;
 - (void)logEventWithEventDetails:(NSMutableDictionary *)eventDetail;
-- (void)stop;
-
+- (void)stopTracker;
+- (void)updateEvent:(Event *)event;
+- (void)updateEvents:(NSArray *)events;
 
 @end

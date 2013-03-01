@@ -9,6 +9,9 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "Config.h"
+#import "Event.h"
+#import "CetasTracker.h"
 
 @implementation AppDelegate
 
@@ -19,6 +22,15 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    Config *config = [Config getDefaultInstance];
+    [config setUserName:@"someone"];
+    [config setUserId:@"userid"];
+    [config setUpdateInterval:60];
+    
+    CetasTracker *tracker = [[CetasTracker alloc] initWithApiKey:@"mq28uQr94zM5yHMrBWGX5P3j+pNajzT9StMd+WoEyDsJj40U+ebzS5k0Nj1CCVc6efnohnFJeOOyWf0KAxqeD7RH5x+hB8dEOio8HQOWMjCJZnTV22yTOLBCeTsk+h1GdMeE1KOTl2X7USpLVUk6bw==" config:config];
+    
+   
+    
     return YES;
 }
 

@@ -82,6 +82,8 @@
 -(float)getHorizontalAccuracy;
 -(void)setUserAge:(int)age gender:(int)gender remark:(NSString *)remark;
 
+-(void)setUpdateInterval:(NSInteger)updateInterval;
+
 
 
 

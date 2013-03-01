@@ -11,9 +11,12 @@
 #import "CetasApiService.h"
 #import "ConfigUtil.h"
 
-@interface CetasTracker () <CetasAPIServiceDelegate>
-- (void)updateEvent:(Event *)event;
-- (void)updateEvents:(NSArray *)events;
+@interface CetasTracker () <CetasAPIServiceDelegate>{
+    BOOL performLogout;
+}
+//- (void)updateEvent:(Event *)event;
+//- (void)updateEvents:(NSArray *)events;
+-(BOOL)isUpdateTime;
 
 @property (strong) Config *configObj;
 @property (strong) NSString *sessionID;
@@ -23,6 +26,7 @@
 @property (strong) NSMutableArray *buffer;
 @property (strong) NSMutableDictionary *requestItemsInProcess;
 @property int serviceObjTag;
+@property  NSTimer *updateTimer;
 
 @end
 @implementation CetasTracker 
@@ -49,10 +53,29 @@ static CetasTracker *defaultTracker = nil;
         [service login:apiKey];
         self.serviceObjTag = 1;
         defaultTracker = self;
+        self.lastUpdateTime = [[NSDate date] timeIntervalSince1970];
         // Add Repeat Timer for time interval.
+        self.updateTimer = [NSTimer scheduledTimerWithTimeInterval:self.configObj.interval target:self selector:@selector(fireUpdateTimer) userInfo:nil repeats:YES];
+        performLogout = NO;
+        
     }
     
     return self;
+}
+-(void)fireUpdateTimer{
+    if([self isUpdateTime]){
+        self.lastUpdateTime = [[NSDate date] timeIntervalSince1970];
+        [self updateEvents:nil];
+    }
+    
+}
+
+-(BOOL)isUpdateTime{
+    NSTimeInterval timeElapsed = [[NSDate date] timeIntervalSince1970] - self.lastUpdateTime;
+    if( timeElapsed >= self.configObj.interval){
+        return YES;
+    }
+    return NO;
 }
 
 /**
@@ -78,13 +101,14 @@ static CetasTracker *defaultTracker = nil;
         NSLog(@"CetasTracker::logEvent:  Empty event is passed.");
         return;
     }
-    if(self.buffer.count  > self.configObj.capacity){
+    if(self.buffer.count  >= self.configObj.capacity-1){
         [self updateEvent:event];
     }else{
      
         [self.buffer addObject:event];
         
     }
+   // [self logEvents:[NSArray arrayWithObject:event]];
 }
 
 -(void)logEvents:(NSArray *)events{
@@ -109,20 +133,27 @@ static CetasTracker *defaultTracker = nil;
         do{
             for(int i=0 ; i < allowed ;i++){
                 index = counter*allowed + i;
+                if(! (index < events.count)){
+                    break;
+                }
                 [self.buffer addObject:[events objectAtIndex:index]];
             }
-            if(events.count > counter*allowed ){
-               [self updateEvents:nil];
-                break;
-            }
             counter++;
+            if(events.count > counter*allowed){
+               [self updateEvents:nil];
+            }
+            
         }while(counter < 2 );
     }
 }
 - (void)updateEvents:(NSArray *)events{
     
     CetasApiService *service = [[CetasApiService alloc] initWithDelegate:self];
-    NSMutableArray *allEvents = nil;
+    if (!self.sessionID && events) {
+        [self.buffer addObjectsFromArray:events];
+        return;
+    }
+    NSMutableArray *allEvents = [NSMutableArray array];
     if(self.buffer.count){
         [allEvents addObjectsFromArray:self.buffer];
     }
@@ -133,18 +164,28 @@ static CetasTracker *defaultTracker = nil;
     if(allEvents.count){
        self.serviceObjTag++;
        service.tag =self.serviceObjTag;
-       [service updateEvents:events];
+       [service updateEvents:allEvents];
        self.buffer = [NSMutableArray array];
        [self.requestItemsInProcess setObject:allEvents forKey:[NSString stringWithFormat:@"%d",self.serviceObjTag]];
     }
 }
 
+- (void)logEventWithEventDetails:(NSMutableDictionary *)eventDetail{
+    Event *event = [[Event alloc] init];
+    [event setEventDetail:eventDetail];
+    [self logEvent:event];
+}
+
+- (void)stopTracker{
+    if ([self.updateTimer isValid]) {
+        [self.updateTimer invalidate];
+        self.updateTimer = nil;
+    }
+    performLogout = true;
+    [self updateEvents:nil];
+}
 
 
-
-//- (void)logEvent:(Event *)event; // Later track event
-//- (void)logEvents:(NSArray *)events;
-//- (void)logEventWithEventDetails:(NSMutableDictionary *)eventDetail;
 //- (void)stop;
 
 #pragma Mark CetasApiServiceDelegate methods
@@ -165,7 +206,7 @@ static CetasTracker *defaultTracker = nil;
  * Called when all the data successfully received from the backend
  */
 -(void)dataLoadedSuccess:(CetasApiService *)service response:(NSDictionary *)response{
-    //this.lastUpdateTime = System.currentTimeMillis();
+    self.lastUpdateTime = [[NSDate date] timeIntervalSince1970];
     if(service.tag){
         [self.requestItemsInProcess removeObjectForKey:[NSString stringWithFormat:@"%d",service.tag]];
     }
@@ -180,7 +221,11 @@ static CetasTracker *defaultTracker = nil;
         }
         break;
         case kMessageRequestTypeMessage:{
-            
+            if(performLogout){
+                CetasApiService *service =[[CetasApiService alloc] initWithDelegate:self];
+                [service logout];
+                performLogout = NO;
+            }
         }
         break;
     }
@@ -190,6 +235,7 @@ static CetasTracker *defaultTracker = nil;
  * Called when data loading failed from the backend
  */
 -(void)dataLoadedFailure:(CetasApiService *)service error:(NSError *)error{
+    self.lastUpdateTime = [[NSDate date] timeIntervalSince1970];
     NSString *key = [NSString stringWithFormat:@"%d",service.tag];
     NSArray *pendingEvents = [self.requestItemsInProcess objectForKey:key];
     if(pendingEvents){

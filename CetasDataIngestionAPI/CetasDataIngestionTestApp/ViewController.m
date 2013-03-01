@@ -31,13 +31,35 @@
     // Dispose of any resources that can be recreated.
 }
 -(IBAction)trackButtonPressed:(id)sender{
-    Config *config = [Config getDefaultInstance];
-    [config setUserName:@"someone"];
-    [config setUserId:@"userid"];
-    CetasTracker *tracker = [[CetasTracker alloc] initWithApiKey:@"mq28uQr94zM5yHMrBWGX5P3j+pNajzT9StMd+WoEyDsJj40U+ebzS5k0Nj1CCVc6efnohnFJeOOyWf0KAxqeD7RH5x+hB8dEOio8HQOWMjCJZnTV22yTOLBCeTsk+h1GdMeE1KOTl2X7USpLVUk6bw==" config:config];
-   
 
     
+    //Initialize event object.
+//    Event *event= [[Event alloc] init];
+//    // Add event detail to dictionary similar to filling map in Java.
+//    NSDictionary *eventDetail = [NSDictionary dictionaryWithObjectsAndKeys:
+//                                 @"1000",@"tracker",@"2" ,@"trackerlevel", nil];
+//    //Set event Detail
+//    [event setEventDetail:eventDetail];
+    NSMutableArray *events =[[NSMutableArray alloc] init];
+    
+    for (int i=0; i<= 7 ; i++) {
+        //Initialize event object.
+        Event *event= [[Event alloc] init];
+        // Add event detail to dictionary similar to filling map in Java.
+        NSDictionary *eventDetail = [NSDictionary dictionaryWithObjectsAndKeys:
+                                     @"1000",@"tracker",@"2" ,@"trackerlevel", nil];
+        //Set event Detail
+        [event setEventDetail:eventDetail];
+        [events addObject:event];
+    }
+    
+    
+    [[CetasTracker getDefaultTracker] logEvents:events];
+    
+   
+    
 }
-
+-(IBAction)logout:(id)sender{
+     [[CetasTracker getDefaultTracker] stopTracker];
+}
 @end

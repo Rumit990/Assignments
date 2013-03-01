@@ -63,6 +63,7 @@
     NSMutableDictionary *eventDic = [[NSMutableDictionary alloc] init];
     NSNumber *time = [NSNumber numberWithDouble:self.eventTime];
     [eventDic setObject:time forKey:@"time"];
+    //[eventDic setObject:@"10.6" forKey:@"osVerion"];
     [eventDic setObject:[NSNumber numberWithInteger:self.sequenceNumber] forKey:@"sequence"];
     [eventDic setObject:[NSNumber numberWithInteger:self.type] forKey:@"type"];
     [eventDic setObject:self.attributes forKey:self.attributesName];

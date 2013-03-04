@@ -36,9 +36,19 @@ static CetasTracker *defaultTracker = nil;
 - (id)initWithApiKey:(NSString *)apiKey  config :(Config *)config
 {
     //TODO ADD all Validations Here
-    // Validate config
+    
     // Validate api key
-    // User id validation
+    if (![CetasTracker validateCredential:apiKey minimumLength:10]){
+        return nil;
+    }
+     // User id validation
+    if (![CetasTracker validateCredential:[config getUserId] minimumLength:6]){
+        return nil;
+    }
+    // Validate config
+    if (!config){
+        return nil;
+    }
     
     self = [super init];
     
@@ -62,6 +72,23 @@ static CetasTracker *defaultTracker = nil;
     
     return self;
 }
+
++(NSString *)validateCredential:(NSString *)token minimumLength:(int)minLength
+{
+    if (!token || ([token isEqualToString:@""]))
+    {
+        return nil;
+    }
+    token = [token stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    if (token.length < minLength)
+    {
+        return nil;
+    }
+    
+    return token;
+}
+
 -(void)fireUpdateTimer{
     if([self isUpdateTime]){
         self.lastUpdateTime = [[NSDate date] timeIntervalSince1970];

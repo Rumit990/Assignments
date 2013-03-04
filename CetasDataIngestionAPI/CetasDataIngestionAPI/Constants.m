@@ -29,6 +29,10 @@ NSString * const kCetasAPIResponseKeyAttributes = @"attributes";
 NSString * const kCetasAPIResponseKeyUserID = @"userID";
 NSString * const kCetasAPIResponseKeyContent = @"content";
 NSString * const kCetasAPIResponseKeyUser = @"user";
-
+NSInteger const kMinUpdateTimeInterval = 1;
+NSInteger const kMaxUpdateTimeInterval = 1800;
+NSInteger const kValidationLimitTimeoutIntervalMin = 60;
+NSInteger const kValidationLimitTimeoutIntervalMax = 36000;
+NSInteger const kValidationLimitRemarkLengthMax = 99;
 
 @end

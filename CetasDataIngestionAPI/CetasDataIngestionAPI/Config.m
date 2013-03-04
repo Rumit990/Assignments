@@ -72,24 +72,34 @@ static Config *defaultInstance = nil;
 
 
 -(void)setUserId:(NSString *)userId{
-    [self.userInfo setObject:userId forKey:kUserInfoKeyUserID];
 
+    if(userId && ![userId isEqualToString:@""]){
+        
+        [self.userInfo setObject:userId forKey:kUserInfoKeyUserID];
+
+    }
 }
 -(void)setUserAge:(int)age{
 
-    [self.userInfo setObject:[[NSNumber alloc] initWithInt:age] forKey:kUserInfoKeyUserAge];
+    [self.userInfo setObject:[[NSNumber alloc] initWithInt:age < 0 ? 0 : age] forKey:kUserInfoKeyUserAge];
 
 }
 
 -(void)setUserGender:(int)gender{
-    [self.userInfo setObject:[[NSNumber alloc] initWithInt:gender] forKey:kUserInfoKeyUserGender];
+    
+    if(gender < kGenderUnknown || gender >kGenderFemale)
+    {
+        gender = 0; // set to unknown in case of invalid parameters.
+    }
+    else  [self.userInfo setObject:[[NSNumber alloc] initWithInt:gender] forKey:kUserInfoKeyUserGender];
 }
 
 -(void)setUserAge:(int)age gender:(int)gender remark:(NSString *)remark{
     
-    [self.userInfo setObject:[[NSNumber alloc] initWithInt:age] forKey:kUserInfoKeyUserAge];
-    [self.userInfo setObject:[[NSNumber alloc] initWithInt:gender] forKey:kUserInfoKeyUserGender];
-     [self.userInfo setObject:remark forKey:kUserInfoKeyUserRemark];
+    [self setUserAge:age];    
+    [self setUserGender:gender];
+    [self setRemark:remark];
+
 }
 
 - (void)setUserLatitude:(double)latitude longitude:(double)longitude horizontalAccuracy:(float)horizontalAccuracy verticalAccuracy:(float)verticalAccuracy{
@@ -101,10 +111,22 @@ static Config *defaultInstance = nil;
 }
 
 -(void)setRemark:(NSString *)remark{
-    [self.userInfo setObject:remark forKey:kUserInfoKeyUserRemark];
+    if(remark.length >100)
+    {
+         // a max of 100 characters are permissible in remark.
+        [self.userInfo setObject:[remark substringToIndex:kValidationLimitRemarkLengthMax]  forKey:kUserInfoKeyUserRemark];
+    }
+    else{
+        [self.userInfo setObject:remark forKey:kUserInfoKeyUserRemark];
+    }
+
 }
 -(void)setUserName:(NSString *)name{
-    [self.userInfo setValue:name forKey:kUserInfoKeyUserName];
+    if(!([name isEqualToString:nil] || [name isEqualToString:@""])){
+
+        [self.userInfo setValue:name forKey:kUserInfoKeyUserName];
+
+    }
 }
 -(NSString *)getUserName{
     return [self.userInfo objectForKey:kUserInfoKeyUserName];
@@ -145,9 +167,22 @@ static Config *defaultInstance = nil;
     return [[self.userInfo objectForKey:kUserInfoKeyUserHorizontalAccuracy] floatValue];
 
 }
--(void)setUpdateInterval:(NSInteger)updateInterval{
+-(void)setUpdateInterval:(NSInteger)interval{
+    
+    int updateInterval = [self validateValue:interval minValue:kMinUpdateTimeInterval
+                                           maxValue:kMaxUpdateTimeInterval];
     self.interval = updateInterval;
 }
 
+-(int)validateValue:(int)value minValue:(int)min maxValue:(int)max{
+    
+    if (value < min){
+        return min;
+    }
+    if (value > max){
+        return max;
+    }
+    return value;
+}
 
 @end

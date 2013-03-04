@@ -28,6 +28,11 @@ extern NSString * const kCetasAPIResponseKeyAttributes;
 extern NSString * const kCetasAPIResponseKeyUserID;
 extern NSString * const kCetasAPIResponseKeyContent;
 extern NSString * const kCetasAPIResponseKeyUser;
+extern NSInteger const kMinUpdateTimeInterval;
+extern NSInteger const kMaxUpdateTimeInterval;
+extern NSInteger const kValidationLimitTimeoutIntervalMin; // check on this
+extern NSInteger const kValidationLimitTimeoutIntervalMax;
+extern NSInteger const kValidationLimitRemarkLengthMax;
 
 #define kMessageRequestTypeLogin 0
 #define kMessageRequestTypeMessage 1

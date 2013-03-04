@@ -10,7 +10,6 @@
 #import "ViewController.h"
 #import "Config.h"
 #import "Event.h"
-#import "JSON.h"
 #import "CetasTracker.h"
 
 @interface ViewController ()

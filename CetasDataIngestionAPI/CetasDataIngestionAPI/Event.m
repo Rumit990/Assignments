@@ -11,7 +11,7 @@
 #import "EventUtil.h"
 #import "Event.h"
 #import "Constants.h"
-#import "JSON.h"
+#import "JsonParser.h"
 
 
 @implementation Event
@@ -67,6 +67,6 @@
     [eventDic setObject:[NSNumber numberWithInteger:self.sequenceNumber] forKey:@"sequence"];
     [eventDic setObject:[NSNumber numberWithInteger:self.type] forKey:@"type"];
     [eventDic setObject:self.attributes forKey:self.attributesName];
-    return [eventDic JSONRepresentation];
+    return [JsonParser JSONRepresentation:eventDic];
 }
 @end

@@ -9,7 +9,7 @@
 
 #import "Request.h"
 #import "Constants.h"
-#import "JSON.h"
+#import "JsonParser.h"
 #import "Event.h"
 #import "EventUtil.h"
 
@@ -34,7 +34,7 @@
         eventStr = @"null";
     
     [dic setValue:eventStr forKey:kCetasAPIResponseKeyContent];
-    return [dic JSONRepresentation];
+    return [JsonParser JSONRepresentation:dic];
 }
 
 

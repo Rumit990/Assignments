@@ -39,14 +39,18 @@ static CetasTracker *defaultTracker = nil;
     
     // Validate api key
     if (![CetasTracker validateCredential:apiKey minimumLength:10]){
+        NSLog(@"Cetas Tracker : Api Key must be of six characters.");
         return nil;
     }
      // User id validation
     if (![CetasTracker validateCredential:[config getUserId] minimumLength:6]){
+        NSLog(@"Cetas Tracker : Invalid User ID : User ID must be minimum of 6 characters.");
         return nil;
     }
     // Validate config
     if (!config){
+        //Invalid Config Object
+         NSLog(@"Cetas Tracker : Invalid Config Object");
         return nil;
     }
     
@@ -208,8 +212,20 @@ static CetasTracker *defaultTracker = nil;
         [self.updateTimer invalidate];
         self.updateTimer = nil;
     }
-    performLogout = true;
-    [self updateEvents:nil];
+    if(!self.sessionID){
+        //It means already logged out.
+        return;
+    }
+   
+    if (self.buffer.count) {
+        performLogout = true;
+        [self updateEvents:nil];
+        
+    }else{
+        CetasApiService *service =[[CetasApiService alloc] initWithDelegate:self];
+        [service logout];
+    }
+
 }
 
 

@@ -9,13 +9,13 @@
 
 #import "CetasApiService.h"
 #import "Request.h"
-#import "JSON.h"
 #import "Event.h"
 #import "ConfigUtil.h"
 #import "EventUtil.h"
 #import <UIKit/UIKit.h>
 #import <CoreTelephony/CTCarrier.h>
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
+#import "JsonParser.h"
 
 #define kMessageTypeLogin 0
 #define kMessageTypeUpdate 1
@@ -88,7 +88,7 @@
     if(languageArray.count){
         language = [languageArray objectAtIndex:0];
     }
-   
+    
     NSLocale *locale = [NSLocale currentLocale];
     NSString *country = [locale localeIdentifier];
     NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
@@ -116,8 +116,8 @@
     
     Config *config = [self.delegate getConfigObject];
     Request *request = [[Request alloc] init];
-    request.timeout = config.timeout; 
-    request.attributes =  [self getSystemInfo]; 
+    request.timeout = config.timeout;
+    request.attributes =  [self getSystemInfo];
     request.user = config.userInfo;
     
     switch (self.messageType) {
@@ -128,12 +128,12 @@
             [event setEventAtribute:kUserInfoKeyUserName forKey:[config getUserName]];
             request.content = [NSArray arrayWithObject:event];
         }
-        break;
+            break;
         case kMessageRequestTypeMessage:{
             request.token = [self.delegate getSessionKey];
             request.content = events;
         }
-        break;
+            break;
         case kMessageRequestTypeLogout:{
             request.token = [self.delegate getSessionKey];
             Event *event = [[Event alloc] initWithType:kMessageRequestTypeLogin];
@@ -144,8 +144,8 @@
             request.user = nil;
             request.attributes = [NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:[self.delegate getSessionDuration]] forKey:@"duration"];
         }
-        break;
-
+            break;
+            
     }
     return request;
 }
@@ -210,8 +210,8 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSString *apiResponseStr = [[NSString alloc] initWithData:self.apiResponse encoding:NSUTF8StringEncoding];
-    NSLog(@"apiResponseStr1 :%@",apiResponseStr);
-    NSDictionary *apiResponseData= [apiResponseStr JSONValue];
+    NSLog(@"apiResponseStr :%@",apiResponseStr);
+    NSDictionary *apiResponseData=  [JsonParser JSONValue:apiResponseStr];
     if (apiResponseData) {
         NSString *status = [apiResponseData objectForKey:kCetasAPIResponseKeyStatus];
         if ([status isEqualToString:kResponseStatusCode200]) {

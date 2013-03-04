@@ -26,6 +26,7 @@
     [config setUserName:@"someone"];
     [config setUserId:@"Hello Someone"];
     [config setUpdateInterval:50];
+    [config setUserGender:GenderMale];
     
     CetasTracker *tracker = [[CetasTracker alloc] initWithApiKey:@"mq28uQr94zM5yHMrBWGX5P3j+pNajzT9StMd+WoEyDsJj40U+ebzS5k0Nj1CCVc6efnohnFJeOOyWf0KAxqeD7RH5x+hB8dEOio8HQOWMjCJZnTV22yTOLBCeTsk+h1GdMeE1KOTl2X7USpLVUk6bw==" config:config];
     

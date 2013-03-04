@@ -22,26 +22,28 @@ static Config *defaultInstance = nil;
 +(id)getDefaultInstance{
     if (defaultInstance == nil) {
         defaultInstance = [[super allocWithZone:NULL] init];
-        if(!defaultInstance.userInfo){
-            defaultInstance.userInfo = [[NSMutableDictionary alloc] init];
-        }
-        [defaultInstance.userInfo setObject:@"default_user" forKey:kUserInfoKeyUserID];
-        [defaultInstance.userInfo setObject:@"Default User" forKey:kUserInfoKeyUserName];
-        [defaultInstance.userInfo setObject:[[NSNumber alloc] initWithInt:0] forKey:kUserInfoKeyUserAge];
-        [defaultInstance.userInfo setObject:[[NSNumber alloc] initWithInt:kGenderUnknown] forKey:kUserInfoKeyUserGender];
-        [defaultInstance.userInfo setObject:[[NSNumber alloc] initWithDouble:0] forKey:kUserInfoKeyUserLongitude];
-        [defaultInstance.userInfo setObject:[[NSNumber alloc] initWithDouble:0] forKey:kUserInfoKeyUserLatitude];
-        [defaultInstance.userInfo setObject:[[NSNumber alloc] initWithFloat:0.0] forKey:kUserInfoKeyUserHorizontalAccuracy];
-        [defaultInstance.userInfo setObject:[[NSNumber alloc] initWithFloat:0.0] forKey:kUserInfoKeyUserVerticalAccuracy];
-        
-        [defaultInstance.userInfo setObject:@"" forKey:kUserInfoKeyUserRemark];
-        defaultInstance.capacity = 5;
-        defaultInstance.interval = 60;
-        defaultInstance.timeout = 1800;
+        [Config setDefaultValues:defaultInstance];
         
     }
-    
     return defaultInstance;
+}
++(void)setDefaultValues:(Config *)config{
+    if(!config.userInfo){
+        config.userInfo = [[NSMutableDictionary alloc] init];
+    }
+    [config.userInfo setObject:@"default_user" forKey:kUserInfoKeyUserID];
+    [config.userInfo setObject:@"Default User" forKey:kUserInfoKeyUserName];
+    [config.userInfo setObject:[[NSNumber alloc] initWithInt:0] forKey:kUserInfoKeyUserAge];
+    [config.userInfo setObject:[[NSNumber alloc] initWithInt:GenderUnknown] forKey:kUserInfoKeyUserGender];
+    [config.userInfo setObject:[[NSNumber alloc] initWithDouble:0] forKey:kUserInfoKeyUserLongitude];
+    [config.userInfo setObject:[[NSNumber alloc] initWithDouble:0] forKey:kUserInfoKeyUserLatitude];
+    [config.userInfo setObject:[[NSNumber alloc] initWithFloat:0.0] forKey:kUserInfoKeyUserHorizontalAccuracy];
+    [config.userInfo setObject:[[NSNumber alloc] initWithFloat:0.0] forKey:kUserInfoKeyUserVerticalAccuracy];
+    
+    [config.userInfo setObject:@"" forKey:kUserInfoKeyUserRemark];
+    config.capacity = 5;
+    config.interval = 60;
+    config.timeout = 1800;
 }
 
 //default initializer
@@ -51,24 +53,13 @@ static Config *defaultInstance = nil;
     
     if (self) {
         // Work your initialising magic here as you normally would
-        self.userInfo =[[NSMutableDictionary alloc] init];
+        [Config setDefaultValues:self];
+        defaultInstance = self;
     }
     
     return self;
 }
 
-+(void)test{
-    NSLog(@"test");
-    //build an info object and convert to json
-    NSDictionary* info = [NSDictionary dictionaryWithObjectsAndKeys:
-                          @"test",@"testKey", nil];
-     NSError* error = nil;
-    //convert object to data
-    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:info 
-                                                       options:kNilOptions error:&error];
-   NSString *apiResponseStr = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    NSLog(@"test :%@",apiResponseStr);
-}
 
 
 -(void)setUserId:(NSString *)userId{
@@ -85,11 +76,11 @@ static Config *defaultInstance = nil;
 
 }
 
--(void)setUserGender:(int)gender{
+-(void)setUserGender:(Gender)gender{
     
-    if(gender < kGenderUnknown || gender >kGenderFemale)
+    if(gender < GenderUnknown || gender >GenderFemale)
     {
-        gender = 0; // set to unknown in case of invalid parameters.
+        gender = GenderUnknown; // set to unknown in case of invalid parameters.
     }
     else  [self.userInfo setObject:[[NSNumber alloc] initWithInt:gender] forKey:kUserInfoKeyUserGender];
 }

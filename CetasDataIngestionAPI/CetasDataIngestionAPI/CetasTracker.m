@@ -110,13 +110,10 @@ static CetasTracker *defaultTracker = nil;
 }
 
 /**
- * Called to get default shared instance of this class. If not already exists, it creates one and returns that
+ * Called to get default shared instance of this class.
  */
 +(id)getDefaultTracker{
-    if (defaultTracker == nil) {
-        defaultTracker = [[super allocWithZone:NULL] init];
-               
-    }
+
     return defaultTracker;
 }
 

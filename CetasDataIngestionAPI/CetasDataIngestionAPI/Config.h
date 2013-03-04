@@ -9,15 +9,27 @@
 
 #import <Foundation/Foundation.h>
 
-#define kGenderUnknown 0
-#define kGenderMale 1
-#define kGenderFemale 2
+/*
+ *
+ */
+
+typedef enum{
+    GenderUnknown,
+    GenderMale,
+    GenderFemale,
+} Gender;
 
 @interface Config : NSObject
-
-/**
- * Static method called to get default shared instance of this class. If not already exists, it creates one and returns that.
+/*!
+ * @brief : Provides a singleton config object.
+ *
+ * For convenience, this class provides a default config instance.
+ * Static method called to get default shared instance of this class with default values for all configuration parameters. If not already exists, it creates one and returns that.
+ * This is initialized to `nil` and will be set to the instance that is
+ * instantiated in - init call. It may be overridden as desired.
+ * 
  */
+
 +(id)getDefaultInstance;
 /*
  * Sets the ID of the current user
@@ -34,7 +46,7 @@
 /*
  * Sets the gender of the current user
  */
--(void)setUserGender:(int)gender;
+-(void)setUserGender:(Gender)gender;
 /*
  * Sets the location of the current user
  */
@@ -85,7 +97,4 @@
 -(void)setUpdateInterval:(NSInteger)updateInterval;
 
 
-
-
-+(void)test;
 @end

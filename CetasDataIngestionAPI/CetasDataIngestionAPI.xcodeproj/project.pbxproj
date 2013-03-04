@@ -17,10 +17,6 @@
 		FB2D025F16DB6BF200E52CCB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB2D025E16DB6BF200E52CCB /* Default-568h@2x.png */; };
 		FB2D026216DB6BF200E52CCB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D026116DB6BF200E52CCB /* ViewController.m */; };
 		FB2D026516DB6BF200E52CCB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB2D026316DB6BF200E52CCB /* ViewController.xib */; };
-		FB2D026C16DB6BF300E52CCB /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC4F2A16DB40BE0080F468 /* SenTestingKit.framework */; };
-		FB2D026E16DB6BF300E52CCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC4F1B16DB40BD0080F468 /* Foundation.framework */; };
-		FB2D027616DB6BF300E52CCB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB2D027416DB6BF300E52CCB /* InfoPlist.strings */; };
-		FB2D027916DB6BF300E52CCB /* CetasDataIngestionTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D027816DB6BF300E52CCB /* CetasDataIngestionTestAppTests.m */; };
 		FB2D028116DB6C4C00E52CCB /* libCetasDataIngestionAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC4F1816DB40BD0080F468 /* libCetasDataIngestionAPI.a */; };
 		FB2D028D16DB872F00E52CCB /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D028C16DB872F00E52CCB /* Constants.m */; };
 		FB2D029116DB945000E52CCB /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2D029016DB945000E52CCB /* Event.m */; };
@@ -73,17 +69,9 @@
 		FBDDC5FD16DE0F9C009511B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDC5FC16DE0F9C009511B8 /* UIKit.framework */; };
 		FBDDC5FE16DE102B009511B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDC5FC16DE0F9C009511B8 /* UIKit.framework */; };
 		FBDDC5FF16DE102C009511B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDC5FC16DE0F9C009511B8 /* UIKit.framework */; };
-		FBDDC60016DE102C009511B8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDDC5FC16DE0F9C009511B8 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FB2D026F16DB6BF300E52CCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FBAC4F0F16DB40BD0080F468 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FB2D024716DB6BF200E52CCB;
-			remoteInfo = CetasDataIngestionTestApp;
-		};
 		FBAC4F2F16DB40BE0080F468 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FBAC4F0F16DB40BD0080F468 /* Project object */;
@@ -120,11 +108,6 @@
 		FB2D026016DB6BF200E52CCB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FB2D026116DB6BF200E52CCB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FB2D026416DB6BF200E52CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
-		FB2D026B16DB6BF300E52CCB /* CetasDataIngestionTestAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CetasDataIngestionTestAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB2D027316DB6BF300E52CCB /* CetasDataIngestionTestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CetasDataIngestionTestAppTests-Info.plist"; sourceTree = "<group>"; };
-		FB2D027516DB6BF300E52CCB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FB2D027716DB6BF300E52CCB /* CetasDataIngestionTestAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CetasDataIngestionTestAppTests.h; sourceTree = "<group>"; };
-		FB2D027816DB6BF300E52CCB /* CetasDataIngestionTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CetasDataIngestionTestAppTests.m; sourceTree = "<group>"; };
 		FB2D028B16DB872F00E52CCB /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		FB2D028C16DB872F00E52CCB /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		FB2D028F16DB945000E52CCB /* EventUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventUtil.h; sourceTree = "<group>"; };
@@ -192,16 +175,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB2D026716DB6BF300E52CCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB2D026C16DB6BF300E52CCB /* SenTestingKit.framework in Frameworks */,
-				FB2D026E16DB6BF300E52CCB /* Foundation.framework in Frameworks */,
-				FBDDC60016DE102C009511B8 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FBAC4F1516DB40BD0080F468 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,25 +223,6 @@
 				FB2D025A16DB6BF200E52CCB /* Default.png */,
 				FB2D025C16DB6BF200E52CCB /* Default@2x.png */,
 				FB2D025E16DB6BF200E52CCB /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FB2D027116DB6BF300E52CCB /* CetasDataIngestionTestAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				FB2D027716DB6BF300E52CCB /* CetasDataIngestionTestAppTests.h */,
-				FB2D027816DB6BF300E52CCB /* CetasDataIngestionTestAppTests.m */,
-				FB2D027216DB6BF300E52CCB /* Supporting Files */,
-			);
-			path = CetasDataIngestionTestAppTests;
-			sourceTree = "<group>";
-		};
-		FB2D027216DB6BF300E52CCB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FB2D027316DB6BF300E52CCB /* CetasDataIngestionTestAppTests-Info.plist */,
-				FB2D027416DB6BF300E52CCB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -334,7 +288,6 @@
 				FBAC4F1D16DB40BD0080F468 /* CetasDataIngestionAPI */,
 				FBAC4F3216DB40BE0080F468 /* CetasDataIngestionAPITests */,
 				FB2D024E16DB6BF200E52CCB /* CetasDataIngestionTestApp */,
-				FB2D027116DB6BF300E52CCB /* CetasDataIngestionTestAppTests */,
 				FBAC4F1A16DB40BD0080F468 /* Frameworks */,
 				FBAC4F1916DB40BD0080F468 /* Products */,
 			);
@@ -346,7 +299,6 @@
 				FBAC4F1816DB40BD0080F468 /* libCetasDataIngestionAPI.a */,
 				FBAC4F2916DB40BE0080F468 /* CetasDataIngestionAPITests.octest */,
 				FB2D024816DB6BF200E52CCB /* CetasDataIngestionTestApp.app */,
-				FB2D026B16DB6BF300E52CCB /* CetasDataIngestionTestAppTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -466,25 +418,6 @@
 			productReference = FB2D024816DB6BF200E52CCB /* CetasDataIngestionTestApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FB2D026A16DB6BF300E52CCB /* CetasDataIngestionTestAppTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FB2D027F16DB6BF300E52CCB /* Build configuration list for PBXNativeTarget "CetasDataIngestionTestAppTests" */;
-			buildPhases = (
-				FB2D026616DB6BF300E52CCB /* Sources */,
-				FB2D026716DB6BF300E52CCB /* Frameworks */,
-				FB2D026816DB6BF300E52CCB /* Resources */,
-				FB2D026916DB6BF300E52CCB /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FB2D027016DB6BF300E52CCB /* PBXTargetDependency */,
-			);
-			name = CetasDataIngestionTestAppTests;
-			productName = CetasDataIngestionTestAppTests;
-			productReference = FB2D026B16DB6BF300E52CCB /* CetasDataIngestionTestAppTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 		FBAC4F1716DB40BD0080F468 /* CetasDataIngestionAPI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBAC4F3D16DB40BE0080F468 /* Build configuration list for PBXNativeTarget "CetasDataIngestionAPI" */;
@@ -546,7 +479,6 @@
 				FBAC4F1716DB40BD0080F468 /* CetasDataIngestionAPI */,
 				FBAC4F2816DB40BE0080F468 /* CetasDataIngestionAPITests */,
 				FB2D024716DB6BF200E52CCB /* CetasDataIngestionTestApp */,
-				FB2D026A16DB6BF300E52CCB /* CetasDataIngestionTestAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -564,14 +496,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB2D026816DB6BF300E52CCB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB2D027616DB6BF300E52CCB /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FBAC4F2616DB40BE0080F468 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,19 +507,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FB2D026916DB6BF300E52CCB /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		FBAC4F2716DB40BE0080F468 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -619,14 +530,6 @@
 				FB2D025516DB6BF200E52CCB /* main.m in Sources */,
 				FB2D025916DB6BF200E52CCB /* AppDelegate.m in Sources */,
 				FB2D026216DB6BF200E52CCB /* ViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FB2D026616DB6BF300E52CCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FB2D027916DB6BF300E52CCB /* CetasDataIngestionTestAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,11 +570,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FB2D027016DB6BF300E52CCB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FB2D024716DB6BF200E52CCB /* CetasDataIngestionTestApp */;
-			targetProxy = FB2D026F16DB6BF300E52CCB /* PBXContainerItemProxy */;
-		};
 		FBAC4F3016DB40BE0080F468 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FBAC4F1716DB40BD0080F468 /* CetasDataIngestionAPI */;
@@ -694,14 +592,6 @@
 				FB2D026416DB6BF200E52CCB /* en */,
 			);
 			name = ViewController.xib;
-			sourceTree = "<group>";
-		};
-		FB2D027416DB6BF300E52CCB /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB2D027516DB6BF300E52CCB /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		FBAC4F3516DB40BE0080F468 /* InfoPlist.strings */ = {
@@ -749,42 +639,6 @@
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		FB2D027C16DB6BF300E52CCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CetasDataIngestionTestApp.app/CetasDataIngestionTestApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CetasDataIngestionTestApp/CetasDataIngestionTestApp-Prefix.pch";
-				INFOPLIST_FILE = "CetasDataIngestionTestAppTests/CetasDataIngestionTestAppTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		FB2D027D16DB6BF300E52CCB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CetasDataIngestionTestApp.app/CetasDataIngestionTestApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CetasDataIngestionTestApp/CetasDataIngestionTestApp-Prefix.pch";
-				INFOPLIST_FILE = "CetasDataIngestionTestAppTests/CetasDataIngestionTestAppTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -905,15 +759,6 @@
 			buildConfigurations = (
 				FB2D027A16DB6BF300E52CCB /* Debug */,
 				FB2D027B16DB6BF300E52CCB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FB2D027F16DB6BF300E52CCB /* Build configuration list for PBXNativeTarget "CetasDataIngestionTestAppTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FB2D027C16DB6BF300E52CCB /* Debug */,
-				FB2D027D16DB6BF300E52CCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -2,15 +2,17 @@
 //  Config.h
 //  CetasDataIngestionAPI
 //
-//  Copyright (c) 2011 - 2013 Cetas Software, Inc. All rights reserved.
+//  Copyright (c) 2011 - 2012 Cetas Software, Inc. All rights reserved.
 //  This is Cetas proprietary and confidential material and its use
 //  is subject to license terms.
 //
 
+//  Methods in this header file are for use with Cetas Analytics.
+
 #import <Foundation/Foundation.h>
 
 /*
- *
+ * Enum specifying  possible values of Gender.
  */
 
 typedef enum{
@@ -18,6 +20,15 @@ typedef enum{
     GenderMale,
     GenderFemale,
 } Gender;
+
+
+/*!
+ * @brief : Provides all the methods for setting user information and configuration parameters.
+ *
+ *  Provides set of methods that allow developers specify user information and configuration parameters.
+ *
+ */
+
 
 @interface Config : NSObject
 /*!
@@ -31,105 +42,74 @@ typedef enum{
  */
 
 +(id)getDefaultInstance;
-/*
- * Sets the ID of the current user
- */
 
-/*!
+
+/*! @name : Sets the ID of the current active user.
  *  @brief Method to assign a unique id for the application end-user.
  *
- *
- *  @note Please be sure not to use this method to pass any private or confidential information
- *  about the user.
- *
- *  @param userId, The unique id for the the application user.
+ *  @param userId: The unique id for the the application user.
  */
 
 -(void)setUserId:(NSString *)userId;
-/*
- * Sets the Age of the current user
- */
 
 
-/*!
+/*! 
+ *  @name :  Sets the age of the current active user
  *  @brief Method to set user's age in years.
  *
  *
- *  This method can be impelemted to capture the age of teh applcation user. Use this method only if you collect this
+ *  This method can be used to capture the age of the app user. Use this method only if you collect this
  *  information explictly from your user (i.e. - there is no need to set a default value).
  *
- *  @note The age is aggregated across all users of your app and not available on a per user
- *  basis.
- *
- *  @param age, The age of user. (provided by the developer)
+ *  @param age : The age of user. 
  *
  */
 
 -(void)setUserAge:(int)age;
-/*
- * Sets the name of the current user
- */
 
 /*!
+ *  @name Sets the name of the current active user.
  *  @brief Method to set user's name.
  *
- *
- *  This method can be impelemted to capture the name of the applcation user. Use this method only if you collect this
- *  information explictly from your user (i.e. - there is no need to set a default value).
- *
- *
- *  @param name, The name of applcation user. (provided by the developer)
+ *  This method can be used to capture the name of the application user. Use this method only if you collect this information explictly from your user (i.e. - there is no need to set a default value).
+ *  @param name: The name of application user. 
  *
  */
 
 -(void)setUserName:(NSString *)name;
-/*
- * Sets the gender of the current user
- */
 
 
 /*!
- *  @brief Method to set user's gender.
+ *  @name : Sets the gender of the current active user.
+ *  @brief: Method to set user's gender.
  *
+ * This method can be used to capture the gender of the application user. Use this method only if you collect this information explictly from your user (i.e. - there is no need to set a default value).
  *
- *  This method can be impelented to capture applcation user's gender. Use this method only if you collect this
- *  information explictly from your user (i.e. - there is no need to set a default value).
- *
- *  @note The gender is aggregated across all users of your app and not available on a per user
- *  basis.
- *
- *  @param gender, The gender of user. (provided by the developer)
+ *  @param : gender: The gender of user. It can have three possible values from enum gender i.e (GenderUnknown, GenderMale, GenderFemale).
  *
  */
 
 -(void)setUserGender:(Gender)gender;
-/*
- * Sets the location of the current user
- */
 
 
-/** @name Location Reporting
- *  Methods for setting location information.
- */
-//@{
-/*!
+/*! @name Location Reporting . Methods for setting location information.
  *  @brief Set user location.
  *
- *  Use information from the CLLocationManager to specify the location of the session. 
- * // revisit the below statements.
- *  @note Only the last location entered is captured per session.
- *  Location is aggregated across all users of your app and not available on a per user basis. 
- *  This information should only be captured if it is germaine to the use of your app.
- *
- *  @code
- CLLocationManager *locationManager = [[CLLocationManager alloc] init];
- [locationManager startUpdatingLocation];
+ *  Use information from the CLLocationManager to specify the location of the session. Cetas does not
+ *  automatically track this information or include the CLLocation framework.
  
- CLLocation *location = locationManager.location;
- [Flurry setLatitude:location.coordinate.latitude
- longitude:location.coordinate.longitude
- horizontalAccuracy:location.horizontalAccuracy
- verticalAccuracy:location.verticalAccuracy];
+ *  @code
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    [locationManager startUpdatingLocation];
+ 
+    CLLocation *location = locationManager.location;
+    //Create Config object and set user location.
+    Config *config = [[Config alloc] init];
+    [config setLatitude:location.coordinate.latitude
+    longitude:location.coordinate.longitude
+    horizontalAccuracy:location.horizontalAccuracy
+    verticalAccuracy:location.verticalAccuracy];
+ 
  *  @endcode
  *  @param latitude The latitude.
  *  @param longitude The longitude.
@@ -137,185 +117,134 @@ typedef enum{
  *  @param verticalAccuracy The accuracy of the altitude value in meters.
  *
  */
-
-
-
 - (void)setUserLatitude:(double)latitude longitude:(double)longitude horizontalAccuracy:(float)horizontalAccuracy verticalAccuracy:(float)verticalAccuracy;
-/*
- * Sets the remarks if any
- */
+
 
 /*!
  *  @brief Method to set remarks, if any.
  *
- *
- *  This method can be impelented by the developer to put remarks on the occurance of a particular event.
+ *  This method can be used by the developer to put some remark while setting user information.
  *  (i.e. - there is no need to set a default value).
- *
- *
- *  @param remark (provided by the developer)
+ *  @param remark .
  *
  */
-
-
 -(void)setRemark:(NSString *)remark;
-/*
- * Returns the ID of the active user
- */
-
 
 /*!
- *  @brief Returns the ID of the active user
+ *  @brief Returns the ID of the active user.
+ *  This method returns active user ID , as set by the developer while setting user information.
  *
- *  This method returns applcation user's ID , as recorded by the developer by implementing userId setter method. 
- *
- *  @note Use this method only if you collect this information explictly from your user.
+ *  @note If not set it will return nil.
  */
 
 -(NSString *)getUserId;
-/*
- * Returns the name of active user
- */
-
 /*!
- *  @brief Returns the name of the active user
+ *  @brief : Returns the name of the active user
  *
- *  This method returns applcation user's name, as recorded by the developer by implementing userName setter method. 
+ *  This method returns active user name, as set by the developer while setting user information.
  *
- *  @note Use this method only if you collect this information explictly from your user.
-
+ *  @note If not set it will return nil.
  */
 
 -(NSString *)getUserName;
-/*
- * Returns the age of the active user
- */
+
 
 /*!
  *  @brief Returns the age of the active user
  *
- *  This method returns applcation user's age, as recorded by the developer by implementing userAge setter method.
+ *  This method returns active user age, as set by the developer while setting user information.
  *
- *  @note Use this method only if you collect this information explictly from your user.
+ *  @note If not set it will return nil.
  */
 
 -(int)getUserAge;
-/*
- * Returns the gender of the active user
- */
 
 /*!
  *  @brief Returns the gender of the active user.
  *
- *  This method returns applcation user's gender, as recorded by the developer by implementing userGender setter method. 
+ *  This method returns active user's gender, as set by the developer while setting user information.
  *
- *  @note Use this method only if you collect this information explictly from your user.
+ *  @note If not set it will return nil.It can have three possible values from enum gender i.e (GenderUnknown, GenderMale, GenderFemale). 
 
  */
 
 -(int)getUserGender;
-/*
- * Returns the remark set by user 
- */
+
 
 /*!
- *  @brief Returns the remark provided by the developer on a particular event's occourance.
+ *  @brief Returns the remark.
  *
- *  This method returns the remark associated with the occourance of a particular event, as recorded by the developer by implementing userRemark setter method. 
+ *  This method returns the remark as set by the developer while setting user information.
  *
- *  @note Use this method only if you set a remark explicitly for the occourance of a particular event.
+ *  @note If not set it will return nil.
 
  */
 
 -(NSString *)getUserRemark;
-/*
- * Returns the user current latitude component of location coordinate.
- */
 
 /*!
- *  @brief  Returns the current latitude component of location coordinate for the active user.
-
+ *  @brief  Returns the latitude component of location for the active user.
  *
- *  This method returns applcation user's latitude component of location coordinate, as recorded by the developer by implementing userLatitude setter method.
+ *  This method returns active user's latitude component of location, as set by the developer while setting user information.
  *
  *
-  * @note Use this method only if you collect this information explictly from your user.
+  * @note If not set it will return nil.
 
  */
 
 -(double)getUserLatitude;
-/*
- * Returns the user current longitude component of location coordinate.
- */
-
 /*!
- *  @brief Returns the current longitude component of location coordinate for the active user.
+ *  @brief  Returns the longitude component of location for the active user.
  *
- *  This method returns applcation user's longitude component of location coordinate, as recorded by the developer by implementing userLongitude setter method.
+ *  This method returns active user's longitude component of location, as set by the developer while setting user information.
  *
- *  @note Use this method only if you collect this information explictly from your user.
-
+ *
+ * @note If not set it will return nil.
+ 
  */
 -(double)getUserLongitude;
-/*
- * Returns the user vertical accuracy. 
- */
 
 /*!
  *  @brief Returns the vertical accuracy in location of the active user.
  *
- *  This method returns vertical accuracy in location of the active user, as recorded by the developer by implementing userVerticalAccuracy setter method.
+ *  This method returns vertical accuracy in location of the active user,  as set by the developer while setting user information.
  *
- *  @note Use this method only if you collect this information explictly from your user.
-
+ * @note If not set it will return nil.
  */
 
 -(float)getVerticalAccuracy;
-/*
- * Returns the user horizontal accuracy.
- */
-
 /*!
  *  @brief Returns the horizontal accuracy in location of the active user.
  *
- *  This method returns returns the horizontal accuracy in location of the active user, as recorded by the developer by implementing userHorizontalAccuracy setter method.
- 
+ *  This method returns horizontal accuracy in location of the active user,  as set by the developer while setting user information.
  *
- *  @note Use this method only if you collect this information explictly from your user.
-
+ * @note If not set it will return nil.
  */
 
 -(float)getHorizontalAccuracy;
 
-/*
- * Returns the application user's age, gender and the remark.
- */
-
-/*!
- *  @brief Method to set the application user's age, gender and the remark provided by the developer on a particular event's occourance, in one call.
- *
- *  This method can be impelented to capture applcation user's age, gender and the remark provided by the developer on a particular event's occourance. Use this method only if you collect this
- *  information explictly from your user (i.e. - there is no need to set a default value).
- *  
- *  @note Use this method only if you collect the application user's age and gender explicitly, and need to set a remark on the occurance of an event.
- *
- *
- *  @param age, gender, remark
- *
- *
- 
- */
-
--(void)setUserAge:(int)age gender:(int)gender remark:(NSString *)remark;
 
 
 /*!
- *  @brief Method to set a time window for which the generated events are buffered before they being dispatched to the Cetas service.
+ *  @brief Method to set the application user's age, gender and the remark in a single call.
  *
+ *  This method can be used to capture app user's age, gender and the remark. Use this method only if you collect this information explictly from your user (i.e. - there is no need to set a default value).
+ *
+ *  @param age :  Age in years.
+          gender : It can have three possible values from enum gender i.e (GenderUnknown, GenderMale,GenderFemale).
+          remark :  remark if any.
+ *
+ */
+
+-(void)setUserAge:(int)age gender:(Gender)gender remark:(NSString *)remark;
+
+
+/*!
+ *  @brief Method to set a time interval between each dispatch  of the generated events to the Cetas service. Until the interval is not reached events are buffered.
  *
  *  @note This method should be used by the application developer to explicitly set the time interval for which the Cetas Analytics would buffer the generated events (till the maximum capacity is reached), before they are dispatched to the Cetas service. Events will be dispatched periodically after every update time interval.
  *
- *  @param updateInterval, the event buffering time inte
+ *  @param updateInterval: Number of seconds for update interval.
  */
 
 -(void)setUpdateInterval:(NSInteger)updateInterval;

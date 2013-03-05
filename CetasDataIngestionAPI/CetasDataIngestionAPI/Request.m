@@ -2,10 +2,12 @@
 //  Request.m
 //  CetasDataIngestionAPI
 //
-//  Copyright (c) 2011 - 2013 Cetas Software, Inc. All rights reserved.
+//  Copyright (c) 2011 - 2012 Cetas Software, Inc. All rights reserved.
 //  This is Cetas proprietary and confidential material and its use
 //  is subject to license terms.
 //
+
+//  Request Class : Encapsulates request params to be submitted to the Cetas Analytics Service.
 
 #import "Request.h"
 #import "Constants.h"
@@ -15,6 +17,12 @@
 
 @implementation Request
 
+
+/*!
+ *  @brief : Returns the  a JSON  representation of request object.
+ *
+ *  This method generates a dictionary with all the request parameters and converts the dictinary into a JSON string using JSON parser.
+ */
 
 -(NSString *)getJSONRepresentation{
     

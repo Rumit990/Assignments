@@ -2,10 +2,23 @@
 //  CetasApiService.m
 //  CetasDataIngestionAPI
 //
-//  Copyright (c) 2011 - 2013 Cetas Software, Inc. All rights reserved.
+//  Copyright (c) 2011 - 2012 Cetas Software, Inc. All rights reserved.
 //  This is Cetas proprietary and confidential material and its use
 //  is subject to license terms.
 //
+/**
+ * Service layer for making rest calls to Cetas server
+ * This class has public methods login, logout and update events data to backend.
+ * This class makes asynchronous request to server (means it doesn't not block the main thread of the app)
+ * After making connection control waits for connection delegates methods, which are called when server starts returning response to app
+ * These methods are called by IOS in below given order:
+ * - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+ * - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+ * - (void)connectionDidFinishLoading:(NSURLConnection *)connection
+ 
+ * OR if failed to connect then
+ * - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+ */
 
 #import "CetasApiService.h"
 #import "Request.h"
@@ -21,15 +34,11 @@
 #define kMessageTypeUpdate 1
 #define kMessageTypeLogout 2
 
-@interface CetasApiService()
-
-@property (strong) Request *requestData;
-
-
-@end
+//Private Interface
 
 @implementation CetasApiService
 
+//custom intializer
 -(id) initWithDelegate:(id<CetasAPIServiceDelegate>)parameterDelegate
 {
     self = [super init];
@@ -40,7 +49,10 @@
     }
     return self;
 }
-
+/**
+ * This method sends post request to the backend.
+ * It creates an asynchronous connection to URL (we build with complete query params).
+ */
 -(void) sendPostRequestWithPostParamsString:(NSString *)paramsString{
     
     // set urlOrParamString by request param string (request param string should not contain cookie param)
@@ -62,7 +74,9 @@
     NSLog(@"API URL:%@%@ POST:%@", kCetasRestAPIBaseURL,[self getAPIPath], paramsString);
     
 }
-
+/*
+ * This method returns path component for specific message type.
+ */
 -(NSString *)getAPIPath{
     switch (self.messageType) {
         case kMessageTypeLogin:
@@ -78,6 +92,22 @@
     return @"";
     
 }
+/*
+ * This method returns device context information in a dictionary. This will be sent in attributes key in rest call.Following contextual Information is set:
+    Country of the end user.
+    Name of operating system running on device.
+    Operating system version running on device.
+    Version of the application in use.
+    Model of the device.
+    Name of the device.
+    Device language.
+    Carrier information :
+        Mobile name
+        Mobile country code.
+        Mobile network code.
+        IsoCountry code.
+
+ */
 
 -(NSDictionary *)getSystemInfo{
     
@@ -111,7 +141,10 @@
     return systemInfo;
 }
 
-
+/*!
+ * @brief : Prepares and returns the request object for message type.
+ *
+ */
 -(Request *)prepareRequest:(NSArray *)events apiKey:(NSString *)apiKey{
     
     Config *config = [self.delegate getConfigObject];
@@ -150,7 +183,10 @@
     return request;
 }
 
-
+/*
+ * Makes login rest call to Cetas Service.
+ * Called by tacker object during initilization to start tracking.
+ */
 -(void)login:(NSString *)apiKey {
     
     self.messageType= kMessageRequestTypeLogin;
@@ -159,14 +195,20 @@
     [self sendPostRequestWithPostParamsString:requestJSON];
     
 }
-
+/*
+ * Makes logout rest call to Cetas Service.
+ * Called by tacker to make logout call. In genral called when application stops.
+ */
 -(void)logout {
     self.messageType = kMessageRequestTypeLogout;
     Request *request = [self prepareRequest:nil apiKey:nil];
     NSString *requestJSON = [request getJSONRepresentation];
     [self sendPostRequestWithPostParamsString:requestJSON];
 }
-
+/*
+ * Updates event information to Cetas Service.
+ * Called by tacker object during initilization to start tracking.
+ */
 -(void) updateEvents:(NSArray *)events{
     self.messageType = kMessageRequestTypeMessage;
     Request *request = [self prepareRequest:events apiKey:nil];
@@ -215,10 +257,12 @@
     if (apiResponseData) {
         NSString *status = [apiResponseData objectForKey:kCetasAPIResponseKeyStatus];
         if ([status isEqualToString:kResponseStatusCode200]) {
+            //Call delegate if request is successfully
             if ([self.delegate respondsToSelector:@selector(dataLoadedSuccess:response:)]){
                 [self.delegate dataLoadedSuccess:self response:apiResponseData];
             }
         }else{
+            //Case of Failure.
             if ([self.delegate respondsToSelector:@selector(dataLoadedFailure:error:)]){
                 [self.delegate dataLoadedFailure:self error:nil];
             }

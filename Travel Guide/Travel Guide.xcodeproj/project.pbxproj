@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB054835170170A900E97E5D /* libCetasDataIngestionAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB054834170170A900E97E5D /* libCetasDataIngestionAPI.a */; };
+		FB0B6FD4170416A200A64D98 /* Spain_Granada.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FD2170416A200A64D98 /* Spain_Granada.jpg */; };
+		FB0B6FD5170416A200A64D98 /* Spain_Madrid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FD3170416A200A64D98 /* Spain_Madrid.jpg */; };
+		FB0B6FD817041B6200A64D98 /* Spain_Barcelona.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FD717041B6100A64D98 /* Spain_Barcelona.jpg */; };
+		FB0B6FDA17041BE300A64D98 /* Spain_Valencia.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FD917041BE300A64D98 /* Spain_Valencia.jpg */; };
+		FB0B6FDE17041E2400A64D98 /* Portugal_Albufeira.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FDB17041E2400A64D98 /* Portugal_Albufeira.jpg */; };
+		FB0B6FDF17041E2400A64D98 /* Portugal_Cascais.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FDC17041E2400A64D98 /* Portugal_Cascais.jpg */; };
+		FB0B6FE017041E2400A64D98 /* Portugal_Lisbon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FDD17041E2400A64D98 /* Portugal_Lisbon.jpg */; };
+		FB0B6FE217041FD300A64D98 /* Portugal_Porto.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FE117041FD300A64D98 /* Portugal_Porto.jpg */; };
+		FB0B6FE41704204900A64D98 /* Portugal_Lagos.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB0B6FE31704204900A64D98 /* Portugal_Lagos.jpg */; };
+		FB90D91D1700CC2700D7FCC1 /* United States_Atlanta.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB90D9181700CC2700D7FCC1 /* United States_Atlanta.jpg */; };
+		FB90D91E1700CC2700D7FCC1 /* United States_Los Angeles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB90D9191700CC2700D7FCC1 /* United States_Los Angeles.jpg */; };
+		FB90D91F1700CC2700D7FCC1 /* United States_Miami.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB90D91A1700CC2700D7FCC1 /* United States_Miami.jpg */; };
+		FB90D9201700CC2700D7FCC1 /* United States_Miami1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB90D91B1700CC2700D7FCC1 /* United States_Miami1.jpg */; };
+		FB90D9211700CC2700D7FCC1 /* United States_Miami2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB90D91C1700CC2700D7FCC1 /* United States_Miami2.jpg */; };
+		FB90D9241700CD6F00D7FCC1 /* United States_Las Vegas.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB90D9231700CD6E00D7FCC1 /* United States_Las Vegas.jpg */; };
+		FBA943581700877C00599AA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA943571700877C00599AA8 /* UIKit.framework */; };
+		FBA9435A1700877C00599AA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA943591700877C00599AA8 /* Foundation.framework */; };
+		FBA9435C1700877C00599AA8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA9435B1700877C00599AA8 /* CoreGraphics.framework */; };
+		FBA943621700877C00599AA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBA943601700877C00599AA8 /* InfoPlist.strings */; };
+		FBA943641700877C00599AA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA943631700877C00599AA8 /* main.m */; };
+		FBA943681700877C00599AA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA943671700877C00599AA8 /* AppDelegate.m */; };
+		FBA9436A1700877C00599AA8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA943691700877C00599AA8 /* Default.png */; };
+		FBA9436C1700877C00599AA8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA9436B1700877C00599AA8 /* Default@2x.png */; };
+		FBA9436E1700877C00599AA8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA9436D1700877C00599AA8 /* Default-568h@2x.png */; };
+		FBA943861700881300599AA8 /* CountriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA9437B1700881100599AA8 /* CountriesViewController.m */; };
+		FBA943871700881300599AA8 /* DestinationInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA9437D1700881100599AA8 /* DestinationInfoViewController.m */; };
+		FBA943881700881300599AA8 /* DestinationInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA9437E1700881100599AA8 /* DestinationInfoViewController.xib */; };
+		FBA943891700881300599AA8 /* DestinationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA943801700881200599AA8 /* DestinationsViewController.m */; };
+		FBA9438A1700881300599AA8 /* DestinationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA943811700881200599AA8 /* DestinationsViewController.xib */; };
+		FBA9438B1700881300599AA8 /* CountriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA943821700881300599AA8 /* CountriesViewController.xib */; };
+		FBA9438C1700881300599AA8 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA943841700881300599AA8 /* UserDetailsViewController.m */; };
+		FBA9438D1700881300599AA8 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBA943851700881300599AA8 /* UserDetailsViewController.xib */; };
+		FBA943941700885800599AA8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA943931700885800599AA8 /* SystemConfiguration.framework */; };
+		FBA943961700886100599AA8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA943951700886100599AA8 /* CoreData.framework */; };
+		FBA943981700886A00599AA8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA943971700886A00599AA8 /* CoreLocation.framework */; };
+		FBA943A51700892600599AA8 /* Spain_Flag.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA9439E1700892600599AA8 /* Spain_Flag.png */; };
+		FBA943A61700892600599AA8 /* United States_Berlin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBA9439F1700892600599AA8 /* United States_Berlin.jpg */; };
+		FBA943A71700892600599AA8 /* United States_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA943A01700892600599AA8 /* United States_Icon.png */; };
+		FBA943A81700892600599AA8 /* Germany_Flag.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA943A11700892600599AA8 /* Germany_Flag.png */; };
+		FBA943A91700892600599AA8 /* Portugal_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA943A21700892600599AA8 /* Portugal_Icon.png */; };
+		FBA943AA1700892600599AA8 /* Spain_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA943A31700892600599AA8 /* Spain_Icon.png */; };
+		FBA943AB1700892600599AA8 /* Portugal_Flag.png in Resources */ = {isa = PBXBuildFile; fileRef = FBA943A41700892600599AA8 /* Portugal_Flag.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FB054834170170A900E97E5D /* libCetasDataIngestionAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCetasDataIngestionAPI.a; sourceTree = "<group>"; };
+		FB0B6FD2170416A200A64D98 /* Spain_Granada.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spain_Granada.jpg; sourceTree = "<group>"; };
+		FB0B6FD3170416A200A64D98 /* Spain_Madrid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spain_Madrid.jpg; sourceTree = "<group>"; };
+		FB0B6FD717041B6100A64D98 /* Spain_Barcelona.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spain_Barcelona.jpg; sourceTree = "<group>"; };
+		FB0B6FD917041BE300A64D98 /* Spain_Valencia.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Spain_Valencia.jpg; sourceTree = "<group>"; };
+		FB0B6FDB17041E2400A64D98 /* Portugal_Albufeira.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Portugal_Albufeira.jpg; sourceTree = "<group>"; };
+		FB0B6FDC17041E2400A64D98 /* Portugal_Cascais.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Portugal_Cascais.jpg; sourceTree = "<group>"; };
+		FB0B6FDD17041E2400A64D98 /* Portugal_Lisbon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Portugal_Lisbon.jpg; sourceTree = "<group>"; };
+		FB0B6FE117041FD300A64D98 /* Portugal_Porto.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Portugal_Porto.jpg; sourceTree = "<group>"; };
+		FB0B6FE31704204900A64D98 /* Portugal_Lagos.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Portugal_Lagos.jpg; sourceTree = "<group>"; };
+		FB90D9181700CC2700D7FCC1 /* United States_Atlanta.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "United States_Atlanta.jpg"; sourceTree = "<group>"; };
+		FB90D9191700CC2700D7FCC1 /* United States_Los Angeles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "United States_Los Angeles.jpg"; sourceTree = "<group>"; };
+		FB90D91A1700CC2700D7FCC1 /* United States_Miami.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "United States_Miami.jpg"; sourceTree = "<group>"; };
+		FB90D91B1700CC2700D7FCC1 /* United States_Miami1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "United States_Miami1.jpg"; sourceTree = "<group>"; };
+		FB90D91C1700CC2700D7FCC1 /* United States_Miami2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "United States_Miami2.jpg"; sourceTree = "<group>"; };
+		FB90D9231700CD6E00D7FCC1 /* United States_Las Vegas.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "United States_Las Vegas.jpg"; sourceTree = "<group>"; };
+		FBA943531700877C00599AA8 /* Travel Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Travel Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBA943571700877C00599AA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FBA943591700877C00599AA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FBA9435B1700877C00599AA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FBA9435F1700877C00599AA8 /* Travel Guide-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Travel Guide-Info.plist"; sourceTree = "<group>"; };
+		FBA943611700877C00599AA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBA943631700877C00599AA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBA943651700877C00599AA8 /* Travel Guide-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Travel Guide-Prefix.pch"; sourceTree = "<group>"; };
+		FBA943661700877C00599AA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FBA943671700877C00599AA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FBA943691700877C00599AA8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FBA9436B1700877C00599AA8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FBA9436D1700877C00599AA8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FBA9437A1700881100599AA8 /* CountriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesViewController.h; sourceTree = "<group>"; };
+		FBA9437B1700881100599AA8 /* CountriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesViewController.m; sourceTree = "<group>"; };
+		FBA9437C1700881100599AA8 /* DestinationInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationInfoViewController.h; sourceTree = "<group>"; };
+		FBA9437D1700881100599AA8 /* DestinationInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationInfoViewController.m; sourceTree = "<group>"; };
+		FBA9437E1700881100599AA8 /* DestinationInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationInfoViewController.xib; sourceTree = "<group>"; };
+		FBA9437F1700881200599AA8 /* DestinationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationsViewController.h; sourceTree = "<group>"; };
+		FBA943801700881200599AA8 /* DestinationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationsViewController.m; sourceTree = "<group>"; };
+		FBA943811700881200599AA8 /* DestinationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationsViewController.xib; sourceTree = "<group>"; };
+		FBA943821700881300599AA8 /* CountriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountriesViewController.xib; sourceTree = "<group>"; };
+		FBA943831700881300599AA8 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		FBA943841700881300599AA8 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		FBA943851700881300599AA8 /* UserDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
+		FBA943931700885800599AA8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FBA943951700886100599AA8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FBA943971700886A00599AA8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FBA9439E1700892600599AA8 /* Spain_Flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spain_Flag.png; sourceTree = "<group>"; };
+		FBA9439F1700892600599AA8 /* United States_Berlin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "United States_Berlin.jpg"; sourceTree = "<group>"; };
+		FBA943A01700892600599AA8 /* United States_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "United States_Icon.png"; sourceTree = "<group>"; };
+		FBA943A11700892600599AA8 /* Germany_Flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Germany_Flag.png; sourceTree = "<group>"; };
+		FBA943A21700892600599AA8 /* Portugal_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Portugal_Icon.png; sourceTree = "<group>"; };
+		FBA943A31700892600599AA8 /* Spain_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spain_Icon.png; sourceTree = "<group>"; };
+		FBA943A41700892600599AA8 /* Portugal_Flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Portugal_Flag.png; sourceTree = "<group>"; };
+		FBC153CF17016503003BC5DA /* CetasEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CetasEvent.h; sourceTree = "<group>"; };
+		FBC153D01701651A003BC5DA /* CetasConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CetasConfig.h; sourceTree = "<group>"; };
+		FBC153D11701651A003BC5DA /* CetasTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CetasTracker.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBA943501700877C00599AA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA943981700886A00599AA8 /* CoreLocation.framework in Frameworks */,
+				FBA943961700886100599AA8 /* CoreData.framework in Frameworks */,
+				FBA943941700885800599AA8 /* SystemConfiguration.framework in Frameworks */,
+				FBA943581700877C00599AA8 /* UIKit.framework in Frameworks */,
+				FBA9435A1700877C00599AA8 /* Foundation.framework in Frameworks */,
+				FBA9435C1700877C00599AA8 /* CoreGraphics.framework in Frameworks */,
+				FB054835170170A900E97E5D /* libCetasDataIngestionAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBA943481700877B00599AA8 = {
+			isa = PBXGroup;
+			children = (
+				FBA943971700886A00599AA8 /* CoreLocation.framework */,
+				FBA943951700886100599AA8 /* CoreData.framework */,
+				FBA943931700885800599AA8 /* SystemConfiguration.framework */,
+				FBA9435D1700877C00599AA8 /* Travel Guide */,
+				FBA943561700877C00599AA8 /* Frameworks */,
+				FBA943541700877C00599AA8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBA943541700877C00599AA8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBA943531700877C00599AA8 /* Travel Guide.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBA943561700877C00599AA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBA943571700877C00599AA8 /* UIKit.framework */,
+				FBA943591700877C00599AA8 /* Foundation.framework */,
+				FBA9435B1700877C00599AA8 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBA9435D1700877C00599AA8 /* Travel Guide */ = {
+			isa = PBXGroup;
+			children = (
+				FBA943661700877C00599AA8 /* AppDelegate.h */,
+				FBA943671700877C00599AA8 /* AppDelegate.m */,
+				FBA943831700881300599AA8 /* UserDetailsViewController.h */,
+				FBA943841700881300599AA8 /* UserDetailsViewController.m */,
+				FBA943851700881300599AA8 /* UserDetailsViewController.xib */,
+				FBA9437A1700881100599AA8 /* CountriesViewController.h */,
+				FBA943821700881300599AA8 /* CountriesViewController.xib */,
+				FBA9437B1700881100599AA8 /* CountriesViewController.m */,
+				FBA9437F1700881200599AA8 /* DestinationsViewController.h */,
+				FBA943801700881200599AA8 /* DestinationsViewController.m */,
+				FBA943811700881200599AA8 /* DestinationsViewController.xib */,
+				FBA9437C1700881100599AA8 /* DestinationInfoViewController.h */,
+				FBA9437D1700881100599AA8 /* DestinationInfoViewController.m */,
+				FBA9437E1700881100599AA8 /* DestinationInfoViewController.xib */,
+				FBA9435E1700877C00599AA8 /* Supporting Files */,
+			);
+			path = "Travel Guide";
+			sourceTree = "<group>";
+		};
+		FBA9435E1700877C00599AA8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBC153CF17016503003BC5DA /* CetasEvent.h */,
+				FB054834170170A900E97E5D /* libCetasDataIngestionAPI.a */,
+				FBC153D01701651A003BC5DA /* CetasConfig.h */,
+				FBC153D11701651A003BC5DA /* CetasTracker.h */,
+				FBA9435F1700877C00599AA8 /* Travel Guide-Info.plist */,
+				FBA943601700877C00599AA8 /* InfoPlist.strings */,
+				FBA943631700877C00599AA8 /* main.m */,
+				FBA943651700877C00599AA8 /* Travel Guide-Prefix.pch */,
+				FBA9439E1700892600599AA8 /* Spain_Flag.png */,
+				FBA9439F1700892600599AA8 /* United States_Berlin.jpg */,
+				FBA943A01700892600599AA8 /* United States_Icon.png */,
+				FBA943A11700892600599AA8 /* Germany_Flag.png */,
+				FBA943A21700892600599AA8 /* Portugal_Icon.png */,
+				FBA943A31700892600599AA8 /* Spain_Icon.png */,
+				FBA943A41700892600599AA8 /* Portugal_Flag.png */,
+				FB0B6FE31704204900A64D98 /* Portugal_Lagos.jpg */,
+				FB0B6FDB17041E2400A64D98 /* Portugal_Albufeira.jpg */,
+				FB0B6FDC17041E2400A64D98 /* Portugal_Cascais.jpg */,
+				FB0B6FDD17041E2400A64D98 /* Portugal_Lisbon.jpg */,
+				FB0B6FE117041FD300A64D98 /* Portugal_Porto.jpg */,
+				FB0B6FD2170416A200A64D98 /* Spain_Granada.jpg */,
+				FB0B6FD717041B6100A64D98 /* Spain_Barcelona.jpg */,
+				FB0B6FD3170416A200A64D98 /* Spain_Madrid.jpg */,
+				FB0B6FD917041BE300A64D98 /* Spain_Valencia.jpg */,
+				FB90D9181700CC2700D7FCC1 /* United States_Atlanta.jpg */,
+				FB90D9191700CC2700D7FCC1 /* United States_Los Angeles.jpg */,
+				FB90D9231700CD6E00D7FCC1 /* United States_Las Vegas.jpg */,
+				FB90D91A1700CC2700D7FCC1 /* United States_Miami.jpg */,
+				FB90D91B1700CC2700D7FCC1 /* United States_Miami1.jpg */,
+				FB90D91C1700CC2700D7FCC1 /* United States_Miami2.jpg */,
+				FBA943691700877C00599AA8 /* Default.png */,
+				FBA9436B1700877C00599AA8 /* Default@2x.png */,
+				FBA9436D1700877C00599AA8 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBA943521700877C00599AA8 /* Travel Guide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBA943771700877C00599AA8 /* Build configuration list for PBXNativeTarget "Travel Guide" */;
+			buildPhases = (
+				FBA9434F1700877C00599AA8 /* Sources */,
+				FBA943501700877C00599AA8 /* Frameworks */,
+				FBA943511700877C00599AA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Travel Guide";
+			productName = "Travel Guide";
+			productReference = FBA943531700877C00599AA8 /* Travel Guide.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBA9434A1700877B00599AA8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = Cetas;
+			};
+			buildConfigurationList = FBA9434D1700877B00599AA8 /* Build configuration list for PBXProject "Travel Guide" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FBA943481700877B00599AA8;
+			productRefGroup = FBA943541700877C00599AA8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBA943521700877C00599AA8 /* Travel Guide */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBA943511700877C00599AA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA943621700877C00599AA8 /* InfoPlist.strings in Resources */,
+				FBA9436A1700877C00599AA8 /* Default.png in Resources */,
+				FBA9436C1700877C00599AA8 /* Default@2x.png in Resources */,
+				FBA9436E1700877C00599AA8 /* Default-568h@2x.png in Resources */,
+				FBA943881700881300599AA8 /* DestinationInfoViewController.xib in Resources */,
+				FBA9438A1700881300599AA8 /* DestinationsViewController.xib in Resources */,
+				FBA9438B1700881300599AA8 /* CountriesViewController.xib in Resources */,
+				FBA9438D1700881300599AA8 /* UserDetailsViewController.xib in Resources */,
+				FBA943A51700892600599AA8 /* Spain_Flag.png in Resources */,
+				FBA943A61700892600599AA8 /* United States_Berlin.jpg in Resources */,
+				FBA943A71700892600599AA8 /* United States_Icon.png in Resources */,
+				FBA943A81700892600599AA8 /* Germany_Flag.png in Resources */,
+				FBA943A91700892600599AA8 /* Portugal_Icon.png in Resources */,
+				FBA943AA1700892600599AA8 /* Spain_Icon.png in Resources */,
+				FBA943AB1700892600599AA8 /* Portugal_Flag.png in Resources */,
+				FB90D91D1700CC2700D7FCC1 /* United States_Atlanta.jpg in Resources */,
+				FB90D91E1700CC2700D7FCC1 /* United States_Los Angeles.jpg in Resources */,
+				FB90D91F1700CC2700D7FCC1 /* United States_Miami.jpg in Resources */,
+				FB90D9201700CC2700D7FCC1 /* United States_Miami1.jpg in Resources */,
+				FB90D9211700CC2700D7FCC1 /* United States_Miami2.jpg in Resources */,
+				FB90D9241700CD6F00D7FCC1 /* United States_Las Vegas.jpg in Resources */,
+				FB0B6FD4170416A200A64D98 /* Spain_Granada.jpg in Resources */,
+				FB0B6FD5170416A200A64D98 /* Spain_Madrid.jpg in Resources */,
+				FB0B6FD817041B6200A64D98 /* Spain_Barcelona.jpg in Resources */,
+				FB0B6FDA17041BE300A64D98 /* Spain_Valencia.jpg in Resources */,
+				FB0B6FDE17041E2400A64D98 /* Portugal_Albufeira.jpg in Resources */,
+				FB0B6FDF17041E2400A64D98 /* Portugal_Cascais.jpg in Resources */,
+				FB0B6FE017041E2400A64D98 /* Portugal_Lisbon.jpg in Resources */,
+				FB0B6FE217041FD300A64D98 /* Portugal_Porto.jpg in Resources */,
+				FB0B6FE41704204900A64D98 /* Portugal_Lagos.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBA9434F1700877C00599AA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA943641700877C00599AA8 /* main.m in Sources */,
+				FBA943681700877C00599AA8 /* AppDelegate.m in Sources */,
+				FBA943861700881300599AA8 /* CountriesViewController.m in Sources */,
+				FBA943871700881300599AA8 /* DestinationInfoViewController.m in Sources */,
+				FBA943891700881300599AA8 /* DestinationsViewController.m in Sources */,
+				FBA9438C1700881300599AA8 /* UserDetailsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FBA943601700877C00599AA8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBA943611700877C00599AA8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBA943751700877C00599AA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FBA943761700877C00599AA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBA943781700877C00599AA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Travel Guide/Travel Guide-Prefix.pch";
+				INFOPLIST_FILE = "Travel Guide/Travel Guide-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Travel Guide\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FBA943791700877C00599AA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Travel Guide/Travel Guide-Prefix.pch";
+				INFOPLIST_FILE = "Travel Guide/Travel Guide-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Travel Guide\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBA9434D1700877B00599AA8 /* Build configuration list for PBXProject "Travel Guide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBA943751700877C00599AA8 /* Debug */,
+				FBA943761700877C00599AA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBA943771700877C00599AA8 /* Build configuration list for PBXNativeTarget "Travel Guide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBA943781700877C00599AA8 /* Debug */,
+				FBA943791700877C00599AA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBA9434A1700877B00599AA8 /* Project object */;
+}

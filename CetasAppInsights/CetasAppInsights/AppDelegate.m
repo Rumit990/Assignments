@@ -2,7 +2,6 @@
 //  AppDelegate.m
 //  CetasAppInsights
 //
-//  Created by Vipin Joshi on 23/05/13.
 //  Copyright (c) 2013 Cetas. All rights reserved.
 //
 
@@ -35,6 +34,11 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
     appNav.navigationBar.tintColor = [UIColor darkGrayColor];
     return appNav;
 }
+/*
+ * setupCetasSDK
+ * Initializes and setup the config and tracker objects
+ *
+ */
 
 -(void)setupCetasSDK{
     

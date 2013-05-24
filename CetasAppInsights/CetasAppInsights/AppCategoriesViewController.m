@@ -2,10 +2,11 @@
 //  AppCategoriesViewController.m
 //  CetasAppInsights
 //
-//  Created by Vipin Joshi on 23/05/13.
 //  Copyright (c) 2013 Cetas. All rights reserved.
 //
-
+/*
+ * This class let you select from App categories. i.e Running apps or Installed apps.
+ */
 #import "AppCategoriesViewController.h"
 #import "Constants.h"
 #import "SingletonClass.h"
@@ -77,7 +78,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:13.0];
     cell.textLabel.text = [self.categories objectAtIndex:indexPath.section];
     
     // Configure the cell...
@@ -127,6 +128,7 @@
 #pragma mark - Table view delegate
 
 
+
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(section == 0){
         return 185;
@@ -143,8 +145,12 @@
         UIView *containerView = [[UIView alloc] initWithFrame:CGRectMake(10, 10, self.tableView.frame.size.width-20, 120)];
         containerView.backgroundColor = [UIColor colorWithWhite:0.80 alpha:1.0];
         containerView.layer.cornerRadius = 10.0;
+        containerView.layer.borderWidth = 1.0;
+        containerView.layer.borderColor = [UIColor colorWithWhite:0.75 alpha:1.0].CGColor;
         UIView *innerContainerView = [[UIView alloc] initWithFrame:CGRectMake(self.tableView.frame.size.width/2-70, 10, 120, 100)];
         innerContainerView.backgroundColor = [UIColor whiteColor];
+        innerContainerView.layer.borderColor = [UIColor colorWithWhite:0.75 alpha:1.0].CGColor;
+        innerContainerView.layer.borderWidth = 1.0;
         innerContainerView.layer.cornerRadius = 10.0;
         [containerView addSubview:innerContainerView];
         headerView.backgroundColor = [UIColor clearColor];
@@ -157,10 +163,10 @@
         
         UIView *labelBackView = [[UIView alloc] initWithFrame:CGRectMake(11, 145, self.tableView.frame.size.width-20, 25)];
         labelBackView.backgroundColor = [UIColor colorWithWhite:0.72 alpha:1.0];
-        labelBackView.layer.cornerRadius = 20.0;
-        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(13, 0, headerView.frame.size.width, 25)];
+        labelBackView.layer.cornerRadius = 25.0;
+        UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 0, 173, 25)];
         headerLabel.text = @"Please select a category";
-        headerLabel.font = [UIFont systemFontOfSize:14.0];
+        headerLabel.font = [UIFont boldSystemFontOfSize:14.0];
         headerLabel.textColor = [UIColor whiteColor];
         headerLabel.backgroundColor = [UIColor clearColor];
         [labelBackView addSubview:headerLabel];

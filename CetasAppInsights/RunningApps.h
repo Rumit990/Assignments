@@ -2,7 +2,6 @@
 //  RunningApps.h
 //  RunningApps
 //
-//  Created by Surendra on 23/05/13.
 //  Copyright (c) 2013 Tinyview Inc. All rights reserved.
 //
 

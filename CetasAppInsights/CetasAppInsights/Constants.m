@@ -9,9 +9,10 @@
 #import "Constants.h"
 
 
-NSString * const kApplicationCategoryActive = @"Active Apps";
+NSString * const kApplicationCategoryActive = @"Running Apps";
 NSString * const kApplicationCategoryInstalled = @"Installed Apps";
-
+NSString * const kAppInfoItemKeyTitle = @"title";
+NSString * const kAppInfoItemKeyValue = @"value";
 @implementation Constants
 
 @end

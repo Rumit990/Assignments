@@ -12,6 +12,8 @@ extern BOOL const kEnableNewFeatures;
 
 extern NSString * const kApplicationCategoryActive ;
 extern NSString * const kApplicationCategoryInstalled;
+extern NSString * const kAppInfoItemKeyTitle ;
+extern NSString * const kAppInfoItemKeyValue ;
 @interface Constants : NSObject
 
 

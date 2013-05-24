@@ -113,31 +113,7 @@
     if (!image)
         return;
     
-//    float iconHeight , iconWidth;
-//    if([imageType isEqualToString:ICON_DOWNLOADER_IMAGE_TYPE_FAVICON]){
-//        iconHeight  = kFaviconIconHeight;
-//        iconWidth = kFaviconIconHeight;
-//    }else if ([imageType isEqualToString:ICON_DOWNLOADER_IMAGE_TYPE_PODUCT]){
-//        iconHeight = image.size.height;
-//        iconWidth = image.size.width;
-//    }else{
-//        iconHeight  = kAppIconHeight;
-//        iconWidth = kAppIconHeight;
-//        
-//    }
-//    if (image.size.width != iconWidth && image.size.height != iconHeight)
-//	{
-//        CGSize itemSize = CGSizeMake(iconHeight, iconWidth);
-//		UIGraphicsBeginImageContext(itemSize);
-//		CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-//		[image drawInRect:imageRect];
-//		self.imageDownloaded = UIGraphicsGetImageFromCurrentImageContext();
-//		UIGraphicsEndImageContext();
-//    }
-//    else
-//    {
-//        self.imageDownloaded = image;
-//    }
+
     self.imageDownloaded = image;
     
     self.activeDownload = nil;

@@ -1,8 +1,6 @@
 //
 //  RunningApps.m
 //  RunningApps
-//
-//  Created by Surendra on 23/05/13.
 //  Copyright (c) 2013 Tinyview Inc. All rights reserved.
 //
 
@@ -23,7 +21,7 @@
         [self retrieveAppNameDictionaryWithSuccess:^(NSDictionary *appNameAppsDictionary) {
             
             NSArray *runningProcesses = [self runningProcesses];
-            NSLog(@"Running Processes : %@",runningProcesses);
+            //NSLog(@"Running Processes : %@",runningProcesses);
             
             NSMutableArray *appNameDictionaries = [[NSMutableArray alloc] init];
             for (NSString *appName in appNameAppsDictionary.allKeys) {
@@ -54,7 +52,7 @@
                                     }
                                 }
                                 if (!containsObj) {
-                                    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:appId,@"appId",[processDict objectForKey:@"appStartTime"],@"appStartTime", nil];
+                                    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:appId,kDictKeyAppId,[processDict objectForKey:kDictKeyStartTime],kDictKeyStartTime, nil];
                                     [successfulAppIds addObject:dict];
                                     [incrementalAppIds addObject:dict];
                                 }
@@ -217,7 +215,7 @@
     dispatch_async(retrieval_thread, ^{
         
         NSBundle *selfBundle = [NSBundle bundleForClass:[self class]];
-        NSString *appNamesDictionaryPath = [selfBundle pathForResource:@"AppNames"
+        NSString *appNamesDictionaryPath = [selfBundle pathForResource:@"executableAppNames"
                                                                   ofType:@"json"];
         if (!appNamesDictionaryPath) {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -273,7 +271,7 @@
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         [[NSURLCache sharedURLCache] setMemoryCapacity:1024*1024*2];
         [request setCachePolicy:NSURLRequestReturnCacheDataElseLoad];
-        [request setURL:[NSURL URLWithString:@"https://file-path/AppNames.json"]];
+        [request setURL:[NSURL URLWithString:@"https://file-path/executableAppNames.json"]];
         [request setTimeoutInterval:30.0f];
         NSData *result = [NSURLConnection sendSynchronousRequest:request
                                                returningResponse:&response
@@ -391,7 +389,10 @@
                     
                     NSString * processID = [[NSString alloc] initWithFormat:@"%d", process[i].kp_proc.p_pid];
                     NSString * processName = [[NSString alloc] initWithFormat:@"%s", process[i].kp_proc.p_comm];
-                    NSString *startTime =[[NSString alloc] initWithFormat:@"%ld ", process[i].kp_proc.p_un.__p_starttime.tv_sec];
+                    NSString *startTime =[[NSString alloc] initWithFormat:@"%.0ld", process[i].kp_proc.p_un.__p_starttime.tv_sec];
+                    
+                    //NSNumber *launchtime = [NSNumber numberWithDouble:[[NSString stringWithFormat:@"%.0ld", process[i].kp_proc.p_un.__p_starttime.tv_sec] doubleValue]];
+                    
                     NSDictionary * dict = [[NSDictionary alloc] initWithObjects:[NSArray arrayWithObjects:processID, processName,startTime, nil]
                                                                         forKeys:[NSArray arrayWithObjects:@"ProcessID", @"ProcessName",@"appStartTime", nil]];
                     [array addObject:dict];

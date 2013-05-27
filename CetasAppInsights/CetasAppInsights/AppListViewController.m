@@ -66,7 +66,7 @@
     self.appIconImages = [[NSMutableDictionary alloc] init];
     self.imageDownloadsInProgress =[[NSMutableDictionary alloc] init];
     self.loadingIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2-25, self.view.frame.size.height/2-25, 50, 50)];
-    self.loadingIndicator.backgroundColor =[UIColor colorWithWhite:0 alpha:1];
+    self.loadingIndicator.backgroundColor =[UIColor colorWithWhite:0.37 alpha:1];
     self.loadingIndicator.layer.cornerRadius =5.0;
     [self.view addSubview:self.loadingIndicator];
     
@@ -104,6 +104,7 @@
         self.appsInfoArray = newAppDictionaries;
         
         [self.tableView reloadData];
+        [self.loadingIndicator stopAnimating];
     } withSuccess:^(NSArray *appDictionaries) {
         //Block for successfull response.
         NSLog(@"Successful appDictionaries.count: %i", appDictionaries.count);
@@ -324,12 +325,12 @@
         [eventInfoDic setObject:[appInfo objectForKey:@"trackName"] forKey:@"App Name"];
         NSString *appID  = [NSString stringWithFormat:@"%@",[appInfo objectForKey:@"trackId"]];
         
-        [eventInfoDic setObject:appID   forKey:@"App ID"];
+        [eventInfoDic setObject:appID   forKey:@"App Id"];
         if([self.appCategory isEqualToString:kApplicationCategoryActive]){
             
             NSDate *date =[NSDate dateWithTimeIntervalSince1970:[[appInfo objectForKey:kDictKeyStartTime] doubleValue]];
             if(date){
-                [eventInfoDic setObject:[appInfo objectForKey:kDictKeyStartTime]  forKey:@"App Start Time"];
+                [eventInfoDic setObject:[appInfo objectForKey:kDictKeyStartTime]  forKey:@"App Launch Time"];
             }
             
         }

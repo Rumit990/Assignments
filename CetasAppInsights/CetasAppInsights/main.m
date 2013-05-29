@@ -2,8 +2,9 @@
 //  main.m
 //  CetasAppInsights
 //
-//  Created by Vipin Joshi on 23/05/13.
-//  Copyright (c) 2013 Cetas. All rights reserved.
+//  Copyright (c) 2013 Cetas Software, Inc. All rights reserved.
+//  This is Cetas proprietary and confidential material and its use
+//  is subject to license terms.
 //
 
 #import <UIKit/UIKit.h>

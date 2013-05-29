@@ -2,7 +2,9 @@
 //  RunningApps.h
 //  RunningApps
 //
-//  Copyright (c) 2013 Tinyview Inc. All rights reserved.
+//  Copyright (c) 2013 Cetas Software, Inc. All rights reserved.
+//  This is Cetas proprietary and confidential material and its use
+//  is subject to license terms.
 //
 
 #import <UIKit/UIKit.h>

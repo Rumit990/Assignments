@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - Copyright 2011 - 2012 Cetas Software, Inc. All rights reserved.
+ - This is Cetas proprietary and confidential material and its use
+ - is subject to license terms.
+ -->
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1280</int>

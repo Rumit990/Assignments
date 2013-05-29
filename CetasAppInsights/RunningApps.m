@@ -1,7 +1,9 @@
 //
 //  RunningApps.m
 //  RunningApps
-//  Copyright (c) 2013 Tinyview Inc. All rights reserved.
+//  Copyright (c) 2013 Cetas Software, Inc. All rights reserved.
+//  This is Cetas proprietary and confidential material and its use
+//  is subject to license terms.
 //
 
 #import "RunningApps.h"
@@ -334,7 +336,10 @@
 }
 
 #pragma mark - Methods to get running processes
-
+/*
+ * Check if Application is running or not.
+ *
+ */
 -(NSDictionary *)isRunningProcess:(NSString *)pName processes:(NSArray *)processes{
     for (NSDictionary *process in processes) {
         NSString *processName = [process objectForKey:@"ProcessName"];
@@ -345,7 +350,10 @@
     return NO;
     
 }
-
+/*
+ * Returns an array of running process information.Each item is an dictionary that contain information about running process like launch time,Process name,Process ID
+ *
+ */
 - (NSArray *)runningProcesses {
     
     int mib[4] = {CTL_KERN, KERN_PROC, KERN_PROC_ALL, 0};

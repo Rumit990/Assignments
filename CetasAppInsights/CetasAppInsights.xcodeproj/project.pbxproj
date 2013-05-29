@@ -20,6 +20,7 @@
 		FB951E84174E0C880038977F /* CetasDataIngestionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E83174E0C880038977F /* CetasDataIngestionSDK.framework */; };
 		FB951E8B174E12330038977F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E8A174E12330038977F /* CoreData.framework */; };
 		FB951E8D174E123F0038977F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E8C174E123F0038977F /* SystemConfiguration.framework */; };
+		FBBF5F4E1755CB02009D2C89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBBF5F4D1755CB02009D2C89 /* CoreLocation.framework */; };
 		FBDB0AF8174E310B00B9F5C5 /* iHasApp.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0AF6174E310B00B9F5C5 /* iHasApp.m */; };
 		FBDB0AF9174E310B00B9F5C5 /* schemeApps.json in Resources */ = {isa = PBXBuildFile; fileRef = FBDB0AF7174E310B00B9F5C5 /* schemeApps.json */; };
 		FBDB0AFC174E331200B9F5C5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0AFB174E331200B9F5C5 /* Constants.m */; };
@@ -54,6 +55,7 @@
 		FB951E83174E0C880038977F /* CetasDataIngestionSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CetasDataIngestionSDK.framework; sourceTree = "<group>"; };
 		FB951E8A174E12330038977F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FB951E8C174E123F0038977F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FBBF5F4D1755CB02009D2C89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FBDB0AF5174E310B00B9F5C5 /* iHasApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iHasApp.h; sourceTree = "<group>"; };
 		FBDB0AF6174E310B00B9F5C5 /* iHasApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iHasApp.m; sourceTree = "<group>"; };
 		FBDB0AF7174E310B00B9F5C5 /* schemeApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schemeApps.json; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBF5F4E1755CB02009D2C89 /* CoreLocation.framework in Frameworks */,
 				FB951E8D174E123F0038977F /* SystemConfiguration.framework in Frameworks */,
 				FB951E8B174E12330038977F /* CoreData.framework in Frameworks */,
 				FB951E84174E0C880038977F /* CetasDataIngestionSDK.framework in Frameworks */,
@@ -98,6 +101,7 @@
 		FB951E34174DEFAB0038977F = {
 			isa = PBXGroup;
 			children = (
+				FBBF5F4D1755CB02009D2C89 /* CoreLocation.framework */,
 				FBDB0AF4174E30F200B9F5C5 /* Ext */,
 				FB951E49174DEFAB0038977F /* CetasAppInsights */,
 				FB951E42174DEFAB0038977F /* Frameworks */,
@@ -129,8 +133,8 @@
 		FB951E49174DEFAB0038977F /* CetasAppInsights */ = {
 			isa = PBXGroup;
 			children = (
-				FBDB0AFD174E3ACB00B9F5C5 /* Common */,
 				FB951E52174DEFAB0038977F /* AppDelegate.h */,
+				FBDB0AFD174E3ACB00B9F5C5 /* Common */,
 				FB951E53174DEFAB0038977F /* AppDelegate.m */,
 				FBDB0B12174F283000B9F5C5 /* AppCategoriesViewController.h */,
 				FBDB0B13174F283000B9F5C5 /* AppCategoriesViewController.m */,

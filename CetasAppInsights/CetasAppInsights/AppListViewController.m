@@ -1,7 +1,9 @@
 //
 //  AppListViewController.m
 //  CetasAppInsights
-//  Copyright (c) 2013 Cetas. All rights reserved.
+//  Copyright (c) 2013 Cetas Software, Inc. All rights reserved.
+//  This is Cetas proprietary and confidential material and its use
+//  is subject to license terms.
 //
 
 #import "AppListViewController.h"

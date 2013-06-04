@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB7AF1CD175DA5BB00F3C57E /* MMPSilence.wav in Resources */ = {isa = PBXBuildFile; fileRef = FB7AF1CC175DA5BB00F3C57E /* MMPSilence.wav */; };
 		FB951E44174DEFAB0038977F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E43174DEFAB0038977F /* UIKit.framework */; };
 		FB951E46174DEFAB0038977F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E45174DEFAB0038977F /* Foundation.framework */; };
 		FB951E48174DEFAB0038977F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E47174DEFAB0038977F /* CoreGraphics.framework */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB7AF1CC175DA5BB00F3C57E /* MMPSilence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MMPSilence.wav; sourceTree = "<group>"; };
 		FB951E3F174DEFAB0038977F /* CetasAppInsights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CetasAppInsights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB951E43174DEFAB0038977F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FB951E45174DEFAB0038977F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -145,6 +147,7 @@
 				FBDB0B1C174F3F3500B9F5C5 /* AppInfoViewController.h */,
 				FBDB0B1D174F3F3500B9F5C5 /* AppInfoViewController.m */,
 				FBDB0B1E174F3F3600B9F5C5 /* AppInfoViewController.xib */,
+				FB7AF1CC175DA5BB00F3C57E /* MMPSilence.wav */,
 				FB951E4A174DEFAB0038977F /* Supporting Files */,
 			);
 			path = CetasAppInsights;
@@ -254,6 +257,7 @@
 				FBDB0B16174F283100B9F5C5 /* AppCategoriesViewController.xib in Resources */,
 				FBDB0B1B174F29FF00B9F5C5 /* AppListViewController.xib in Resources */,
 				FBDB0B20174F3F3700B9F5C5 /* AppInfoViewController.xib in Resources */,
+				FB7AF1CD175DA5BB00F3C57E /* MMPSilence.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,9 +11,22 @@
 
 @interface SingletonClass : NSObject
 
+
 /**
  * Called to get shared instance of this class. If not already exists, it creates one and returns that
  */
 + (id)sharedInstance;
 + (void) setNavigationTitleFont: (UINavigationItem *) navItem;
+/*
+ * Used to track running apps at regular inteval of time.
+ */
+
+-(void)trackRunningApps;
+/*
+ * Logs the Cetas Events for tacking installed /running application information.
+ */
+-(void)logCetasEvents:(NSArray *)appsInfoArray category:(NSString *)category;
+//Hold reference to running app information for previous iteration.
+@property (strong) NSMutableDictionary *prevAppInfoDictionaries;
+
 @end

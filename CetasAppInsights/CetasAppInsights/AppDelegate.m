@@ -10,11 +10,12 @@
 #import "AppDelegate.h"
 #import "AppCategoriesViewController.h"
 #import <CetasDataIngestionSDK/CetasTracker.h>
+#import "SingletonClass.h"
 //#import "iHasApp.h"
 /*
  * Cetas App Insights Application Feed Keys
  */
-NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiieI2tCh0qDh0rw/rblJC6/0llBKkLlYcI7/lYS+/QDJItSQdN3hwTcRk3m8GJCN1JX4zeNEdkQAnFFUva8P6CuNiJ4dlI0c4ny22JJf6ImK6/1l+zxdFa3V5CSYaaIgxL6P4q30=";
+NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428uVUEYoz78N+QiGUwWJsWdxzIZ74G7zlErNCGN0LyFjeI9UZFIzb/MTBHrSorn3CIf+/J/naagjHfKc6l4w+JCbbh0P2zCaHxUSjiV5kf1e0H9jTg==";
 
 @implementation AppDelegate
 
@@ -30,8 +31,13 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
     self.window.backgroundColor = [UIColor whiteColor];
     [self setupCetasSDK];
     [self.window makeKeyAndVisible];
+    self.timer =[NSTimer timerWithTimeInterval:60.0*5 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
     
     return YES;
+}
+
+-(void)fireLoggingEvents{
+    [[SingletonClass sharedInstance] trackRunningApps];
 }
 
 
@@ -67,7 +73,9 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
     //Used to setup location information
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    [self.locationManager startUpdatingLocation];
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.distanceFilter =kCLDistanceFilterNone;
+    [self.locationManager startMonitoringSignificantLocationChanges];
   
 }
 
@@ -97,40 +105,69 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
 //    };
 //    bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
 //    [self dispatchTheEvents];
+//    
+//    [self scheduleAlarmForDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    
+}
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
+    NSLog(@"Recevied Local notification.");
 }
 
+- (void)scheduleAlarmForDate:(NSDate*)theDate
+{
+    UIApplication* app = [UIApplication sharedApplication];
+    NSArray*    oldNotifications = [app scheduledLocalNotifications];
+    
+    // Clear out the old notification before scheduling a new one.
+    if ([oldNotifications count] > 0)
+        [app cancelAllLocalNotifications];
+    
+    // Create a new notification.
+    UILocalNotification* alarm = [[UILocalNotification alloc] init];
+    if (alarm)
+    {
+        alarm.fireDate = theDate;
+        alarm.timeZone = [NSTimeZone defaultTimeZone];
+        alarm.repeatInterval = kCFCalendarUnitSecond;
+        alarm.applicationIconBadgeNumber = 1;
+        alarm.soundName = @"MMPSilence.wav";
+        alarm.alertBody = @"";
+        
+        [app scheduleLocalNotification:alarm];
+    }
+}
 
-//-(void)dispatchTheEvents{
-//    // Start the long-running task and return immediately.
-//    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        UIApplication* application = [UIApplication sharedApplication];
-//        // Do the work associated with the task, preferably in chunks.
-//        while (1) {
-//            NSLog(@"Enter background >> ");
-//            [self.locationManager stopUpdatingLocation];
-//                
-////                       iHasApp *detectionObject =[[iHasApp alloc] init];
-////                       [detectionObject detectAppDictionariesWithIncremental:^(NSArray *appDictionaries){
-////                           NSLog(@"Increment");
-////                       }withSuccess:^(NSArray *appDictionaries){
-////                           NSLog(@"app dictionaries.%@",appDictionaries);
-////                       }withFailure:^(NSError *error) {
-////                           NSLog(@"error");
-////                       }
-////                        ];
-//            [NSThread sleepForTimeInterval:5.0];
-//            NSLog(@"Background remaning time %f",[application backgroundTimeRemaining]);
+-(void)dispatchTheEvents{
+    // Start the long-running task and return immediately.
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIApplication* application = [UIApplication sharedApplication];
+        // Do the work associated with the task, preferably in chunks.
+        while (1) {
+            NSLog(@"Enter background >> ");
+            //[self.locationManager stopUpdatingLocation];
+                
+//                       iHasApp *detectionObject =[[iHasApp alloc] init];
+//                       [detectionObject detectAppDictionariesWithIncremental:^(NSArray *appDictionaries){
+//                           NSLog(@"Increment");
+//                       }withSuccess:^(NSArray *appDictionaries){
+//                           NSLog(@"app dictionaries.%@",appDictionaries);
+//                       }withFailure:^(NSError *error) {
+//                           NSLog(@"error");
+//                       }
+//                        ];
+            [NSThread sleepForTimeInterval:5.0];
+            NSLog(@"Background remaning time %f",[application backgroundTimeRemaining]);
 //            if([application backgroundTimeRemaining]< 580.0){
 //                [self.locationManager startUpdatingLocation];
 //            }
-//            
-//        }
-//        
-//        [application endBackgroundTask:bgTask];
-//        bgTask = UIBackgroundTaskInvalid;
-//    });
-//}
+            
+        }
+        
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+    });
+}
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
@@ -167,5 +204,14 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
     self.locationUpdated = YES;
     
 }
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+    NSLog(@"Did update location : ,%@",locations);
+     NSLog(@"<-------locationManager:didUpdateLocations Coming in ..-------->");
+    UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Location changed" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
+}
 
+-(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
+    NSLog(@"<-------locationManager:didEnterRegion Coming in region monitoring..-------->");
+}
 @end

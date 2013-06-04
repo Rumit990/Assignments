@@ -18,5 +18,6 @@
 //@property (strong, nonatomic) dispatch_block_t expirationHandler;
 @property (strong) CLLocationManager *locationManager;
 @property BOOL locationUpdated;
+@property NSTimer *timer;
 
 @end

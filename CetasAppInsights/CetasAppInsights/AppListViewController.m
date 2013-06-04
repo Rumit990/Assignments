@@ -115,7 +115,7 @@
         if(appDictionaries.count){
             [self.tableView reloadData];
             // Track Cetas events for each app.
-            [self logCetasEvents];
+            [[SingletonClass sharedInstance] logCetasEvents:appDictionaries category:self.appCategory];
         }else{
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Alert"
                                                                 message:@"Unable to fetch data from itunes. Please reload again."
@@ -314,35 +314,49 @@
  * This method logs Inventory Events and App start event for each app detected.
  */
 
--(void)logCetasEvents{
-    
-    
-    NSString *categoryName = @"Installed";
-    if([self.appCategory isEqualToString:kApplicationCategoryActive]){
-        categoryName = @"Running";
-    }
-    
-    for (NSMutableDictionary *appInfo in self.appsInfoArray) {
-        NSMutableDictionary *eventInfoDic =[[NSMutableDictionary alloc] init];
-        [eventInfoDic setObject:[appInfo objectForKey:@"trackName"] forKey:@"App Name"];
-        NSString *appID  = [NSString stringWithFormat:@"%@",[appInfo objectForKey:@"trackId"]];
-        
-        [eventInfoDic setObject:appID   forKey:@"App Id"];
-        if([self.appCategory isEqualToString:kApplicationCategoryActive]){
-            
-            NSDate *date =[NSDate dateWithTimeIntervalSince1970:[[appInfo objectForKey:kDictKeyStartTime] doubleValue]];
-            if(date){
-                [eventInfoDic setObject:[appInfo objectForKey:kDictKeyStartTime]  forKey:@"App Launch Time"];
-            }
-            
-        }
-        
-        [[CetasTracker getDefaultTracker] trackEventWithCategory:categoryName eventDetail:eventInfoDic];
-        
-    }
-    NSLog(@"Cetas Events Info logged.");
-    
-}
+//-(void)logCetasEvents{
+//    
+//    
+//    NSString *categoryName = @"Installed";
+//    if([self.appCategory isEqualToString:kApplicationCategoryActive]){
+//        categoryName = @"Running";
+//    }
+//    
+//    for (NSMutableDictionary *appInfo in self.appsInfoArray) {
+//        NSMutableDictionary *eventInfoDic =[[NSMutableDictionary alloc] init];
+//        [eventInfoDic setObject:[appInfo objectForKey:@"trackName"] forKey:@"App Name"];
+//        NSString *appID  = [NSString stringWithFormat:@"%@",[appInfo objectForKey:@"trackId"]];
+//        
+//        [eventInfoDic setObject:appID   forKey:@"App Id"];
+//        if([self.appCategory isEqualToString:kApplicationCategoryActive]){
+//            
+//            NSDate *date =[NSDate dateWithTimeIntervalSince1970:[[appInfo objectForKey:kDictKeyStartTime] doubleValue]];
+//            if(date){
+//                [eventInfoDic setObject:[appInfo objectForKey:kDictKeyStartTime]  forKey:@"App Launch Time"];
+//            }
+//            
+//        }
+//        
+//        [[CetasTracker getDefaultTracker] trackEventWithCategory:categoryName eventDetail:eventInfoDic];
+//        
+//    }
+//    if([self.appCategory isEqualToString:kApplicationCategoryActive]){
+//        NSMutableArray  *trackNames =[[NSMutableArray alloc] init];
+//        for (NSMutableDictionary *appInfo in self.appsInfoArray) {
+//            
+//            [trackNames addObject:[appInfo objectForKey:@"trackName"]];
+//            
+//        }
+//        NSMutableDictionary *eventInfoDic =[NSMutableDictionary dictionaryWithObject:[trackNames componentsJoinedByString:@","] forKey:@"Running Apps"];
+//        [[CetasTracker getDefaultTracker] trackEventWithCategory:@"Set of " eventDetail:eventInfoDic];
+//    
+//    }
+//       
+//    
+//    
+//    NSLog(@"Cetas Events Info logged.");
+//    
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

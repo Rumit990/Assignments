@@ -31,13 +31,16 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
     self.window.backgroundColor = [UIColor whiteColor];
     [self setupCetasSDK];
     [self.window makeKeyAndVisible];
-    self.timer =[NSTimer timerWithTimeInterval:60.0*5 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
+    self.timer =[NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
     
     return YES;
 }
 
 -(void)fireLoggingEvents{
+    NSLog(@"Timer fired ..");
     [[SingletonClass sharedInstance] trackRunningApps];
+    [self.locationManager stopUpdatingLocation];
+     NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
 }
 
 
@@ -75,7 +78,7 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     self.locationManager.distanceFilter =kCLDistanceFilterNone;
-    [self.locationManager startMonitoringSignificantLocationChanges];
+    [self.locationManager startUpdatingLocation];
   
 }
 
@@ -97,45 +100,34 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
 //        
 //        
 //        NSLog(@"Timer expired Enter background . ");
-//        UIApplication* application = [UIApplication sharedApplication];
-//        [application endBackgroundTask:bgTask];
-//        bgTask = UIBackgroundTaskInvalid;
-//        bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
-//        [self dispatchTheEvents];
+//        UIApplication* app = [UIApplication sharedApplication];
+//        [app endBackgroundTask:bgTask];
+////        bgTask = UIBackgroundTaskInvalid;
+////        bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
+////        [self dispatchTheEvents];
 //    };
-//    bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
-//    [self dispatchTheEvents];
-//    
-//    [self scheduleAlarmForDate:[NSDate dateWithTimeIntervalSinceNow:10]];
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+        // Clean up any unfinished task business by marking where you
+        // stopped or ending the task outright.
+        
+        
+        NSLog(@"Timer expired Enter background . ");
+       // UIApplication* app = [UIApplication sharedApplication];
+
+         NSLog(@"Before start updating location : Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+        [self.locationManager startUpdatingLocation];
+        [application endBackgroundTask:bgTask];
+        bgTask = UIBackgroundTaskInvalid;
+        bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
+         NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+        
+    }];
+   // [self dispatchTheEvents];
     
-}
--(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    NSLog(@"Recevied Local notification.");
+    
 }
 
-- (void)scheduleAlarmForDate:(NSDate*)theDate
-{
-    UIApplication* app = [UIApplication sharedApplication];
-    NSArray*    oldNotifications = [app scheduledLocalNotifications];
-    
-    // Clear out the old notification before scheduling a new one.
-    if ([oldNotifications count] > 0)
-        [app cancelAllLocalNotifications];
-    
-    // Create a new notification.
-    UILocalNotification* alarm = [[UILocalNotification alloc] init];
-    if (alarm)
-    {
-        alarm.fireDate = theDate;
-        alarm.timeZone = [NSTimeZone defaultTimeZone];
-        alarm.repeatInterval = kCFCalendarUnitSecond;
-        alarm.applicationIconBadgeNumber = 1;
-        alarm.soundName = @"MMPSilence.wav";
-        alarm.alertBody = @"";
-        
-        [app scheduleLocalNotification:alarm];
-    }
-}
+
 
 -(void)dispatchTheEvents{
     // Start the long-running task and return immediately.
@@ -143,24 +135,17 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         UIApplication* application = [UIApplication sharedApplication];
         // Do the work associated with the task, preferably in chunks.
-        while (1) {
+        while (([application applicationState] == UIApplicationStateBackground) || ([application applicationState] == UIApplicationStateInactive)) {
+            
             NSLog(@"Enter background >> ");
-            //[self.locationManager stopUpdatingLocation];
+            [self.locationManager stopUpdatingLocation];
                 
-//                       iHasApp *detectionObject =[[iHasApp alloc] init];
-//                       [detectionObject detectAppDictionariesWithIncremental:^(NSArray *appDictionaries){
-//                           NSLog(@"Increment");
-//                       }withSuccess:^(NSArray *appDictionaries){
-//                           NSLog(@"app dictionaries.%@",appDictionaries);
-//                       }withFailure:^(NSError *error) {
-//                           NSLog(@"error");
-//                       }
-//                        ];
-            [NSThread sleepForTimeInterval:5.0];
+            [[SingletonClass sharedInstance] trackRunningApps];
             NSLog(@"Background remaning time %f",[application backgroundTimeRemaining]);
-//            if([application backgroundTimeRemaining]< 580.0){
-//                [self.locationManager startUpdatingLocation];
-//            }
+           if([application backgroundTimeRemaining]< 580.0){
+                [self.locationManager startUpdatingLocation];
+            }
+            [NSThread sleepForTimeInterval:30.0];
             
         }
         
@@ -201,17 +186,8 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
 //                                                          horizontalAccuracy:location.horizontalAccuracy
 //                                                            verticalAccuracy:location.verticalAccuracy];
     
-    self.locationUpdated = YES;
     
 }
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    NSLog(@"Did update location : ,%@",locations);
-     NSLog(@"<-------locationManager:didUpdateLocations Coming in ..-------->");
-    UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Location changed" message:@"" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
-}
 
--(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
-    NSLog(@"<-------locationManager:didEnterRegion Coming in region monitoring..-------->");
-}
+
 @end

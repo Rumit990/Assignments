@@ -74,9 +74,6 @@ static SingletonClass *sharedInstance = nil;
         if(appDictionaries.count){
             
             // Track Cetas events for each app.
-                        
-            
-            
             [self logCetasEvents:appDictionaries category:kApplicationCategoryActive];
             
 

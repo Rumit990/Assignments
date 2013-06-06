@@ -19,5 +19,6 @@
 @property (strong) CLLocationManager *locationManager;
 @property BOOL locationUpdated;
 @property NSTimer *timer;
+@property BOOL isBackground;
 
 @end

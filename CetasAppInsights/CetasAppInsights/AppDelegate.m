@@ -94,34 +94,23 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     
-//    self.expirationHandler = ^{
-//        // Clean up any unfinished task business by marking where you
-//        // stopped or ending the task outright.
-//        
-//        
-//        NSLog(@"Timer expired Enter background . ");
-//        UIApplication* app = [UIApplication sharedApplication];
-//        [app endBackgroundTask:bgTask];
-////        bgTask = UIBackgroundTaskInvalid;
-////        bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
-////        [self dispatchTheEvents];
-//    };
-    bgTask = [application beginBackgroundTaskWithExpirationHandler:^{
+    self.expirationHandler = ^{
         // Clean up any unfinished task business by marking where you
         // stopped or ending the task outright.
         
         
         NSLog(@"Timer expired Enter background . ");
-       // UIApplication* app = [UIApplication sharedApplication];
-
-         NSLog(@"Before start updating location : Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+        // UIApplication* app = [UIApplication sharedApplication];
+        
+        NSLog(@"Before start updating location : Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
         [self.locationManager startUpdatingLocation];
         [application endBackgroundTask:bgTask];
         bgTask = UIBackgroundTaskInvalid;
         bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
-         NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+        NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
         
-    }];
+    };
+    bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
    // [self dispatchTheEvents];
     
     

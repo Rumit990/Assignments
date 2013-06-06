@@ -15,7 +15,7 @@
 }
 
 @property (strong, nonatomic) UIWindow *window;
-//@property (strong, nonatomic) dispatch_block_t expirationHandler;
+@property (strong, nonatomic) dispatch_block_t expirationHandler;
 @property (strong) CLLocationManager *locationManager;
 @property BOOL locationUpdated;
 @property NSTimer *timer;

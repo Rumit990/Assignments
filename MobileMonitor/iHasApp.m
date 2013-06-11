@@ -136,6 +136,7 @@
         NSData *result = [NSURLConnection sendSynchronousRequest:request
                                                returningResponse:&response
                                                            error:&connectionError];
+        
         if (connectionError) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (failureBlock) {

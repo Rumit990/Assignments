@@ -15,7 +15,7 @@
 /*
  * Cetas App Insights Application Feed Keys
  */
-NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428uVUEYoz78N+QiGUwWJsWdxzIZ74G7zlErNCGN0LyFjeI9UZFIzb/MTBHrSorn3CIf+/J/naagjHfKc6l4w+JCbbh0P2zCaHxUSjiV5kf1e0H9jTg==";
+NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiieI2tCh0qDh0rw/rblJC6/0llBKkLlYcI7/lYS+/QDJItSQdN3hwTcRk3m8GJCN1JX4zeNEdkQAnFFUva8P6CuNiJ4dlI0c4ny22JJf6ImK6/1l+zxdFa3V5CSYaaIgxL6P4q30=";
 
 @implementation AppDelegate
 
@@ -162,7 +162,7 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
 {
     
     //NSLog(@"Location Manager : Failed to track location, %@",error);
-    self.locationUpdated = NO;
+    //self.locationUpdated = NO;
     
 }
 
@@ -170,10 +170,10 @@ NSString *const kCetasApplicationKey =  @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428
 {
     NSLog(@"Location manager : Location updated, %@",location);
     [self.locationManager stopUpdatingLocation];
-//    [[[CetasTracker getDefaultTracker] eventPreliminaryInfo] setUserLatitude:location.coordinate.latitude
-//                                                                   longitude:location.coordinate.longitude
-//                                                          horizontalAccuracy:location.horizontalAccuracy
-//                                                            verticalAccuracy:location.verticalAccuracy];
+    [[[CetasTracker getDefaultTracker] eventPreliminaryInfo] setUserLatitude:location.coordinate.latitude
+                                                                   longitude:location.coordinate.longitude
+                                                          horizontalAccuracy:location.horizontalAccuracy
+                                                            verticalAccuracy:location.verticalAccuracy];
     
     
 }

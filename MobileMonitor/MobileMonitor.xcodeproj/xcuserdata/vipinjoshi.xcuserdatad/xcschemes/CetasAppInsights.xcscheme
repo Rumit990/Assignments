@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FB951E3E174DEFAB0038977F"
-               BuildableName = "CetasAppInsights.app"
-               BlueprintName = "CetasAppInsights"
-               ReferencedContainer = "container:CetasAppInsights.xcodeproj">
+               BuildableName = "MobileMonitor.app"
+               BlueprintName = "MobileMonitor"
+               ReferencedContainer = "container:MobileMonitor.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB951E3E174DEFAB0038977F"
-            BuildableName = "CetasAppInsights.app"
-            BlueprintName = "CetasAppInsights"
-            ReferencedContainer = "container:CetasAppInsights.xcodeproj">
+            BuildableName = "MobileMonitor.app"
+            BlueprintName = "MobileMonitor"
+            ReferencedContainer = "container:MobileMonitor.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB951E3E174DEFAB0038977F"
-            BuildableName = "CetasAppInsights.app"
-            BlueprintName = "CetasAppInsights"
-            ReferencedContainer = "container:CetasAppInsights.xcodeproj">
+            BuildableName = "MobileMonitor.app"
+            BlueprintName = "MobileMonitor"
+            ReferencedContainer = "container:MobileMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FB951E3E174DEFAB0038977F"
-            BuildableName = "CetasAppInsights.app"
-            BlueprintName = "CetasAppInsights"
-            ReferencedContainer = "container:CetasAppInsights.xcodeproj">
+            BuildableName = "MobileMonitor.app"
+            BlueprintName = "MobileMonitor"
+            ReferencedContainer = "container:MobileMonitor.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

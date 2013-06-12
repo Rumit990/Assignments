@@ -24,6 +24,7 @@
 		FB8AEDF417686B0D00E794E5 /* MobileMonitor-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDE117686B0D00E794E5 /* MobileMonitor-Info.plist */; };
 		FB8AEDF517686B0D00E794E5 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDE317686B0D00E794E5 /* placeholder-icon.png */; };
 		FB8AEDF617686B0D00E794E5 /* SingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDE517686B0D00E794E5 /* SingletonClass.m */; };
+		FB8AEDF81768713800E794E5 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDF71768713700E794E5 /* Logo.png */; };
 		FB951E44174DEFAB0038977F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E43174DEFAB0038977F /* UIKit.framework */; };
 		FB951E46174DEFAB0038977F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E45174DEFAB0038977F /* Foundation.framework */; };
 		FB951E48174DEFAB0038977F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E47174DEFAB0038977F /* CoreGraphics.framework */; };
@@ -63,6 +64,7 @@
 		FB8AEDE317686B0D00E794E5 /* placeholder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-icon.png"; sourceTree = "<group>"; };
 		FB8AEDE417686B0D00E794E5 /* SingletonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonClass.h; sourceTree = "<group>"; };
 		FB8AEDE517686B0D00E794E5 /* SingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonClass.m; sourceTree = "<group>"; };
+		FB8AEDF71768713700E794E5 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
 		FB951E3F174DEFAB0038977F /* MobileMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB951E43174DEFAB0038977F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FB951E45174DEFAB0038977F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -100,6 +102,7 @@
 		FB8AEDCB17686B0D00E794E5 /* MobileMonitor */ = {
 			isa = PBXGroup;
 			children = (
+				FB8AEDF71768713700E794E5 /* Logo.png */,
 				FB8AEDCC17686B0D00E794E5 /* AppCategoriesViewController.h */,
 				FB8AEDCD17686B0D00E794E5 /* AppCategoriesViewController.m */,
 				FB8AEDCE17686B0D00E794E5 /* AppCategoriesViewController.xib */,
@@ -236,6 +239,7 @@
 				FB8AEDF117686B0D00E794E5 /* InfoPlist.strings in Resources */,
 				FB8AEDF417686B0D00E794E5 /* MobileMonitor-Info.plist in Resources */,
 				FB8AEDF517686B0D00E794E5 /* placeholder-icon.png in Resources */,
+				FB8AEDF81768713800E794E5 /* Logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +336,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileMonitor/MobileMonitor-Prefix.pch";
-				INFOPLIST_FILE = "/Rumit/Assignments/MobileMonitor/MobileMonitor/MobileMonitor-Info.plist";
+				INFOPLIST_FILE = "MobileMonitor/MobileMonitor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -352,7 +356,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileMonitor/MobileMonitor-Prefix.pch";
-				INFOPLIST_FILE = "/Rumit/Assignments/MobileMonitor/MobileMonitor/MobileMonitor-Info.plist";
+				INFOPLIST_FILE = "MobileMonitor/MobileMonitor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

@@ -34,7 +34,7 @@ NSString *const kCetasApplicationKey = @"oZE1AgyEGvFtNGtq/76lI0yg+rtBsMMtVQP9CuT
     self.window.backgroundColor = [UIColor whiteColor];
     [self setupCetasSDK];
     [self.window makeKeyAndVisible];
-    self.timer =[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
+    self.timer =[NSTimer scheduledTimerWithTimeInterval:60.0*5.0 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
     
     return YES;
 }

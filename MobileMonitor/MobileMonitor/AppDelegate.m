@@ -13,9 +13,12 @@
 #import "SingletonClass.h"
 //#import "iHasApp.h"
 /*
- * Cetas App Insights Application Feed Keys
+ * Cetas API Key:
+ * Project : Mobile Monitor App.
+ * Account : ipad@cetas.net/ipad7890
  */
-NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiieI2tCh0qDh0rw/rblJC6/0llBKkLlYcI7/lYS+/QDJItSQdN3hwTcRk3m8GJCN1JX4zeNEdkQAnFFUva8P6CuNiJ4dlI0c4ny22JJf6ImK6/1l+zxdFa3V5CSYaaIgxL6P4q30=";
+NSString *const kCetasApplicationKey = @"oZE1AgyEGvFtNGtq/76lI0yg+rtBsMMtVQP9CuT/erOdEd1mv6lOMmm46hkc5imekU/d2tskRy1mMgdQkKM5OsjavXNwvuiUzzavNxYf4n7JtqRw7sYPO8ajoR2a/hO8wnh8kd2YPHviqxwrVUt3OEG4USX/6C3L";
+// @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428uVUEYoz78N+QiGUwWJsWdxzIZ74G7zlErNCGN0LyFjeI9UZFIzb/MTBHrSorn3CIf+/J/naagjHfKc6l4w+JCbbh0P2zCaHxUSjiV5kf1e0H9jTg==";
 
 @implementation AppDelegate
 
@@ -31,16 +34,18 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
     self.window.backgroundColor = [UIColor whiteColor];
     [self setupCetasSDK];
     [self.window makeKeyAndVisible];
-    self.timer =[NSTimer scheduledTimerWithTimeInterval:30.0 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
+    self.timer =[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
     
     return YES;
 }
-
+/*
+ * Timer fire Handler. Tracks the information about running apps at regular interval (5 mins).
+ */
 -(void)fireLoggingEvents{
-    NSLog(@"Timer fired ..");
+    //NSLog(@"Timer fired ..");
     [[SingletonClass sharedInstance] trackRunningApps];
     [self.locationManager stopUpdatingLocation];
-     NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+     //NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
 }
 
 
@@ -63,8 +68,8 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
     
     //Default User Info
     CetasEventPreliminaryInfo *info = [CetasEventPreliminaryInfo eventPreliminaryInfo];
-    [info setUserName:@"Cetas App Insights"];
-    [info setUserId:@"cetas_app_insights"];
+    [info setUserName:@"Mobile Monitor"];
+    [info setUserId:@"mobileMonitor"];
     
     
     // Prepare tracker object with api key and config object.
@@ -72,8 +77,7 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
     // API key is mandatory.
     [[CetasTracker getDefaultTracker] startTrackerWithApiKey:kCetasApplicationKey config:config eventPreliminaryInfo:info delegate:nil];
     
-    //Used to setup location information
-    //Used to setup location information
+    //Used to setup location information.
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -93,55 +97,23 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
 //    NSLog(@"Enter background . ");
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    
+    // Using self inside a block must be a weak reference.
+    __weak AppDelegate *self_ =self;
     self.expirationHandler = ^{
         // Clean up any unfinished task business by marking where you
         // stopped or ending the task outright.
-        
-        
-        NSLog(@"Timer expired Enter background . ");
-        // UIApplication* app = [UIApplication sharedApplication];
-        
-        NSLog(@"Before start updating location : Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
-        [self.locationManager startUpdatingLocation];
-        [application endBackgroundTask:bgTask];
-        bgTask = UIBackgroundTaskInvalid;
-        bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
-        NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+        //Start the location updating to increase the background running time again to 10 mintues.
+        [self_.locationManager startUpdatingLocation];
+        [application endBackgroundTask:self_.bgTask];
+        self_.bgTask = UIBackgroundTaskInvalid;
+        self_.bgTask = [application beginBackgroundTaskWithExpirationHandler:self_.expirationHandler];
         
     };
-    bgTask = [application beginBackgroundTaskWithExpirationHandler:self.expirationHandler];
-   // [self dispatchTheEvents];
+    self.bgTask = [application beginBackgroundTaskWithExpirationHandler:self_.expirationHandler];
     
     
 }
 
-
-
--(void)dispatchTheEvents{
-    // Start the long-running task and return immediately.
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        UIApplication* application = [UIApplication sharedApplication];
-        // Do the work associated with the task, preferably in chunks.
-        while (([application applicationState] == UIApplicationStateBackground) || ([application applicationState] == UIApplicationStateInactive)) {
-            
-            NSLog(@"Enter background >> ");
-            [self.locationManager stopUpdatingLocation];
-                
-            [[SingletonClass sharedInstance] trackRunningApps];
-            NSLog(@"Background remaning time %f",[application backgroundTimeRemaining]);
-           if([application backgroundTimeRemaining]< 580.0){
-                [self.locationManager startUpdatingLocation];
-            }
-            [NSThread sleepForTimeInterval:30.0];
-            
-        }
-        
-        [application endBackgroundTask:bgTask];
-        bgTask = UIBackgroundTaskInvalid;
-    });
-}
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
@@ -162,7 +134,7 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
 {
     
     //NSLog(@"Location Manager : Failed to track location, %@",error);
-    //self.locationUpdated = NO;
+   
     
 }
 
@@ -170,6 +142,7 @@ NSString *const kCetasApplicationKey =  @"YUFo7gm78G+jWpVu9TmEyDPrkLHlBWDyucRiie
 {
     NSLog(@"Location manager : Location updated, %@",location);
     [self.locationManager stopUpdatingLocation];
+    //Track user location.
     [[[CetasTracker getDefaultTracker] eventPreliminaryInfo] setUserLatitude:location.coordinate.latitude
                                                                    longitude:location.coordinate.longitude
                                                           horizontalAccuracy:location.horizontalAccuracy

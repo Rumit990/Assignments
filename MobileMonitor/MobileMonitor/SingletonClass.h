@@ -1,5 +1,5 @@
 //
-//  SingletonClass.h
+//  SingletonClass.h 
 //  CetasAppInsights
 //
 //  Copyright (c) 2013 Cetas Software, Inc. All rights reserved.

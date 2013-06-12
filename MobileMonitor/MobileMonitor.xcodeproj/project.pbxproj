@@ -7,51 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB8AEDE617686B0D00E794E5 /* AppCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDCD17686B0D00E794E5 /* AppCategoriesViewController.m */; };
+		FB8AEDE717686B0D00E794E5 /* AppCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDCE17686B0D00E794E5 /* AppCategoriesViewController.xib */; };
+		FB8AEDE817686B0D00E794E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDD017686B0D00E794E5 /* AppDelegate.m */; };
+		FB8AEDE917686B0D00E794E5 /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDD217686B0D00E794E5 /* AppInfoViewController.m */; };
+		FB8AEDEA17686B0D00E794E5 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDD317686B0D00E794E5 /* AppInfoViewController.xib */; };
+		FB8AEDEB17686B0D00E794E5 /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDD517686B0D00E794E5 /* AppListViewController.m */; };
+		FB8AEDEC17686B0D00E794E5 /* AppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDD617686B0D00E794E5 /* AppListViewController.xib */; };
+		FB8AEDED17686B0D00E794E5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDD817686B0D00E794E5 /* Constants.m */; };
+		FB8AEDEE17686B0D00E794E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDD917686B0D00E794E5 /* Default-568h@2x.png */; };
+		FB8AEDEF17686B0D00E794E5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDDA17686B0D00E794E5 /* Default.png */; };
+		FB8AEDF017686B0D00E794E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDDB17686B0D00E794E5 /* Default@2x.png */; };
+		FB8AEDF117686B0D00E794E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDDC17686B0D00E794E5 /* InfoPlist.strings */; };
+		FB8AEDF217686B0D00E794E5 /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDDF17686B0D00E794E5 /* IconDownloader.m */; };
+		FB8AEDF317686B0D00E794E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDE017686B0D00E794E5 /* main.m */; };
+		FB8AEDF417686B0D00E794E5 /* MobileMonitor-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDE117686B0D00E794E5 /* MobileMonitor-Info.plist */; };
+		FB8AEDF517686B0D00E794E5 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDE317686B0D00E794E5 /* placeholder-icon.png */; };
+		FB8AEDF617686B0D00E794E5 /* SingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDE517686B0D00E794E5 /* SingletonClass.m */; };
 		FB951E44174DEFAB0038977F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E43174DEFAB0038977F /* UIKit.framework */; };
 		FB951E46174DEFAB0038977F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E45174DEFAB0038977F /* Foundation.framework */; };
 		FB951E48174DEFAB0038977F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E47174DEFAB0038977F /* CoreGraphics.framework */; };
-		FB951E4E174DEFAB0038977F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB951E4C174DEFAB0038977F /* InfoPlist.strings */; };
-		FB951E50174DEFAB0038977F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB951E4F174DEFAB0038977F /* main.m */; };
-		FB951E54174DEFAB0038977F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB951E53174DEFAB0038977F /* AppDelegate.m */; };
-		FB951E56174DEFAB0038977F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FB951E55174DEFAB0038977F /* Default.png */; };
-		FB951E58174DEFAB0038977F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB951E57174DEFAB0038977F /* Default@2x.png */; };
-		FB951E5A174DEFAB0038977F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB951E59174DEFAB0038977F /* Default-568h@2x.png */; };
-		FB951E74174E06330038977F /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FB951E73174E06330038977F /* Logo.png */; };
 		FB951E84174E0C880038977F /* CetasDataIngestionSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E83174E0C880038977F /* CetasDataIngestionSDK.framework */; };
 		FB951E8B174E12330038977F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E8A174E12330038977F /* CoreData.framework */; };
 		FB951E8D174E123F0038977F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB951E8C174E123F0038977F /* SystemConfiguration.framework */; };
 		FBBF5F4E1755CB02009D2C89 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBBF5F4D1755CB02009D2C89 /* CoreLocation.framework */; };
 		FBDB0AF8174E310B00B9F5C5 /* iHasApp.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0AF6174E310B00B9F5C5 /* iHasApp.m */; };
 		FBDB0AF9174E310B00B9F5C5 /* schemeApps.json in Resources */ = {isa = PBXBuildFile; fileRef = FBDB0AF7174E310B00B9F5C5 /* schemeApps.json */; };
-		FBDB0AFC174E331200B9F5C5 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0AFB174E331200B9F5C5 /* Constants.m */; };
-		FBDB0B00174E3AE300B9F5C5 /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0AFE174E3AE300B9F5C5 /* IconDownloader.m */; };
-		FBDB0B02174E3D9600B9F5C5 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDB0B01174E3D9600B9F5C5 /* placeholder-icon.png */; };
 		FBDB0B06174E47A000B9F5C5 /* executableAppNames.json in Resources */ = {isa = PBXBuildFile; fileRef = FBDB0B03174E47A000B9F5C5 /* executableAppNames.json */; };
 		FBDB0B07174E47A000B9F5C5 /* RunningApps.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0B05174E47A000B9F5C5 /* RunningApps.m */; };
-		FBDB0B0A174E4DB000B9F5C5 /* SingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0B09174E4DAF00B9F5C5 /* SingletonClass.m */; };
-		FBDB0B15174F283100B9F5C5 /* AppCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0B13174F283000B9F5C5 /* AppCategoriesViewController.m */; };
-		FBDB0B16174F283100B9F5C5 /* AppCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB0B14174F283100B9F5C5 /* AppCategoriesViewController.xib */; };
-		FBDB0B1A174F29FF00B9F5C5 /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0B18174F29FE00B9F5C5 /* AppListViewController.m */; };
-		FBDB0B1B174F29FF00B9F5C5 /* AppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB0B19174F29FF00B9F5C5 /* AppListViewController.xib */; };
-		FBDB0B1F174F3F3700B9F5C5 /* AppInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDB0B1D174F3F3500B9F5C5 /* AppInfoViewController.m */; };
-		FBDB0B20174F3F3700B9F5C5 /* AppInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDB0B1E174F3F3600B9F5C5 /* AppInfoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB8AEDCC17686B0D00E794E5 /* AppCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCategoriesViewController.h; sourceTree = "<group>"; };
+		FB8AEDCD17686B0D00E794E5 /* AppCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCategoriesViewController.m; sourceTree = "<group>"; };
+		FB8AEDCE17686B0D00E794E5 /* AppCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCategoriesViewController.xib; sourceTree = "<group>"; };
+		FB8AEDCF17686B0D00E794E5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FB8AEDD017686B0D00E794E5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FB8AEDD117686B0D00E794E5 /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoViewController.h; sourceTree = "<group>"; };
+		FB8AEDD217686B0D00E794E5 /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewController.m; sourceTree = "<group>"; };
+		FB8AEDD317686B0D00E794E5 /* AppInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppInfoViewController.xib; sourceTree = "<group>"; };
+		FB8AEDD417686B0D00E794E5 /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
+		FB8AEDD517686B0D00E794E5 /* AppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
+		FB8AEDD617686B0D00E794E5 /* AppListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppListViewController.xib; sourceTree = "<group>"; };
+		FB8AEDD717686B0D00E794E5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FB8AEDD817686B0D00E794E5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FB8AEDD917686B0D00E794E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FB8AEDDA17686B0D00E794E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		FB8AEDDB17686B0D00E794E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		FB8AEDDD17686B0D00E794E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB8AEDDE17686B0D00E794E5 /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
+		FB8AEDDF17686B0D00E794E5 /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
+		FB8AEDE017686B0D00E794E5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB8AEDE117686B0D00E794E5 /* MobileMonitor-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MobileMonitor-Info.plist"; sourceTree = "<group>"; };
+		FB8AEDE217686B0D00E794E5 /* MobileMonitor-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MobileMonitor-Prefix.pch"; sourceTree = "<group>"; };
+		FB8AEDE317686B0D00E794E5 /* placeholder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-icon.png"; sourceTree = "<group>"; };
+		FB8AEDE417686B0D00E794E5 /* SingletonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonClass.h; sourceTree = "<group>"; };
+		FB8AEDE517686B0D00E794E5 /* SingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonClass.m; sourceTree = "<group>"; };
 		FB951E3F174DEFAB0038977F /* MobileMonitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileMonitor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB951E43174DEFAB0038977F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FB951E45174DEFAB0038977F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB951E47174DEFAB0038977F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		FB951E4B174DEFAB0038977F /* MobileMonitor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileMonitor-Info.plist"; sourceTree = "<group>"; };
-		FB951E4D174DEFAB0038977F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FB951E4F174DEFAB0038977F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FB951E51174DEFAB0038977F /* MobileMonitor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MobileMonitor-Prefix.pch"; sourceTree = "<group>"; };
-		FB951E52174DEFAB0038977F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		FB951E53174DEFAB0038977F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		FB951E55174DEFAB0038977F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		FB951E57174DEFAB0038977F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		FB951E59174DEFAB0038977F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FB951E73174E06330038977F /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo.png; path = ../Logo.png; sourceTree = "<group>"; };
 		FB951E83174E0C880038977F /* CetasDataIngestionSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CetasDataIngestionSDK.framework; sourceTree = "<group>"; };
 		FB951E8A174E12330038977F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		FB951E8C174E123F0038977F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -59,25 +74,9 @@
 		FBDB0AF5174E310B00B9F5C5 /* iHasApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iHasApp.h; sourceTree = "<group>"; };
 		FBDB0AF6174E310B00B9F5C5 /* iHasApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iHasApp.m; sourceTree = "<group>"; };
 		FBDB0AF7174E310B00B9F5C5 /* schemeApps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schemeApps.json; sourceTree = "<group>"; };
-		FBDB0AFA174E331200B9F5C5 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		FBDB0AFB174E331200B9F5C5 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
-		FBDB0AFE174E3AE300B9F5C5 /* IconDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconDownloader.m; sourceTree = "<group>"; };
-		FBDB0AFF174E3AE300B9F5C5 /* IconDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconDownloader.h; sourceTree = "<group>"; };
-		FBDB0B01174E3D9600B9F5C5 /* placeholder-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-icon.png"; sourceTree = "<group>"; };
 		FBDB0B03174E47A000B9F5C5 /* executableAppNames.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = executableAppNames.json; sourceTree = "<group>"; };
 		FBDB0B04174E47A000B9F5C5 /* RunningApps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunningApps.h; sourceTree = "<group>"; };
 		FBDB0B05174E47A000B9F5C5 /* RunningApps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunningApps.m; sourceTree = "<group>"; };
-		FBDB0B08174E4DAF00B9F5C5 /* SingletonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonClass.h; sourceTree = "<group>"; };
-		FBDB0B09174E4DAF00B9F5C5 /* SingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonClass.m; sourceTree = "<group>"; };
-		FBDB0B12174F283000B9F5C5 /* AppCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCategoriesViewController.h; sourceTree = "<group>"; };
-		FBDB0B13174F283000B9F5C5 /* AppCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCategoriesViewController.m; sourceTree = "<group>"; };
-		FBDB0B14174F283100B9F5C5 /* AppCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCategoriesViewController.xib; sourceTree = "<group>"; };
-		FBDB0B17174F29FE00B9F5C5 /* AppListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
-		FBDB0B18174F29FE00B9F5C5 /* AppListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
-		FBDB0B19174F29FF00B9F5C5 /* AppListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppListViewController.xib; sourceTree = "<group>"; };
-		FBDB0B1C174F3F3500B9F5C5 /* AppInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppInfoViewController.h; sourceTree = "<group>"; };
-		FBDB0B1D174F3F3500B9F5C5 /* AppInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppInfoViewController.m; sourceTree = "<group>"; };
-		FBDB0B1E174F3F3600B9F5C5 /* AppInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppInfoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,12 +97,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB8AEDCB17686B0D00E794E5 /* MobileMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				FB8AEDCC17686B0D00E794E5 /* AppCategoriesViewController.h */,
+				FB8AEDCD17686B0D00E794E5 /* AppCategoriesViewController.m */,
+				FB8AEDCE17686B0D00E794E5 /* AppCategoriesViewController.xib */,
+				FB8AEDCF17686B0D00E794E5 /* AppDelegate.h */,
+				FB8AEDD017686B0D00E794E5 /* AppDelegate.m */,
+				FB8AEDD117686B0D00E794E5 /* AppInfoViewController.h */,
+				FB8AEDD217686B0D00E794E5 /* AppInfoViewController.m */,
+				FB8AEDD317686B0D00E794E5 /* AppInfoViewController.xib */,
+				FB8AEDD417686B0D00E794E5 /* AppListViewController.h */,
+				FB8AEDD517686B0D00E794E5 /* AppListViewController.m */,
+				FB8AEDD617686B0D00E794E5 /* AppListViewController.xib */,
+				FB8AEDD717686B0D00E794E5 /* Constants.h */,
+				FB8AEDD817686B0D00E794E5 /* Constants.m */,
+				FB8AEDD917686B0D00E794E5 /* Default-568h@2x.png */,
+				FB8AEDDA17686B0D00E794E5 /* Default.png */,
+				FB8AEDDB17686B0D00E794E5 /* Default@2x.png */,
+				FB8AEDDC17686B0D00E794E5 /* InfoPlist.strings */,
+				FB8AEDDE17686B0D00E794E5 /* IconDownloader.h */,
+				FB8AEDDF17686B0D00E794E5 /* IconDownloader.m */,
+				FB8AEDE017686B0D00E794E5 /* main.m */,
+				FB8AEDE117686B0D00E794E5 /* MobileMonitor-Info.plist */,
+				FB8AEDE217686B0D00E794E5 /* MobileMonitor-Prefix.pch */,
+				FB8AEDE317686B0D00E794E5 /* placeholder-icon.png */,
+				FB8AEDE417686B0D00E794E5 /* SingletonClass.h */,
+				FB8AEDE517686B0D00E794E5 /* SingletonClass.m */,
+			);
+			path = MobileMonitor;
+			sourceTree = "<group>";
+		};
 		FB951E34174DEFAB0038977F = {
 			isa = PBXGroup;
 			children = (
-				FBBF5F4D1755CB02009D2C89 /* CoreLocation.framework */,
+				FB8AEDCB17686B0D00E794E5 /* MobileMonitor */,
 				FBDB0AF4174E30F200B9F5C5 /* Ext */,
-				FB951E49174DEFAB0038977F /* MobileMonitor */,
 				FB951E42174DEFAB0038977F /* Frameworks */,
 				FB951E40174DEFAB0038977F /* Products */,
 			);
@@ -120,6 +150,7 @@
 		FB951E42174DEFAB0038977F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBBF5F4D1755CB02009D2C89 /* CoreLocation.framework */,
 				FB951E8C174E123F0038977F /* SystemConfiguration.framework */,
 				FB951E8A174E12330038977F /* CoreData.framework */,
 				FB951E83174E0C880038977F /* CetasDataIngestionSDK.framework */,
@@ -128,43 +159,6 @@
 				FB951E47174DEFAB0038977F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		FB951E49174DEFAB0038977F /* MobileMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				FB951E52174DEFAB0038977F /* AppDelegate.h */,
-				FBDB0AFD174E3ACB00B9F5C5 /* Common */,
-				FB951E53174DEFAB0038977F /* AppDelegate.m */,
-				FBDB0B12174F283000B9F5C5 /* AppCategoriesViewController.h */,
-				FBDB0B13174F283000B9F5C5 /* AppCategoriesViewController.m */,
-				FBDB0B14174F283100B9F5C5 /* AppCategoriesViewController.xib */,
-				FBDB0B17174F29FE00B9F5C5 /* AppListViewController.h */,
-				FBDB0B18174F29FE00B9F5C5 /* AppListViewController.m */,
-				FBDB0B19174F29FF00B9F5C5 /* AppListViewController.xib */,
-				FBDB0B1C174F3F3500B9F5C5 /* AppInfoViewController.h */,
-				FBDB0B1D174F3F3500B9F5C5 /* AppInfoViewController.m */,
-				FBDB0B1E174F3F3600B9F5C5 /* AppInfoViewController.xib */,
-				FB951E4A174DEFAB0038977F /* Supporting Files */,
-			);
-			name = MobileMonitor;
-			path = ../../../Users/vipinjoshi/Desktop/MobileMonitor/MobileMonitor;
-			sourceTree = "<group>";
-		};
-		FB951E4A174DEFAB0038977F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FB951E4B174DEFAB0038977F /* MobileMonitor-Info.plist */,
-				FB951E73174E06330038977F /* Logo.png */,
-				FB951E4C174DEFAB0038977F /* InfoPlist.strings */,
-				FBDB0B01174E3D9600B9F5C5 /* placeholder-icon.png */,
-				FB951E4F174DEFAB0038977F /* main.m */,
-				FB951E51174DEFAB0038977F /* MobileMonitor-Prefix.pch */,
-				FB951E55174DEFAB0038977F /* Default.png */,
-				FB951E57174DEFAB0038977F /* Default@2x.png */,
-				FB951E59174DEFAB0038977F /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		FBDB0AF4174E30F200B9F5C5 /* Ext */ = {
@@ -178,19 +172,6 @@
 				FBDB0B05174E47A000B9F5C5 /* RunningApps.m */,
 			);
 			name = Ext;
-			sourceTree = "<group>";
-		};
-		FBDB0AFD174E3ACB00B9F5C5 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				FBDB0AFE174E3AE300B9F5C5 /* IconDownloader.m */,
-				FBDB0AFF174E3AE300B9F5C5 /* IconDownloader.h */,
-				FBDB0AFA174E331200B9F5C5 /* Constants.h */,
-				FBDB0AFB174E331200B9F5C5 /* Constants.m */,
-				FBDB0B08174E4DAF00B9F5C5 /* SingletonClass.h */,
-				FBDB0B09174E4DAF00B9F5C5 /* SingletonClass.m */,
-			);
-			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,17 +225,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB951E4E174DEFAB0038977F /* InfoPlist.strings in Resources */,
-				FB951E56174DEFAB0038977F /* Default.png in Resources */,
-				FB951E58174DEFAB0038977F /* Default@2x.png in Resources */,
-				FB951E5A174DEFAB0038977F /* Default-568h@2x.png in Resources */,
-				FB951E74174E06330038977F /* Logo.png in Resources */,
 				FBDB0AF9174E310B00B9F5C5 /* schemeApps.json in Resources */,
-				FBDB0B02174E3D9600B9F5C5 /* placeholder-icon.png in Resources */,
 				FBDB0B06174E47A000B9F5C5 /* executableAppNames.json in Resources */,
-				FBDB0B16174F283100B9F5C5 /* AppCategoriesViewController.xib in Resources */,
-				FBDB0B1B174F29FF00B9F5C5 /* AppListViewController.xib in Resources */,
-				FBDB0B20174F3F3700B9F5C5 /* AppInfoViewController.xib in Resources */,
+				FB8AEDE717686B0D00E794E5 /* AppCategoriesViewController.xib in Resources */,
+				FB8AEDEA17686B0D00E794E5 /* AppInfoViewController.xib in Resources */,
+				FB8AEDEC17686B0D00E794E5 /* AppListViewController.xib in Resources */,
+				FB8AEDEE17686B0D00E794E5 /* Default-568h@2x.png in Resources */,
+				FB8AEDEF17686B0D00E794E5 /* Default.png in Resources */,
+				FB8AEDF017686B0D00E794E5 /* Default@2x.png in Resources */,
+				FB8AEDF117686B0D00E794E5 /* InfoPlist.strings in Resources */,
+				FB8AEDF417686B0D00E794E5 /* MobileMonitor-Info.plist in Resources */,
+				FB8AEDF517686B0D00E794E5 /* placeholder-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,26 +246,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB951E50174DEFAB0038977F /* main.m in Sources */,
-				FB951E54174DEFAB0038977F /* AppDelegate.m in Sources */,
 				FBDB0AF8174E310B00B9F5C5 /* iHasApp.m in Sources */,
-				FBDB0AFC174E331200B9F5C5 /* Constants.m in Sources */,
-				FBDB0B00174E3AE300B9F5C5 /* IconDownloader.m in Sources */,
 				FBDB0B07174E47A000B9F5C5 /* RunningApps.m in Sources */,
-				FBDB0B0A174E4DB000B9F5C5 /* SingletonClass.m in Sources */,
-				FBDB0B15174F283100B9F5C5 /* AppCategoriesViewController.m in Sources */,
-				FBDB0B1A174F29FF00B9F5C5 /* AppListViewController.m in Sources */,
-				FBDB0B1F174F3F3700B9F5C5 /* AppInfoViewController.m in Sources */,
+				FB8AEDE617686B0D00E794E5 /* AppCategoriesViewController.m in Sources */,
+				FB8AEDE817686B0D00E794E5 /* AppDelegate.m in Sources */,
+				FB8AEDE917686B0D00E794E5 /* AppInfoViewController.m in Sources */,
+				FB8AEDEB17686B0D00E794E5 /* AppListViewController.m in Sources */,
+				FB8AEDED17686B0D00E794E5 /* Constants.m in Sources */,
+				FB8AEDF217686B0D00E794E5 /* IconDownloader.m in Sources */,
+				FB8AEDF317686B0D00E794E5 /* main.m in Sources */,
+				FB8AEDF617686B0D00E794E5 /* SingletonClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FB951E4C174DEFAB0038977F /* InfoPlist.strings */ = {
+		FB8AEDDC17686B0D00E794E5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FB951E4D174DEFAB0038977F /* en */,
+				FB8AEDDD17686B0D00E794E5 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -351,7 +332,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileMonitor/MobileMonitor-Prefix.pch";
-				INFOPLIST_FILE = "/Users/vipinjoshi/Desktop/MobileMonitor/MobileMonitor/MobileMonitor-Info.plist";
+				INFOPLIST_FILE = "/Rumit/Assignments/MobileMonitor/MobileMonitor/MobileMonitor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -371,7 +352,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MobileMonitor/MobileMonitor-Prefix.pch";
-				INFOPLIST_FILE = "/Users/vipinjoshi/Desktop/MobileMonitor/MobileMonitor/MobileMonitor-Info.plist";
+				INFOPLIST_FILE = "/Rumit/Assignments/MobileMonitor/MobileMonitor/MobileMonitor-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

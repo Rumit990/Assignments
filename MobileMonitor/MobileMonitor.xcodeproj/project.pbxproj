@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB7C427117CCB68700A44093 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7C427017CCB68700A44093 /* FacebookSDK.framework */; };
 		FB8AEDE617686B0D00E794E5 /* AppCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDCD17686B0D00E794E5 /* AppCategoriesViewController.m */; };
 		FB8AEDE717686B0D00E794E5 /* AppCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDCE17686B0D00E794E5 /* AppCategoriesViewController.xib */; };
 		FB8AEDE817686B0D00E794E5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDD017686B0D00E794E5 /* AppDelegate.m */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB7C427017CCB68700A44093 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		FB8AEDCC17686B0D00E794E5 /* AppCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCategoriesViewController.h; sourceTree = "<group>"; };
 		FB8AEDCD17686B0D00E794E5 /* AppCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCategoriesViewController.m; sourceTree = "<group>"; };
 		FB8AEDCE17686B0D00E794E5 /* AppCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppCategoriesViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				FB951E44174DEFAB0038977F /* UIKit.framework in Frameworks */,
 				FB951E46174DEFAB0038977F /* Foundation.framework in Frameworks */,
 				FB951E48174DEFAB0038977F /* CoreGraphics.framework in Frameworks */,
+				FB7C427117CCB68700A44093 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +155,7 @@
 		FB951E42174DEFAB0038977F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB7C427017CCB68700A44093 /* FacebookSDK.framework */,
 				FBBF5F4D1755CB02009D2C89 /* CoreLocation.framework */,
 				FB951E8C174E123F0038977F /* SystemConfiguration.framework */,
 				FB951E8A174E12330038977F /* CoreData.framework */,

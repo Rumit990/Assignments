@@ -11,6 +11,8 @@
 #import "AppCategoriesViewController.h"
 #import <CetasDataIngestionSDK/CetasTracker.h>
 #import "SingletonClass.h"
+#import "asl.h"
+
 //#import "iHasApp.h"
 /*
  * Cetas API Key:
@@ -18,7 +20,8 @@
  * Account : ipad@cetas.net/ipad7890
  */
 NSString *const kCetasApplicationKey = @"oZE1AgyEGvFtNGtq/76lI0yg+rtBsMMtVQP9CuT/erOdEd1mv6lOMmm46hkc5imekU/d2tskRy1mMgdQkKM5OsjavXNwvuiUzzavNxYf4n7JtqRw7sYPO8ajoR2a/hO8wnh8kd2YPHviqxwrVUt3OEG4USX/6C3L";
-// @"2DBBY7dlxokfi62TJrd6ds1QfRlYvQtiBNl428uVUEYoz78N+QiGUwWJsWdxzIZ74G7zlErNCGN0LyFjeI9UZFIzb/MTBHrSorn3CIf+/J/naagjHfKc6l4w+JCbbh0P2zCaHxUSjiV5kf1e0H9jTg==";
+// NSString *const kCetasApplicationKey = @"cWn5bwOBo15jz9jpOnoWDPDsQmj+opfcXWfcEnk2RntzdN/YTUpAAiI+4JoO16mxW5KN8hK0yAREYZ9Kj/PYkOvBKq4YnU2RqXWfwBRgoe0LU0NMTNGADWUiEP+NmguFs2Uy5KWOVXkR2UthiKNot3exg/qceR/ASTVbowXPtis=";
+#define kTimeInterval 60.0*5
 
 @implementation AppDelegate
 
@@ -34,7 +37,9 @@ NSString *const kCetasApplicationKey = @"oZE1AgyEGvFtNGtq/76lI0yg+rtBsMMtVQP9CuT
     self.window.backgroundColor = [UIColor whiteColor];
     [self setupCetasSDK];
     [self.window makeKeyAndVisible];
-    self.timer =[NSTimer scheduledTimerWithTimeInterval:60.0*5.0 target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
+    self.timer =[NSTimer scheduledTimerWithTimeInterval:kTimeInterval target:self selector:@selector(fireLoggingEvents) userInfo:nil repeats:YES];
+    
+    
     
     return YES;
 }
@@ -46,6 +51,7 @@ NSString *const kCetasApplicationKey = @"oZE1AgyEGvFtNGtq/76lI0yg+rtBsMMtVQP9CuT
     [[SingletonClass sharedInstance] trackRunningApps];
     [self.locationManager stopUpdatingLocation];
      //NSLog(@"Background remaning time %f",[[UIApplication sharedApplication] backgroundTimeRemaining]);
+    //[self readSystemLogs];
 }
 
 
@@ -85,7 +91,38 @@ NSString *const kCetasApplicationKey = @"oZE1AgyEGvFtNGtq/76lI0yg+rtBsMMtVQP9CuT
     [self.locationManager startUpdatingLocation];
   
 }
-
+-(void)readSystemLogs{
+    
+    aslmsg q, m;
+    int i;
+    const char *key, *val;
+    
+    q = asl_new(ASL_TYPE_QUERY);
+    asl_set_query(q, ASL_KEY_SENDER, "Tinyview", ASL_QUERY_OP_EQUAL);
+    asl_set_query(q, ASL_KEY_TIME,[self.lastLoggingTime UTF8String] , ASL_QUERY_OP_GREATER);
+    aslresponse r = asl_search(NULL, q);
+    while (NULL != (m = aslresponse_next(r)))
+    {
+        NSMutableDictionary *tmpDict = [NSMutableDictionary dictionary];
+        
+        for (i = 0; (NULL != (key = asl_key(m, i))); i++)
+        {
+            NSString *keyString = [NSString stringWithUTF8String:(char *)key];
+            
+            val = asl_get(m, key);
+            
+            NSString *string = [NSString stringWithUTF8String:val];
+            [tmpDict setObject:string forKey:keyString];
+        }
+        if(![[tmpDict objectForKey:@"Sender"] isEqualToString:@"MobileMonitor"]){
+             NSLog(@" Logs : %@", tmpDict);
+            
+            self.lastLoggingTime = [tmpDict objectForKey:@"Time"] ;
+        }
+       
+    }
+    aslresponse_free(r);
+}
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

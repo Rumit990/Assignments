@@ -11,7 +11,6 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,CLLocationManagerDelegate>{
-    
 }
 
 @property (strong, nonatomic) UIWindow *window;
@@ -21,5 +20,7 @@
 @property BOOL locationUpdated;
 @property NSTimer *timer;
 @property BOOL isBackground;
+@property (strong) NSString *lastLoggingTime;
+ 
 
 @end

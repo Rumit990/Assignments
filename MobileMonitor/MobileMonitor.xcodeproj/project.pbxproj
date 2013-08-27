@@ -21,7 +21,6 @@
 		FB8AEDF117686B0D00E794E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDDC17686B0D00E794E5 /* InfoPlist.strings */; };
 		FB8AEDF217686B0D00E794E5 /* IconDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDDF17686B0D00E794E5 /* IconDownloader.m */; };
 		FB8AEDF317686B0D00E794E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDE017686B0D00E794E5 /* main.m */; };
-		FB8AEDF417686B0D00E794E5 /* MobileMonitor-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDE117686B0D00E794E5 /* MobileMonitor-Info.plist */; };
 		FB8AEDF517686B0D00E794E5 /* placeholder-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDE317686B0D00E794E5 /* placeholder-icon.png */; };
 		FB8AEDF617686B0D00E794E5 /* SingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8AEDE517686B0D00E794E5 /* SingletonClass.m */; };
 		FB8AEDF81768713800E794E5 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FB8AEDF71768713700E794E5 /* Logo.png */; };
@@ -237,7 +236,6 @@
 				FB8AEDEF17686B0D00E794E5 /* Default.png in Resources */,
 				FB8AEDF017686B0D00E794E5 /* Default@2x.png in Resources */,
 				FB8AEDF117686B0D00E794E5 /* InfoPlist.strings in Resources */,
-				FB8AEDF417686B0D00E794E5 /* MobileMonitor-Info.plist in Resources */,
 				FB8AEDF517686B0D00E794E5 /* placeholder-icon.png in Resources */,
 				FB8AEDF81768713800E794E5 /* Logo.png in Resources */,
 			);
